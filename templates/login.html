@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+
+        <link rel="preload" href="//font.alba.co.kr/HGSoftGGothicssi40g.woff2" as="font" type="font/woff2" crossorigin="crossorigin">
+        
+        <link rel="preload" href="//font.alba.co.kr/HGSoftGGothicssi60g.woff2" as="font" type="font/woff2" crossorigin="crossorigin">
+        
+        <link rel="preload" href="//font.alba.co.kr/HGSoftGGothicssi80g.woff2" as="font" type="font/woff2" crossorigin="crossorigin">
+        <script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ecommerce.js"></script>
+        <script src="https://connect.facebook.net/ko_KR/sdk.js?hash=e11e108…" async="" crossorigin="anonymous"></script>
+        <script async="" src="//www.google-analytics.com/analytics.js"></script>
+        <script id="facebook-jssdk" src="//connect.facebook.net/ko_KR/sdk.js"></script>
+        <script src="../static/js/jquery.js"></script>
+        <script src="../static/js/ouath.js"></script>
+        <script src="../static/css/font.css"></script>
+        <script src="../static/css/Sub.css"></script>
+        <script type="text/javascript">
+            // 업직종개편
+            var JOBKIND_CHANGE_BIZ = true;					// 기업서비스
+            var JOBKIND_CHANGE_BIZ_REG = true;			// 공고등록2222 
+            var JOBKIND_CHANGE_JOB = true;					// 채용정보
+            var JOBKIND_CHANGE_PERSON = true;			// 개인서비스
+            var JOBKIND_CHANGE_PERSON_REG = true;	// 이력서등록
+            var JOBKIND_CHANGE_RESUME = true;			// 인재목록
+            var JOBKIND_CHANGE_ETC = true;					// 기타
+            </script>
+        
+        
+        <script type="text/javascript">
+            //<![CDATA[
+            var enc = "eb01a2314d88977b91710c21d1f49f7869edbf7cfc2ad6d3bb48f11f5f2b01f1";
+            function blurLoginInput(obj) {
+                if (obj.value == "") {
+                    if (obj.name == "userid") {
+                        obj.style.backgroundImage = "url(//image.alba.kr/main/id.gif)";
+                    } else {
+                        obj.style.backgroundImage = "url(//image.alba.kr/main/pass.gif)";
+                    }
+                }
+            }
+            function doLogin() {
+                var userid = document.getElementById("userid").value;
+                var frm = document.getElementById("f");
+        
+                if (typeof(opener) == "undefined" || opener == null) return false;
+                if (document.getElementById("userid").value == "") {
+                    alert("아이디를 입력하세요.");
+                    return false;
+                }
+                if (document.getElementById("passwd").value == "") {
+                    alert("비밀번호를 입력하세요.");
+                    return false;
+                }
+        
+                if (document.getElementById("usertype").value != "")
+                {
+                    $.ajax({
+                        url: "https://sign.alba.co.kr/login/UserTypeCheckAjax.asp",
+                        data: { "userid" : userid } ,
+                        dataType: "jsonp" ,
+                        jsonp: "UserTypeCheck",
+                        success: function(data) {
+                        }
+                    });
+                } else {
+                    document.getElementById("enc").value = enc;
+        
+                    frm.action = "https://sign.alba.co.kr/login/login.asp";
+                    frm.submit();
+                }
+            }
+        
+            function UserTypeCheck(data){
+                var frm = document.getElementById("f");
+        
+                if(data.RESULT == "C" && document.getElementById("usertype").value == "P")
+                {
+                    alert("기업회원으로 가입된 계정입니다.\n개인회원 아이디로 다시 로그인해 주세요.");
+                    return false;
+                }
+                if(data.RESULT == "P" && document.getElementById("usertype").value == "C")
+                {
+                    alert("개인회원으로 가입된 계정입니다.\n기업회원 아이디로 다시 로그인해 주세요.");
+                    return false;
+                }
+                if(data.RESULT == "N" || (data.RESULT == "C" && document.getElementById("usertype").value == "C") || (data.RESULT == "P" && document.getElementById("usertype").value == "P")){
+                    document.getElementById("enc").value = enc;
+                    frm.action = "https://sign.alba.co.kr/login/login.asp";
+                    frm.submit();
+                }
+            }
+        
+            window.onload = function() {
+        
+                if (document.getElementById("userid").value == "") {
+                    document.getElementById("userid").focus();
+                } else {
+                    document.getElementById("userid").focus();
+                    document.getElementById("passwd").focus();
+                }
+            }
+            
+            </script>
+        <script type="text/javascript">
+            //<![CDATA[
+            var enc = "eb01a2314d88977b91710c21d1f49f7869edbf7cfc2ad6d3bb48f11f5f2b01f1";
+            function blurLoginInput(obj) {
+                if (obj.value == "") {
+                    if (obj.name == "userid") {
+                        obj.style.backgroundImage = "url(//image.alba.kr/main/id.gif)";
+                    } else {
+                        obj.style.backgroundImage = "url(//image.alba.kr/main/pass.gif)";
+                    }
+                }
+            }
+            function doLogin() {
+                var userid = document.getElementById("userid").value;
+                var frm = document.getElementById("f");
+        
+                if (typeof(opener) == "undefined" || opener == null) return false;
+                if (document.getElementById("userid").value == "") {
+                    alert("아이디를 입력하세요.");
+                    return false;
+                }
+                if (document.getElementById("passwd").value == "") {
+                    alert("비밀번호를 입력하세요.");
+                    return false;
+                }
+        
+                if (document.getElementById("usertype").value != "")
+                {
+                    $.ajax({
+                        url: "https://sign.alba.co.kr/login/UserTypeCheckAjax.asp",
+                        data: { "userid" : userid } ,
+                        dataType: "jsonp" ,
+                        jsonp: "UserTypeCheck",
+                        success: function(data) {
+                        }
+                    });
+                } else {
+                    document.getElementById("enc").value = enc;
+        
+                    frm.action = "https://sign.alba.co.kr/login/login.asp";
+                    frm.submit();
+                }
+            }
+        
+            function UserTypeCheck(data){
+                var frm = document.getElementById("f");
+        
+                if(data.RESULT == "C" && document.getElementById("usertype").value == "P")
+                {
+                    alert("기업회원으로 가입된 계정입니다.\n개인회원 아이디로 다시 로그인해 주세요.");
+                    return false;
+                }
+                if(data.RESULT == "P" && document.getElementById("usertype").value == "C")
+                {
+                    alert("개인회원으로 가입된 계정입니다.\n기업회원 아이디로 다시 로그인해 주세요.");
+                    return false;
+                }
+                if(data.RESULT == "N" || (data.RESULT == "C" && document.getElementById("usertype").value == "C") || (data.RESULT == "P" && document.getElementById("usertype").value == "P")){
+                    document.getElementById("enc").value = enc;
+                    frm.action = "https://sign.alba.co.kr/login/login.asp";
+                    frm.submit();
+                }
+            }
+        
+            window.onload = function() {
+        
+                if (document.getElementById("userid").value == "") {
+                    document.getElementById("userid").focus();
+                } else {
+                    document.getElementById("userid").focus();
+                    document.getElementById("passwd").focus();
+                }
+            }
+            
+        
+        
+        var OAUTH_FAPPID = { ALBA: "788189774566772", JOBSEARCH: "1088470491182206" };
+        var OAUTH_KAPPID = { ALBA: "a1fe7ce30fc15b388357dc7da3cf7057", JOBSEARCH: "5ec0c39bb09c5f9b2b080f585d4e4ad6" };
+        var OAUTH_GAPPID = { ALBA: "223315527955-0qeefdvemb22cbmjsb884hon4qrovmmc.apps.googleusercontent.com", JOBSEARCH: "" };
+        var OAUTH_AAPPID = { ALBA: "kr.co.alba.sign", JOBSEARCH: "" };
+        var OAUTH_SVCDOMAIN;
+        var OAUTH_PROTOCOL = location.protocol;
+        var OauthLoginCLS = {
+            init: function() {
+                var signdomain = (OAUTH_CONFIG.SVCTYPE.toLowerCase() == "test" ? "https://sign0" : "https://sign");
+                if (OAUTH_CONFIG.SITE == "ALBA") {
+                    signdomain += ".alba.co.kr";
+                } else if (OAUTH_CONFIG.SITE == "JOBSEARCH") {
+                    signdomain += ".job.co.kr";
+                }
+                OAUTH_SVCDOMAIN = signdomain;
+            },
+        
+            // 紐⑤컮�쇨린湲� 泥댄겕
+            isMobile: function() {
+                var isMobile = false;
+                var userAgent = navigator.userAgent.toLowerCase();
+                var mobileDeviceArray = ['iphone', 'ipad', 'android', 'lgtelecom', 'samsung', 'nokia'];
+        
+                for (var i = 0; i < mobileDeviceArray.length; i++) {
+                    if (userAgent.indexOf(mobileDeviceArray[i]) != -1) {
+                        isMobile = true;
+                        break;
+                    }
+                }
+                return isMobile;
+            },
+        
+            // 鍮덇컪泥댄겕
+            isEmpty: function(str) {
+                return (str == null || str == "null" || typeof (str) == "undefined" || str == "undefined" || str.replace(/ /gi, "") == "") ? true : false;
+            },
+        
+            // SNS濡쒓렇�� �대┃��
+            doLogin: function(snscode) {
+                if (location.host.indexOf(".alba.co.kr") > -1) {
+                    document.domain = "alba.co.kr";
+                } else if (location.host.indexOf(".job.co.kr") > -1) {
+                    document.domain = "job.co.kr";
+                }
+        
+                // 紐⑤컮�쇨린湲곗껜��
+                if (!OauthLoginCLS.isMobile() && OAUTH_CONFIG.MOBILE == "Y") {
+                    alert("�덉젙�곸씤 �댁슜�� �꾪빐�쒕뒗 紐⑤컮�쇨린湲곗뿉�� �묒냽�섏뀛�� �⑸땲��.");
+                }
+        
+                var category2 = ""; //鍮낆옘由� �곸옱��
+        
+                if (snscode == "F") {			// �섏씠�ㅻ턿
+                    category2 = "FACEBOOK";
+                    OauthLoginCLS.checkFacebook();
+                } else if (snscode == "K" || snscode == "KL") {	// 移댁뭅�ㅽ넚, 移댁뭅�ㅽ넚�곌껐�댁젣
+                    var ua = window.navigator.userAgent;
+                    if (ua.toLowerCase().indexOf("android 4.4") >= 0) {
+                        alert("�덈뱶濡쒖씠�� �룹베�먯꽌�� 吏��먰븯吏� �딆뒿�덈떎.");
+                        return;
+                    }
+                    var msie = ua.indexOf("MSIE");
+                    var is_version = true;
+                    if (msie > 0) {
+                        var re = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+                        if (re.exec(ua) != null)
+                            rv = parseFloat(RegExp.$1);
+                        if (rv <= 8)
+                            is_version = false;
+                    }
+                    if (is_version == true) {
+                        category2 = "KAKAO";
+                        snscode == "K" ? OauthLoginCLS.checkKakao() : OauthLoginCLS.checkKakaoUnlink();
+                    } else {
+                        alert("移댁뭅�ㅽ넚�� IE9 �댁긽�먯꽌留� 吏��먮맗�덈떎.");
+                    }
+                } else if (snscode == 'N') {	// �ㅼ씠踰�
+                    category2 = "NAVER";
+                    OauthLoginCLS.checkNaver();
+                } else if (snscode == "G") {	// 援ш�
+                    category2 = "GOOGLE";
+                    OauthLoginCLS.checkGoogle();
+                } else if (snscode == "A") {	// �좏뵆
+                    category2 = "APPLE";
+                    OauthLoginCLS.checkApple();
+                }
+        
+                if (category2 != "" && location.pathname.toLowerCase() != "/login/logingate.asp" && location.pathname.toLowerCase() != "/auth/loginpop.asp") {
+                    BA.Collect("EVENT", {
+                        "category1": "濡쒓렇�� - �뚮컮泥쒓뎅"
+                    ,	"category2": category2
+                    ,	"pageurl": location.pathname
+                    });
+                }
+            },
+        
+            // 濡쒓렇�몄떎��
+            execLogin: function(param) {
+                var site = OauthLoginCLS.isEmpty(param.site) ? "" : param.site;
+                var snscode = OauthLoginCLS.isEmpty(param.snscode) ? "" : param.snscode;
+                var snsyn = OauthLoginCLS.isEmpty(param.snsyn) ? "" : param.snsyn;
+                var userid = OauthLoginCLS.isEmpty(param.userid) ? "" : param.userid;
+                var usernm = OauthLoginCLS.isEmpty(param.usernm) ? "" : param.usernm;
+                var gender = OauthLoginCLS.isEmpty(param.gender) ? "" : param.gender;
+                var email = OauthLoginCLS.isEmpty(param.email) ? "" : param.email;
+                var birth = OauthLoginCLS.isEmpty(param.birth) ? "" : param.birth;
+                var profile = OauthLoginCLS.isEmpty(param.profile) ? "" : param.profile;
+                var picture = OauthLoginCLS.isEmpty(param.picture) ? "" : param.picture;
+                var gourl = jQuery("#gourl").val();
+                var adultcert = OauthLoginCLS.isEmpty(param.adultcert) ? "" : param.adultcert;
+                var popup = OauthLoginCLS.isEmpty(param.popup) ? "" : param.popup;
+        
+                var strHtml = "";
+                strHtml += "<div id=\"divSnsLogin\">";
+                strHtml += "<form id=\"frmSnsLogin\" name=\"frmSnsLogin\" method=\"post\" accept-charset=\"utf-8\" action=\"" + OAUTH_SVCDOMAIN + "/login/LoginSnsProc.asp\">";
+                strHtml += "	<input type=\"hidden\" id=\"sns_site\" name=\"site\" />";
+                strHtml += "	<input type=\"hidden\" id=\"sns_snscode\" name=\"snscode\" />";
+                strHtml += "	<input type=\"hidden\" id=\"sns_snsyn\" name=\"snsyn\" />";
+                strHtml += "	<input type=\"hidden\" id=\"sns_userid\" name=\"userid\" />";
+                strHtml += "	<input type=\"hidden\" id=\"sns_usernm\" name=\"usernm\" />";
+                strHtml += "	<input type=\"hidden\" id=\"sns_gender\" name=\"gender\" />";
+                strHtml += "	<input type=\"hidden\" id=\"sns_email\" name=\"email\" />";
+                strHtml += "	<input type=\"hidden\" id=\"sns_birth\" name=\"birth\" />";
+                strHtml += "	<input type=\"hidden\" id=\"sns_profile\" name=\"profile\" />";
+                strHtml += "	<input type=\"hidden\" id=\"sns_picture\" name=\"picture\" />";
+                strHtml += "	<input type=\"hidden\" id=\"sns_adultcert\" name=\"adultcert\" />";
+                strHtml += "	<input type=\"hidden\" id=\"sns_gourl\" name=\"gourl\" />";
+                strHtml += "	<input type=\"hidden\" id=\"sns_popup\" name=\"popup\" />";
+                strHtml += "	<input type=\"hidden\" id=\"sns_mobile\" name=\"mobile\" />";
+                strHtml += "</form>";
+                strHtml += "</div>";
+                jQuery("#divSnsLogin").remove();
+                jQuery("body").append(strHtml);
+        
+                jQuery("#sns_site").val(site);
+                jQuery("#sns_snscode").val(snscode);
+                jQuery("#sns_snsyn").val("Y");
+                jQuery("#sns_userid").val(userid);
+                jQuery("#sns_usernm").val(usernm);
+                jQuery("#sns_gender").val(gender);
+                jQuery("#sns_email").val(email);
+                jQuery("#sns_birth").val(birth);
+                jQuery("#sns_profile").val(profile);
+                jQuery("#sns_picture").val(picture);
+                jQuery("#sns_adultcert").val(adultcert);
+                jQuery("#sns_gourl").val(gourl);
+                jQuery("#sns_popup").val(popup);
+                jQuery("#sns_mobile").val("N");
+                document.frmSnsLogin.submit();
+            },
+        
+            // FACEBOOK 濡쒓렇�몄긽�쒖껜��
+            checkFacebook: function() {
+                FB.getLoginStatus(function(response) {
+                    if (response.status === "connected") {
+                        OauthLoginCLS.loginFacebook();
+                    } else {
+                        if (OAUTH_CONFIG.MOBILE != "Y") {
+                            FB.login(function(response) {
+                                if (response.status === "connected") {
+                                    OauthLoginCLS.loginFacebook();
+                                }
+                            }, { scope: "public_profile,email" });
+                        } else {
+                            //var url = OAUTH_SVCDOMAIN + "/login/Oauth.asp?snscode=F&mobile=Y&adultcert=" + OAUTH_CONFIG.ADULTCERT + "&gourl=" + encodeURIComponent(jQuery("#gourl").val()) + "&keep=" + encodeURIComponent(jQuery("#keep").is(":checked") ? "Y" : "N")
+                            var url = OAUTH_SVCDOMAIN + "/login/Oauth.asp?snscode=F&mobile=Y&adultcert=" + OAUTH_CONFIG.ADULTCERT + "&gourl=" + encodeURIComponent(jQuery("#gourl").val()) + "&keep=Y";
+                            if ($("#device").val() == "") {
+                                location.href = url;
+                            } else {
+                                location.replace(url);
+                            }
+                        }
+                    }
+                });
+            },
+        
+            // FACEBOOK 濡쒓렇�몄쿂由�
+            loginFacebook: function() {
+                FB.api("/me", { fields: "name,email,gender" }, function(response) {
+                    var birth = (typeof (response.birthday) == "undefined") ? "" : response.birthday;
+                    var barr = birth.split("/");
+                    OauthLoginCLS.execLogin({
+                        site: OAUTH_SITECD.FACEBOOK,
+                        snscode: "F",
+                        snsyn: "Y",
+                        userid: response.id,
+                        usernm: response.name,
+                        gender: response.gender == "male" ? "M" : (response.gender == "female" ? "F" : ""),
+                        email: response.email,
+                        birth: barr.length == 3 ? barr[2] + "." + barr[0] + "." + barr[1] : "",
+                        profile: "http://facebook.com/profile.php?id=" + response.id,
+                        picture: "https://graph.facebook.com/" + response.id + "/picture?type=large",
+                        adultcert: OAUTH_CONFIG.ADULTCERT,
+                        popup: OAUTH_CONFIG.POPUP == "Y" ? "1" : ""
+                    });
+                });
+            },
+        
+            // KAKAO 濡쒓렇�몄긽�쒖껜��
+            checkKakao: function() {
+                Kakao.Auth.getStatusInfo(function(response) {
+                    if (response.status === "connected") {
+                        OauthLoginCLS.loginKakao();
+                    } else {
+                        if (OAUTH_CONFIG.MOBILE != "Y") {
+                            Kakao.Auth.login({
+                                success: function(authObj) {
+                                    OauthLoginCLS.loginKakao();
+                                },
+                                fail: function(errorObj) {
+                                    //alert('移댁뭅�ㅽ넚 濡쒓렇�몄뿉 �ㅽ뙣�섏��듬땲��.');
+                                },
+                                persistAccessToken: false,
+                                persistRefreshToken: false
+                            });
+                        } else {
+                            var url = OAUTH_SVCDOMAIN + "/login/Oauth.asp?snscode=K&mobile=Y&adultcert=" + OAUTH_CONFIG.ADULTCERT + "&gourl=" + encodeURIComponent(jQuery("#gourl").val()) + "&keep=Y";
+                            if ($("#device").val() == "") {
+                                location.href = url;
+                            } else {
+                                location.replace(url);
+                            }
+                        }
+                    }
+                });
+            },
+        
+            // KAKAO 濡쒓렇�몄긽�쒖껜�� �� �깆뿰寃고빐��
+            checkKakaoUnlink: function() {
+                Kakao.Auth.getStatusInfo(function(response) {
+                    if (response.status === "connected") {
+                        OauthLoginCLS.KakaoUnLink();
+                    } else {
+                        if (OAUTH_CONFIG.MOBILE != "Y") {
+                            Kakao.Auth.login({
+                                success: function(authObj) {
+                                    OauthLoginCLS.KakaoUnLink();
+                                },
+                                fail: function(err) {
+                                    alert('移댁뭅�ㅽ넚 濡쒓렇�몄뿉 �ㅽ뙣�섏��듬땲��.');
+                                }
+                                //persistAccessToken : false,
+                                //persistRefreshToken : false
+                            });
+                        } else {
+                            Kakao.Auth.logout(function(response) {
+                                var url = OAUTH_SVCDOMAIN + "/login/Oauth.asp?snscode=KL&mobile=Y&adultcert=" + OAUTH_CONFIG.ADULTCERT + "&gourl=" + OAUTH_SVCDOMAIN + "/user/change/Kakao_unlinkProc.asp";
+                                if ($("#device").val() == "") {
+                                    location.href = url;
+                                } else {
+                                    location.replace(url);
+                                }
+                            });
+                        }
+                    }
+                });
+            },
+        
+            // KAKAO 濡쒓렇�몄쿂由�
+            loginKakao: function() {
+                Kakao.API.request({
+                    url: "/v2/user/me",
+                    data: { secure_resource: true },
+                    success: function(response) {
+                        var userid = response.id;
+                        var usernm = "";
+                        var picture = "";
+                        if (typeof (response.properties) == "object") {
+                            usernm = OauthLoginCLS.isEmpty(response.properties.nickname) ? "" : response.properties.nickname;
+                            picture = OauthLoginCLS.isEmpty(response.properties.profile_image) ? "" : response.properties.profile_image;
+                        }
+                        var email = "";
+                        var gender = "";
+                        if (typeof (response.kakao_account) == "object") {
+                            email = OauthLoginCLS.isEmpty(response.kakao_account.email) ? "" : response.kakao_account.email;
+                            if (!OauthLoginCLS.isEmpty(response.kakao_account.gender)) {
+                                gender = response.kakao_account.gender == "male" ? "M" : (response.kakao_account.gender == "female" ? "F" : "");
+                            }
+                        }
+        
+                        OauthLoginCLS.execLogin({
+                            gourl: jQuery("#gourl").val(),
+                            site: OAUTH_SITECD.KAKAO,
+                            snscode: "K",
+                            snsyn: "Y",
+                            userid: userid.toString(),
+                            usernm: usernm,
+                            gender: gender,
+                            email: email,
+                            birth: "",
+                            profile: "",
+                            picture: picture,
+                            adultcert: OAUTH_CONFIG.ADULTCERT,
+                            popup: OAUTH_CONFIG.POPUP == "Y" ? "1" : ""
+                        });
+                    },
+                    fail: function(response) {
+                        alert(response.msg);
+                    }
+                });
+            },
+        
+            // KAKAO unLink 泥섎━ �깆뿰寃고빐��
+            KakaoUnLink: function() {
+                Kakao.API.request({
+                    url: '/v1/user/unlink',
+                    success: function(res) {
+                        var strLoginUrl = OAUTH_SVCDOMAIN + "/user/change/Kakao_unlinkProc.asp";
+                        if ($("#device").val() == "") {
+                            location.href = strLoginUrl;
+                        } else {
+                            location.replace(strLoginUrl);
+                        }
+                    },
+                    fail: function(error) {
+                        alert('�깆뿰寃고빐�� �ㅽ뙣�섏뿀�듬땲��.');
+                    }
+                });
+            },
+        
+            // NAVER 濡쒓렇�몄긽�쒖껜��
+            checkNaver: function() {
+                //jQuery("#OauthFrame").html("<iframe id='OauthNaver' style='display:none' src='https://nid.naver.com/nidlogin.logout'></iframe>");
+                if (OAUTH_CONFIG.MOBILE != "Y") {
+                    window.open(OAUTH_SVCDOMAIN + "/login/Oauth.asp?snscode=N&mobile=N&adultcert=" + OAUTH_CONFIG.ADULTCERT + "&gourl=" + encodeURIComponent(jQuery("#gourl").val()) + "&popup=" + (OAUTH_CONFIG.POPUP == "Y" ? "1" : ""), "OAuth", "width=460px, height=517px, resizable=no");
+                } else {
+                    var url = OAUTH_SVCDOMAIN + "/login/Oauth.asp?snscode=N&mobile=Y&adultcert=" + OAUTH_CONFIG.ADULTCERT + "&gourl=" + encodeURIComponent(jQuery("#gourl").val()) + "&keep=Y";
+                    if ($("#device").val() == "") {
+                        location.href = url;
+                    } else {
+                        location.replace(url);
+                    }
+                }
+            },
+        
+            // Google 濡쒓렇�몄긽�쒖껜��
+            checkGoogle: function() {
+                if (gauth.isSignedIn.get()) {
+                    OauthLoginCLS.loginGoogle();
+                } else {
+                    if (OAUTH_CONFIG.MOBILE != "Y") {
+                        gauth.signIn({
+                            scope: "profile email"
+                        }).then(function() {
+                            OauthLoginCLS.loginGoogle();
+                        });
+                    } else {
+                        var url = OAUTH_SVCDOMAIN + "/login/Oauth.asp?snscode=G&mobile=Y&adultcert=" + OAUTH_CONFIG.ADULTCERT + "&gourl=" + encodeURIComponent(jQuery("#gourl").val()) + "&keep=Y";
+                        if ($("#device").val() == "") {
+                            location.href = url;
+                        } else {
+                            location.replace(url);
+                        }
+                    }
+                }
+            },
+        
+            // Google 濡쒓렇�몄쿂由�
+            loginGoogle: function() {
+                var profile = gauth.currentUser.get().getBasicProfile();
+                OauthLoginCLS.execLogin({
+                    site: OAUTH_SITECD.GOOGLE,
+                    snscode: "G",
+                    snsyn: "Y",
+                    userid: profile.getId(),
+                    usernm: profile.getName(),
+                    gender: "",
+                    email: profile.getEmail(),
+                    birth: "",
+                    profile: "",
+                    picture: profile.getImageUrl(),
+                    adultcert: OAUTH_CONFIG.ADULTCERT,
+                    popup: OAUTH_CONFIG.POPUP == "Y" ? "1" : ""
+                });
+            },
+        
+            checkApple: function() {
+                if (OAUTH_CONFIG.MOBILE != "Y") {
+                    window.open(OAUTH_SVCDOMAIN + "/login/Oauth.asp?snscode=A&mobile=N&adultcert=" + OAUTH_CONFIG.ADULTCERT + "&gourl=" + encodeURIComponent(jQuery("#gourl").val()) + "&popup=" + (OAUTH_CONFIG.POPUP == "Y" ? "1" : ""), "OAuth", "width=700px, height=699px, resizable=no");
+                } else {
+                    var url = OAUTH_SVCDOMAIN + "/login/Oauth.asp?snscode=A&mobile=Y&adultcert=" + OAUTH_CONFIG.ADULTCERT + "&gourl=" + encodeURIComponent(jQuery("#gourl").val()) + "&keep=Y";
+                    if ($("#device").val() == "") {
+                        location.href = url;
+                    } else {
+                        location.replace(url);
+                    }
+                }
+            }
+        }
+       </script>
+        
+        
+        
+            <meta charset="UTF-8">
+            <link rel="stylesheet" href="../static/css/login.css">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>로그인 - 탈력사무소</title>
+        <style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:'lucida grande', tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+        .fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:'lucida grande', tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+        .fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://connect.facebook.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://connect.facebook.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://connect.facebook.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://connect.facebook.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+        .fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+        .fb_mpn_mobile_landing_page_slide_out{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_out_from_left{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out_from_left;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_up{animation-duration:500ms;animation-name:fb_mpn_landing_page_slide_up;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_in{animation-duration:300ms;animation-name:fb_mpn_bounce_in;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out{animation-duration:300ms;animation-name:fb_mpn_bounce_out;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out_v2{animation-duration:300ms;animation-name:fb_mpn_fade_out;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_from_left{animation-duration:300ms;animation-name:fb_bounce_in_from_left;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_from_left{animation-duration:300ms;animation-name:fb_bounce_out_from_left;transition-timing-function:ease-in}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}@keyframes fb_mpn_landing_page_slide_out{0%{margin:0 12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;margin:0 24px;width:60px}}@keyframes fb_mpn_landing_page_slide_out_from_left{0%{left:12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;left:12px;width:60px}}@keyframes fb_mpn_landing_page_slide_up{0%{bottom:0;opacity:0}100%{bottom:24px;opacity:1}}@keyframes fb_mpn_bounce_in{0%{opacity:.5;top:100%}100%{opacity:1;top:0}}@keyframes fb_mpn_fade_out{0%{bottom:30px;opacity:1}100%{bottom:0;opacity:0}}@keyframes fb_mpn_bounce_out{0%{opacity:1;top:0}100%{opacity:.5;top:100%}}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_from_left{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}50%{transform:scale(1.03, 1.03);transform-origin:bottom left}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_from_left{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}}@keyframes slideInFromBottom{0%{opacity:.1;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}@keyframes slideInFromBottomDelay{0%{opacity:0;transform:translateY(100%)}97%{opacity:0;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}</style></head>
+
+<body id="LoginPop" class="login">
+
+
+
+    <div class="loginCombine">
+        <div class="login-head">
+            <img src="//image.alba.kr/m/bi_202008.png" alt="알바천국">
+        </div>
+    
+        <div class="login-wrap">
+            <form id="f" name="f" method="post">
+                <input type="hidden" id="site" name="site" value="WWW">
+                <input type="hidden" id="gourl" name="gourl" value="https://www.alba.co.kr/main.asp?utm_source=google&amp;utm_medium=paidsearch&amp;utm_campaign=local&amp;utm_content=pc_cpc&amp;utm_term=%EC%95%8C%EB%B0%94%EC%B2%9C%EA%B5%AD&amp;gclid=CjwKCAjw-eKpBhAbEiwAqFL0mtevoAptTKXchY7uUU6ELQtfUarloxMJFf8g2fgxspKFx4_R2M_3AxoC6lsQAvD_BwE">
+                <input type="hidden" id="usertype" name="usertype" value="P">
+                <input type="hidden" id="two_fa" name="two_fa" value="Y">
+                <input type="hidden" id="enc" name="e" value="">
+                <div class="login-area">
+                    <div class="login-tab">
+                        <button type="button" id="personBtn" class="login-tab__item login-tab__person on">개인회원<span class="login-tab__subtxt">(일자리 찾기)</span></button>
+                        <button type="button" id="bizBtn" class="login-tab__item login-tab__biz">기업회원<span class="login-tab__subtxt">(알바생 찾기)</span></button>
+                    </div>
+    
+                    <fieldset class="login-field">
+                        <legend>로그인</legend>
+                        <div class="login-field__action">
+                            <input type="text" id="userid" name="userid" value="" title="아이디" placeholder="아이디" style="ime-mode:disabled" tabindex="1">
+                            <input type="password" id="passwd" name="passwd" title="비밀번호" placeholder="비밀번호" tabindex="2">
+                            <button type="submit" id="btnLogin" onclick="doLogin();return false;" tabindex="3">로그인</button>
+                        </div>
+    
+                        
+    
+                        <div class="login-field__state">
+                            <span class="login-field__state-check"><input type="checkbox" id="idsave" name="idsave" value="1"><label for="idsave">아이디 저장</label></span>
+                            <span class="login-field__state-security">보안접속 <span class="login-field__state-on">ON</span> <button type="button" class="login-field__state-help" onclick="jQuery('.layerHelp').hide();jQuery('.secretHelp').toggle();return false;">도움말</button></span>
+    
+                            <div id="LoginMaintain" class="loginMaintain layerHelp">
+                                개인정보보호를 위해<br> <strong>개인PC에서만 사용해주세요</strong>
+                                <a href="#LoginMaintain" class="layerHelp__close" onclick="jQuery('#LoginMaintain').hide();return false;">닫기</a>
+                            </div>
+                            <div id="SecretHelp" class="secretHelp layerHelp">
+                                <dl class="layerHelp__guide">
+                                    <dt>보안접속 안내</dt>
+                                    <dd>로그인 시 회원님의 아이디 및 비밀번호를 암호화하여 회원님의 정보를 안전하게 보호해줍니다.</dd>
+                                </dl>
+                                <a href="#" class="layerHelp__close" onclick="jQuery('#SecretHelp').hide();return false;">닫기</a>
+                            </div>
+                        </div>
+                    </fieldset>
+    
+                    <div class="login-link">
+                        <a href="#" onclick="opener.location.href='https://sign.alba.co.kr/user/join/?site=WWW';self.close();"><strong>회원가입</strong></a>
+                        <a href="#" onclick="MoveToFindId();return false;">아이디 찾기</a>
+                        <a href="#" onclick="MoveToFindPwd();return false;">비밀번호 찾기</a>
+                    </div>
+    
+                    <div class="login-sns">
+                        <button type="button" class="naver" onclick="OauthLoginCLS.doLogin('N');snsBtnClick('NAVER');return false;">네이버</button>
+                        <button type="button" class="kakao" onclick="OauthLoginCLS.doLogin('K');snsBtnClick('KAKAO');return false;">카카오톡</button>
+                        <button type="button" class="facebook" onclick="OauthLoginCLS.doLogin('F');snsBtnClick('FACEBOOK');return false;">페이스북</button>
+                        <!--button type="button" class="google" onclick="OauthLoginCLS.doLogin('G');snsBtnClick('GOOGLE');return false;">구글</button-->
+                        <button type="button" class="apple" onclick="OauthLoginCLS.doLogin('A');snsBtnClick('APPLE');return false;">Apple</button>
+                        <div id="OauthFrame"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div><script type="text/javascript">
+        var browser = navigator.appName;
+        var b_version = navigator.appVersion;
+        var version = parseFloat(b_version);
+        var useragent = navigator.userAgent;
+    
+        if (browser == 'Microsoft Internet Explorer') {
+            version = useragent.substr(useragent.lastIndexOf('MSIE') + 5, 3);
+            if (version < 7) {
+                jQuery(".secretHelp").addClass("sha");
+            }
+        } else {
+            if (useragent.lastIndexOf('Chrome/') > 0) {
+                version = useragent.substr(useragent.lastIndexOf('Chrome/') + 7, 4);
+                if (version < 26) {
+                    jQuery(".secretHelp").addClass("sha");
+                }
+            } else if (useragent.lastIndexOf('Firefox/') > 0) {
+                version = useragent.substr(useragent.lastIndexOf('Firefox/') + 8, 4);
+                if (version < 1.5) {
+                    jQuery(".secretHelp").addClass("sha");
+                }
+            }
+        }
+    
+        //아이디저장 레이어
+        jQuery("#idsave").click(function(e) {
+            jQuery('.layerHelp').hide();
+            if (jQuery(this).is(":checked")) {
+                jQuery('#LoginMaintain').show();
+            }
+        });
+    
+        jQuery("#personBtn").click(function(e) {
+            document.getElementById("usertype").value = "P";
+        });
+    
+        jQuery("#bizBtn").click(function(e) {
+            document.getElementById("usertype").value = "C";
+        });
+    
+        function snsBtnClick(snstype) {
+            BA.Collect("EVENT", {
+                "category1": "로그인 - 알바천국"
+            ,	"category2": snstype
+            ,	"pageurl": location.pathname
+            });
+        }
+    
+        $(".login-tab>button").click(function() {
+            $(".login-tab>button").removeClass("on");
+            $(this).addClass("on");
+    
+            if ($(this).hasClass("login-tab__biz")) {
+                $(".login-wrap").addClass("biz");
+            } else {
+                $(".login-wrap").removeClass("biz");
+            }
+        });
+    
+        function MoveToFindId() {
+            if($("#usertype").val() == "C") {
+                opener.location.href = 'https://sign.alba.co.kr/user/find/IdSearch.asp?site=WWW&usertype=C';
+                self.close();
+            } else {
+                opener.location.href = 'https://sign.alba.co.kr/user/find/IdSearch.asp?site=WWW';
+                self.close();
+            }
+        }
+    
+        function MoveToFindPwd() {
+            if($("#usertype").val() == "C") {
+                opener.location.href = 'https://sign.alba.co.kr/user/find/PwdSearch.asp?site=WWW&usertype=C';
+                self.close();
+            } else {
+                opener.location.href = 'https://sign.alba.co.kr/user/find/PwdSearch.asp?site=WWW';
+                self.close();
+            }
+        }
+    </script>
+    
+    
+        <script type="text/javascript" src="//trk.alba.co.kr/TA.js?202310251730"></script><div id="_BA"><img src="https://trk.alba.co.kr/Collect?servicetype=PCWEB&amp;adid=&amp;ordercd=&amp;logtype=VIEW&amp;cookieenabled=Y&amp;enctype=UTF-8&amp;scheme=https&amp;host=www.alba.co.kr&amp;port=443&amp;pageurl=%2Fauth%2FLoginPop.asp&amp;fullurl=https%3A%2F%2Fwww.alba.co.kr%2Fauth%2FLoginPop.asp%3Fgourl%3Dhttps%253A%252F%252Fwww.alba.co.kr%252Fmain.asp%253Futm_source%253Dgoogle%2526utm_medium%253Dpaidsearch%2526utm_campaign%253Dlocal%2526utm_content%253Dpc_cpc%2526utm_term%253D%2525EC%252595%25258C%2525EB%2525B0%252594%2525EC%2525B2%25259C%2525EA%2525B5%2525AD%2526gclid%253DCjwKCAjw-eKpBhAbEiwAqFL0mtevoAptTKXchY7uUU6ELQtfUarloxMJFf8g2fgxspKFx4_R2M_3AxoC6lsQAvD_BwE&amp;getdata=gourl%3Dhttps%253A%252F%252Fwww.alba.co.kr%252Fmain.asp%253Futm_source%253Dgoogle%2526utm_medium%253Dpaidsearch%2526utm_campaign%253Dlocal%2526utm_content%253Dpc_cpc%2526utm_term%253D%2525EC%252595%25258C%2525EB%2525B0%252594%2525EC%2525B2%25259C%2525EA%2525B5%2525AD%2526gclid%253DCjwKCAjw-eKpBhAbEiwAqFL0mtevoAptTKXchY7uUU6ELQtfUarloxMJFf8g2fgxspKFx4_R2M_3AxoC6lsQAvD_BwE&amp;referurl=https%3A%2F%2Fwww.alba.co.kr%2FMain.asp&amp;referparam=utm_source%3Dgoogle%26utm_medium%3Dpaidsearch%26utm_campaign%3Dlocal%26utm_content%3Dpc_cpc%26utm_term%3D%25EC%2595%258C%25EB%25B0%2594%25EC%25B2%259C%25EA%25B5%25AD%26gclid%3DCjwKCAjw-eKpBhAbEiwAqFL0mtevoAptTKXchY7uUU6ELQtfUarloxMJFf8g2fgxspKFx4_R2M_3AxoC6lsQAvD_BwE&amp;category1=%EB%A1%9C%EA%B7%B8%EC%9D%B8%20-%20%EC%95%8C%EB%B0%94%EC%B2%9C%EA%B5%AD&amp;osversion=&amp;cid=BF264A316A4541BC8BF2CF4096F7EA60" width="1" height="1" style="display:none" alt=""></div>
+        <script type="text/javascript">
+        BA.Collect("VIEW", {
+            "servicetype":"PCWEB"
+        ,	"adid":""
+        ,	"ordercd":""
+        });
+        </script>
+    
+    
+    <script type="text/javascript">
+    var BAEvent = {
+        Collect:function(param) {
+            var category1 = ((param.category1 != "" && typeof(param.category1) != "undefined") ? param.category1 : "");
+            var category2 = ((param.action != "" && typeof(param.action) != "undefined") ? param.action : "");	// category2 : 액션명
+            var category3 = ((param.category3 != "" && typeof(param.category3) != "undefined") ? param.category3 : "");
+            var pageurl = ((param.pageurl != "" && typeof(param.pageurl) != "undefined") ? param.pageurl : "");
+            var postdata = ((param.data != "" && typeof(param.data) != "undefined") ? param.data : "");
+    
+            if(param.action != "" && typeof(param.action) != "undefined") 	{
+                switch (param.action) {
+                    case "hr_scrap"					: pageurl = "/biz/customized/ResumeScrapInsProc.asp"; category1 = "인재스크랩"			; break;
+                    case "custom_hr_complete"		: pageurl = "/biz/customized/Customizing_reg_ok.asp"; category1 = "맞춤인재설정실행"	; break;
+                    case "jobinfo_apply_call"		: pageurl = ""; category1 = "전화지원"			; break;
+                    case "jobinfo_apply_email"		: pageurl = ""; category1 = "이메일지원"		; break;
+                    case "jobinfo_apply_simple"		: pageurl = ""; category1 = "간편지원"			; break;
+                    case "jobinfo_apply_homepage"	: pageurl = ""; category1 = "홈페이지지원"		; break;
+                    case "jobinfo_apply_online"		: pageurl = ""; category1 = "온라인지원"		; break;
+                    case "jobinfo_apply_sms"		: pageurl = ""; category1 = "문자지원"; break;
+                    case "jobinfo_apply_talk"		: pageurl = ""; category1 = "문자지원 알림톡"; break;
+                    case "jobinfo_apply_findjob"	: pageurl = ""; category1 = "벼룩시장지원"		; break;
+                    case "profile_try_safetynumber" : pageurl = "/person/resume/Regist.asp"; category1 = "회원가입후 이력서작성시도"			; break;
+                    case "profile_safetynumber"		: pageurl = "/person/resume/ResumeComplete.asp"; category1 = "본인인증안함 인재정보공개"	; break;
+                    case "pushoptin_safetynumber"	: pageurl = "/person/resume/ResumeComplete.asp"; category1 = "본인인증후 인재정보공개"		; break;
+                    case "goods_select"				: pageurl = "/biz/job/Regist.asp" + param.getdata ; category1 = "상품선택"; category2 = "상품추천"; break;
+                    case "online_apply_cancel"		: pageurl = "/person/online/ApplicationDeleteProc.asp"; category1 = "온라인입사지원 취소"	; break;
+                    case "email_apply_cancel"		: pageurl = "/person/email/ApplicationDeleteProc.asp";  category1 = "이메일입사지원 삭제"	; break;
+                    case "sms_apply_cancel"			: pageurl = "/person/online/ApplicationDeleteProc.asp"; category1 = "문자지원 삭제"; break;
+                    case "talk_apply_cancel"		: pageurl = "/person/online/ApplicationDeleteProc.asp"; category1 = "문자지원 알림톡 삭제"; break;
+                    case "simple_apply_cancel"		: pageurl = "/person/online/ApplicationDeleteProc.asp"; category1 = "간편입사지원 삭제"		; break;
+                    case "call_apply_cancel"		: pageurl = "/person/online/ApplicationDeleteProc.asp"; category1 = "전화지원 삭제"			; break;
+                    case "homepage_apply_cancel"	: pageurl = "/person/online/ApplicationDeleteProc.asp"; category1 = "홈페이지지원 삭제"		; break;
+                    default							: pageurl = ""; category1 = "";
+                }
+                if(param.action.indexOf("jobinfo_apply") > -1) {
+                    gtag('event', category2);
+                }
+            }
+            BA.Collect("EVENT", {
+                "category1": category1
+            ,	"category2": category2
+            ,	"category3": category3
+            ,	"pageurl": pageurl
+            ,	"postdata": postdata
+            });
+        }
+    }
+    </script>
+    
+    
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+        ga('create', 'UA-34867276-1', 'auto');
+        ga('require', 'displayfeatures');
+        //ga('require', 'linkid', 'linkid.js');
+        ga('send', 'pageview');
+        ga('require', 'ecommerce', 'ecommerce.js');
+    </script>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-644GE2K7K1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'G-644GE2K7K1');
+    </script>
+    
+    
+    
+    <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+</body>
+</html>

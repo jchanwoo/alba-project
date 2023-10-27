@@ -1,0 +1,23 @@
+@font-face {
+    font-family:'HGSoftGGothicssi40g';
+    font-display:swap;
+    src:url('//font.alba.co.kr/HGSoftGGothicssi40g.woff2') format('woff2'),
+        url('//font.alba.co.kr/HGSoftGGothicssi40g.woff') format('woff');
+    font-weight:normal;
+    font-style:normal;
+}		@font-face {
+    font-family:'HGSoftGGothicssi60g';
+    font-display:swap;
+    src:url('//font.alba.co.kr/HGSoftGGothicssi60g.woff2') format('woff2'),
+        url('//font.alba.co.kr/HGSoftGGothicssi60g.woff') format('woff');
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face {
+    font-family:'HGSoftGGothicssi80g';
+    font-display:swap;
+    src:url('//font.alba.co.kr/HGSoftGGothicssi80g.woff2') format('woff2'),
+        url('//font.alba.co.kr/HGSoftGGothicssi80g.woff') format('woff');
+    font-weight:normal;
+    font-style:normal;
+}

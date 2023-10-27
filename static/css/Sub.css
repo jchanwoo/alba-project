@@ -1,0 +1,7037 @@
+@charset "UTF-8"; /* base */
+html, body {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-size: 12px;
+    font-family: 'Malgun Gothic',-apple-system,BlinkMagSystemFont,'AppleGothicNeoSD','Microsoft NeoGothic','Droid sans',Sans-serif;
+    ;letter-spacing: -1px;
+    color: #000;
+    background: #fff
+}
+
+div, ul, ol, dl, p, h1, h2, h3, h4, h5, h6, fieldset, legend, iframe, table {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-family: 'Malgun Gothic',-apple-system,BlinkMagSystemFont,'AppleGothicNeoSD','Microsoft NeoGothic','Droid sans',Sans-serif;
+    ;letter-spacing: -1px;
+    color: #000
+}
+
+ul, ol, dl {
+    list-style: none
+}
+
+dt, dd, li {
+    margin: 0;
+    padding: 0
+}
+
+form {
+    margin: 0
+}
+
+input, select, textarea {
+    font-size: 1em;
+    font-family: 'Malgun Gothic',-apple-system,BlinkMagSystemFont,'AppleGothicNeoSD','Microsoft NeoGothic','Droid sans',Sans-serif;
+    ;color: #000
+}
+
+textarea {
+    resize: none
+}
+
+button[type="button"], button[type="submit"] {
+    cursor: pointer
+}
+
+select {
+    height: 20px;
+    line-height: 16px
+}
+
+img, fieldset, button {
+    border: 0
+}
+
+button {
+    background-color: transparent
+}
+
+img {
+    vertical-align: top
+}
+
+hr {
+    display: none
+}
+
+em, address, i {
+    font-style: normal
+}
+
+label {
+    cursor: pointer
+}
+
+iframe {
+    _vertical-align: top;
+    border: 0 none
+}
+
+iframe.hideFrame, caption, legend, .hide {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: -999em;
+    left: -999em
+}
+
+.displayNone {
+    display: none
+}
+
+.no-scroll {
+    overflow: hidden
+}
+
+::-webkit-input-placeholder {
+    color: #8f959f
+}
+
+:-ms-input-placeholder {
+    color: #8f959f
+}
+
+::placeholder {
+    color: #8f959f
+}
+
+input:disabled {
+    background-color: #f0f2f5
+}
+
+.point-color1 {
+    color: #2e89e5
+}
+
+.point-color2 {
+    color: #fa5165
+}
+
+/* link */
+a, a:visited {
+    text-decoration: none;
+    color: #000
+}
+
+a:hover, a:active {
+    text-decoration: underline;
+    color: #000
+}
+
+/* class : radio/checkbox */
+input.typeRadio, input.typeCheckbox {
+    position: relative;
+    width: 13px;
+    height: 13px;
+    margin: -4px 0 0;
+    margin-top: -2px\9;
+    *margin-top: -4px;
+    padding: 0;
+    vertical-align: middle
+}
+
+input.typeText {
+    *margin: -1px 0
+}
+
+/* class : 공통 */
+.wrap:after {
+    content: "";
+    clear: both;
+    display: block
+}
+
+.filter {
+    z-index: 999;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    filter: alpha(opacity=30);
+    opacity: 0.3
+}
+
+.cursorDefault {
+    cursor: default
+}
+
+/* checkbox/radio 추가 (2023.08 기업/개인 통일)*/
+span.pub-input {
+    position: relative;
+    display: inline-block;
+    line-height: 20px
+}
+
+span.pub-input:first-child {
+    margin-left: 0
+}
+
+span.pub-input * {
+    vertical-align: middle;
+    cursor: pointer
+}
+
+span.pub-input input {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    margin: 0;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    opacity: 0
+}
+
+span.pub-input label {
+    display: inline-block;
+    height: 20px;
+    vertical-align: top;
+    padding: 0 0 0 24px;
+    font-size: 14px;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #4c515b
+}
+
+span.pub-input input[type="checkbox"] + label {
+    background: url('//image.alba.kr/comm/pub_checkbox.png') 0 0 /20px auto no-repeat
+}
+
+span.pub-input input[type="radio"] + label {
+    background: url('//image.alba.kr/comm/pub_radio.png') 0 0 /20px auto no-repeat
+}
+
+span.pub-input input + label {
+    background-position: 0 0
+}
+
+span.pub-input input:checked + label {
+    background-position-y: -40px;
+    color: #2e89e5
+}
+
+span.pub-input input:disabled + label {
+    cursor: default;
+    background-position-y: -40px
+}
+
+span.pub-input--alone label {
+    padding: 0 0 0 20px;
+    font-size: 0
+}
+
+/* paging */
+.paging {
+    position: relative;
+    padding: 20px 0 30px;
+    line-height: 1.2;
+    text-align: center
+}
+
+.paging span {
+    display: inline-block;
+    height: 30px;
+    margin-right: 4px;
+    font-size: 14px;
+    vertical-align: top;
+    border: 1px solid #bbb;
+    border-radius: 2px
+}
+
+.paging span.page {
+    *margin-right: 8px;
+    border: 0 none
+}
+
+.paging span.page a {
+    display: inline-block;
+    width: 30px;
+    height: 24px;
+    padding: 6px 0 0;
+    margin: 0 2px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #bbb;
+    border-radius: 2px
+}
+
+.paging span.page a:hover, .paging span.page a.now {
+    font-weight: bold;
+    border: 1px solid #83c9ff;
+    color: #267cd3
+}
+
+.paging span.location {
+    position: relative;
+    width: 120px;
+    height: 30px;
+    *margin-right: 8px;
+    line-height: 25px;
+    letter-spacing: 1px;
+    background: #f4f4f4
+}
+
+.paging a.next, .paging a.prev {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0 2px 0 -1px;
+    font-size: 18px;
+    line-height: 1.4;
+    text-decoration: none;
+    background: #f4f4f4;
+    border: 1px solid #bbb;
+    border-radius: 2px
+}
+
+.paging a.prev {
+    margin: 0 3px 0 0
+}
+
+.paging a.next:hover, .paging a.prev:hover {
+    color: #267cd3
+}
+
+.paging a.none {
+    color: #bbb
+}
+
+/* 채용 페이징 */
+.pagenation {
+    position: relative;
+    padding: 20px 0 30px;
+    line-height: 1.2;
+    text-align: center
+}
+
+.pagenation span {
+    display: inline-block;
+    height: 30px;
+    margin-right: 4px;
+    font-size: 14px;
+    vertical-align: top;
+    border: 1px solid #bbb;
+    border-radius: 2px
+}
+
+.pagenation span.page {
+    *margin-right: 8px;
+    border: 0 none
+}
+
+.pagenation span.page a {
+    display: inline-block;
+    width: 30px;
+    height: 24px;
+    padding: 6px 0 0;
+    margin: 0 2px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #bbb;
+    border-radius: 2px
+}
+
+.pagenation span.page a:hover, .pagenation span.page a.on {
+    font-weight: bold;
+    border: 1px solid #83c9ff;
+    color: #267cd3
+}
+
+.pagenation span.total {
+    position: relative;
+    width: 120px;
+    height: 32px;
+    *margin-right: 8px;
+    border: 0 none
+}
+
+.pagenation span.total .totalBtn {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 118px;
+    height: 30px;
+    background: #f4f4f4;
+    cursor: pointer
+}
+
+.pagenation span.total .totalBtn .state {
+    display: block;
+    height: 24px;
+    padding: 6px 0 0;
+    text-align: center;
+    font-weight: bold;
+    border: 0 none
+}
+
+.pagenation span.total .totalBtn a {
+    position: absolute;
+    left: 0;
+    width: 105px;
+    height: 24px;
+    padding: 6px 0 0 15px;
+    text-align: left
+}
+
+.pagenation span.total .totalBtn a.first {
+    top: 30px
+}
+
+.pagenation span.total .totalBtn a.last {
+    top: 60px
+}
+
+.pagenation span.total.oneBtn .totalBtn {
+    height: 62px
+}
+
+.pagenation span.total.twoBtn .totalBtn {
+    height: 92px
+}
+
+.pagenation span.pageBtn {
+    border: 0 none
+}
+
+.pagenation span.pageBtn a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    line-height: 1.4;
+    text-decoration: none;
+    background: #f4f4f4;
+    border: 1px solid #bbb;
+    border-radius: 2px
+}
+
+.pagenation span.pageBtn a:hover {
+    color: #267cd3
+}
+
+.pagenation span.pageBtn a.next {
+    margin-left: -1px
+}
+
+.pagenation span.pageBtn a.none {
+    color: #bbb
+}
+
+/* 기업 페이징 */
+.bizContents .pagenation {
+    margin: 42px 0 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 1.2;
+    letter-spacing: 0
+}
+
+.bizContents .pagenation * {
+    vertical-align: top
+}
+
+.bizContents .pagenation span {
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 0;
+    height: auto
+}
+
+.bizContents .pagenation span.pageBtn + .page {
+    margin-left: 5px
+}
+
+.bizContents .pagenation span.page {
+    margin-right: 5px
+}
+
+.bizContents .pagenation span.page a {
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    width: 34px;
+    height: 34px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 34px;
+    text-decoration: none;
+    color: #9096a1
+}
+
+.bizContents .pagenation span.page a + a {
+    margin-left: 5px
+}
+
+.bizContents .pagenation span.page a:hover, .bizContents .pagenation span.page a:active {
+    font-weight: bold;
+    color: #4d5260;
+    border: 1px solid #4d5260
+}
+
+.bizContents .pagenation span.page a.on {
+    font-weight: bold;
+    color: #4d5260;
+    border: 1px solid #4d5260
+}
+
+.bizContents .pagenation span.total {
+    width: 109px;
+    height: 34px;
+    margin-right: 5px
+}
+
+.bizContents .pagenation span.total .totalBtn {
+    box-sizing: border-box;
+    width: 100%;
+    height: 34px;
+    margin-right: 0;
+    border-radius: 4px;
+    background: #fff;
+    border: 1px solid #dfdfdf
+}
+
+.bizContents .pagenation span.total .totalBtn .state {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 0;
+    border-radius: 0;
+    font-weight: normal;
+    line-height: 32px;
+    font-size: 16px;
+    letter-spacing: 0;
+    color: #9096a1
+}
+
+.bizContents .pagenation span.total .totalBtn a {
+    display: block;
+    position: initial;
+    box-sizing: border-box;
+    width: 100%;
+    height: 34px;
+    padding: 0;
+    line-height: 32px;
+    text-align: center;
+    color: #9096a1
+}
+
+.bizContents .pagenation span.total .totalBtn a.first {
+    top: 32px
+}
+
+.bizContents .pagenation span.total .totalBtn a.last {
+    top: 64px
+}
+
+.bizContents .pagenation span.total.oneBtn .totalBtn {
+    height: 64px
+}
+
+.bizContents .pagenation span.total.twoBtn .totalBtn {
+    height: 102px
+}
+
+.bizContents .pagenation span.pageBtn {
+    margin: 0
+}
+
+.bizContents .pagenation span.pageBtn a {
+    position: relative;
+    box-sizing: border-box;
+    width: 34px;
+    height: 34px;
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 27px;
+    color: #9096a1;
+    background: #fff;
+    font-size: 0
+}
+
+.bizContents .pagenation span.pageBtn a:hover, .bizContents .pagenation span.pageBtn a:active {
+    font-weight: normal;
+    border: 1px solid #4d5260
+}
+
+.bizContents .pagenation span.pageBtn a.prev::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotate(180deg);
+    width: 14px;
+    height: 14px;
+    margin: -7px 0 0 -7px;
+    background: url('//image.alba.kr/m/svg/icn_arrow_right_gray400.svg') 0 0 /100% 100% no-repeat;
+    content: ''
+}
+
+.bizContents .pagenation span.pageBtn a.next::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    margin: -7px 0 0 -7px;
+    background: url('//image.alba.kr/m/svg/icn_arrow_right_gray400.svg') 0 0 /100% 100% no-repeat;
+    content: ''
+}
+
+/* 페이징 사이즈 작은버전 */
+.pagenation-type2 .pagenation {
+    padding: 24px 0 20px
+}
+
+.pagenation-type2 .pagenation span {
+    height: 28px
+}
+
+.pagenation-type2 .pagenation span.pageBtn {
+    margin-right: 0
+}
+
+.pagenation-type2 .pagenation span.page a {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 13px;
+    line-height: 26px;
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+    color: #9096a1
+}
+
+.pagenation-type2 .pagenation span.page a:hover, .pagenation-type2 .pagenation span.page a:active, .pagenation-type2 .pagenation span.page a.on {
+    font-weight: bold;
+    color: #4d5260;
+    border: 1px solid #4d5260
+}
+
+.pagenation-type2 .pagenation span.page a + a {
+    margin-left: 5px
+}
+
+.pagenation-type2 .pagenation span.total {
+    width: 78px;
+    height: 28px;
+    margin-right: 5px
+}
+
+.pagenation-type2 .pagenation span.total span.totalBtn {
+    width: 100%;
+    height: 28px;
+    box-sizing: border-box;
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+    background-color: #fff
+}
+
+.pagenation-type2 .pagenation span.total span.totalBtn a {
+    position: static;
+    display: block;
+    width: 100%;
+    height: 28px;
+    padding: 0;
+    margin: 0;
+    line-height: 26px;
+    font-size: 12px;
+    text-align: center;
+    color: #9096a1
+}
+
+.pagenation-type2 .pagenation span.total span.totalBtn .state {
+    height: 28px;
+    font-size: 13px;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+    line-height: 26px;
+    color: #9096a1
+}
+
+.pagenation-type2 .pagenation span.total.twoBtn .totalBtn {
+    height: 84px
+}
+
+.pagenation-type2 .pagenation span.pageBtn a {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #dfdfdf;
+    font-size: 0;
+    line-height: 26px;
+    background-color: #fff
+}
+
+.pagenation-type2 .pagenation span.pageBtn a.prev::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotate(180deg);
+    width: 14px;
+    height: 14px;
+    margin: -7px 0 0 -7px;
+    background: url('//image.alba.kr/m/svg/icn_arrow_right_gray400.svg') 0 0 /100% 100% no-repeat;
+    content: ''
+}
+
+.pagenation-type2 .pagenation span.pageBtn a.next::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    margin: -7px 0 0 -7px;
+    background: url('//image.alba.kr/m/svg/icn_arrow_right_gray400.svg') 0 0 /100% 100% no-repeat;
+    content: ''
+}
+
+.pagenation-type2 .pagenation span.pageBtn a:hover, .pagenation-type2 .pagenation span.pageBtn a:active {
+    font-weight: normal;
+    border: 1px solid #4d5260
+}
+
+/* layout */
+#SubWrap {
+    width: 1070px;
+    margin: 0 auto
+}
+
+#SubSide {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: -999em;
+    width: 0;
+    height: 0
+}
+
+#SubContents {
+    width: 1070px;
+    padding-bottom: 20px
+}
+
+/* skipNav */
+.skipNav {
+    z-index: 999;
+    position: absolute
+}
+
+.skipNav li a {
+    position: absolute;
+    top: -999em;
+    left: 0;
+    width: 148px;
+    height: 32px;
+    text-align: center;
+    line-height: 33px;
+    background-color: #fee49b
+}
+
+.skipNav li a:focus, .skipNav li a:active {
+    top: 0;
+    left: 0
+}
+
+/* Header */
+#Global {
+    z-index: 105;
+    position: relative;
+    width: 100%;
+    min-width: 1260px;
+    margin: 0 0 12px;
+    background-color: #fff
+}
+
+#Header {
+    z-index: 105;
+    position: relative;
+    width: 1260px;
+    height: 110px;
+    margin: 0 auto;
+    padding: 24px 0 0;
+    box-sizing: border-box
+}
+
+#MainBanner {
+    min-width: 1260px
+}
+
+.headerBi {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.headerBi>a {
+    display: block;
+    padding: 28px 0 24px
+}
+
+.headerBi__local-img {
+    margin: 23px 0 0 10px
+}
+
+.headerSearch {
+    width: 500px;
+    margin: 0 auto
+}
+
+.headerSearch .search {
+    position: relative;
+    height: 44px;
+    box-sizing: border-box;
+    border: 1px solid #363e4d;
+    border-radius: 22px;
+    background-color: #fff
+}
+
+.headerSearch.on .search {
+    border-radius: 22px 22px 0 0
+}
+
+.headerSearch .searchInput {
+    display: block;
+    width: 355px
+}
+
+.headerSearch .searchInput>input {
+    width: 355px;
+    height: 41px;
+    margin: 0;
+    padding-left: 19px;
+    box-sizing: border-box;
+    border: 0 none;
+    border-radius: 22px 0 0 22px;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #fff;
+    outline: none
+}
+
+.headerSearch .searchInput>label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 42px;
+    padding-left: 20px;
+    font-size: 15px;
+    line-height: 42px;
+    cursor: text;
+    color: #9096a1
+}
+
+.headerSearch .searchSubmit {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    font-size: 0;
+    cursor: pointer;
+    color: transparent;
+    background: url('//image.alba.kr/e/common/2023/header.png') no-repeat 0 0 / 150px auto
+}
+
+.headerPopular {
+    width: 650px;
+    margin: 0 auto;
+    text-align: center
+}
+
+.headerPopular>li {
+    display: inline-block;
+    margin: 0 5px 0 7px;
+    font-size: 12px
+}
+
+.headerPopular>li>a {
+    display: block;
+    padding: 10px 15px;
+    color: #777e8c
+}
+
+.headerLink {
+    position: absolute;
+    top: 8px;
+    right: -8px
+}
+
+.headerLink>li {
+    position: relative;
+    float: left
+}
+
+.headerLink>li::before {
+    content: "";
+    position: absolute;
+    top: 11px;
+    left: 0;
+    width: 1px;
+    height: 12px;
+    background-color: #d3dae6
+}
+
+.headerLink>li:first-child::before {
+    content: none
+}
+
+.headerLink>li>a {
+    display: block;
+    padding: 8px 12px;
+    font-size: 13px;
+    color: #4d5260
+}
+
+.headerLink>li em.sns {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    font-size: 0;
+    vertical-align: top;
+    color: transparent;
+    background: url('//image.alba.kr/sns/icon_sns_pc_202104.png') no-repeat 0 0 / 182px auto
+}
+
+.headerLink>li em.sns--facebook {
+    background-position: -37px -49px
+}
+
+.headerLink>li em.sns--naver {
+    background-position: -130px -49px
+}
+
+.headerLink>li em.sns--kakao {
+    background-position: -19px -49px
+}
+
+.headerLink>li em.sns--apple {
+    background-position: -112px -49px
+}
+
+/* 통합검색 자동완성 */
+.ark {
+    z-index: 105;
+    position: absolute;
+    left: -1px;
+    top: 42px
+}
+
+#arkArea {
+    left: auto;
+    right: 0
+}
+
+.ark_wrap {
+    display: none;
+    overflow: hidden;
+    position: relative;
+    width: 500px;
+    letter-spacing: -1px;
+    text-align: left;
+    box-sizing: border-box;
+    border: 1px solid #363e4d;
+    border-top: none;
+    border-radius: 0 0 22px 22px;
+    background-color: #fff
+}
+
+.ark_wrap::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #eaeef3
+}
+
+#arkArea .ark_wrap {
+    right: -2px;
+    left: auto !important;
+    width: 294px
+}
+
+.ark_wrap dl {
+    position: relative
+}
+
+.ark_wrap dt {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    height: 31px;
+    font-size: 13px;
+    line-height: 31px;
+    letter-spacing: 0;
+    color: #666
+}
+
+#arkArea .ark_wrap dt {
+    display: none
+}
+
+.ark_content_list {
+    position: relative;
+    padding: 8px 0
+}
+
+.ark_content_list li {
+    overflow: hidden;
+    height: 32px;
+    padding: 0 50px 0 19px;
+    font-size: 13px;
+    line-height: 32px;
+    letter-spacing: -0.1em;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.ark_content_list li span {
+    font-size: 13px;
+    letter-spacing: 0;
+    color: #2e89e5
+}
+
+.ark_content_list li strong {
+    color: #2e89e5
+}
+
+.ark_content_list li em {
+    display: none !important;
+    position: absolute;
+    right: 20px;
+    height: 31px;
+    font-size: 13px;
+    line-height: 31px;
+    letter-spacing: 0;
+    text-align: right;
+    color: #666
+}
+
+.ark_content_list li.divide {
+    border-top: 1px solid #e1e1e1
+}
+
+.ark_content_list li.divide:first-child {
+    border-top: 0 none
+}
+
+.ark_content_list2 {
+    position: relative;
+    padding: 0 80px 0 14px
+}
+
+.ark_content_list2 li {
+    padding: 10px 0 4px;
+    font-size: 13px;
+    letter-spacing: -0.1em
+}
+
+.ark_content_list2 li a.title {
+    overflow: hidden;
+    display: block;
+    padding-bottom: 1px;
+    font-size: 15px;
+    text-decoration: underline;
+    color: #0000cc;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.ark_content_list2 li span {
+    margin: 0;
+    color: #000
+}
+
+.ark_content_list2 li span.company {
+    color: #218d44
+}
+
+.ark_content_list2 li span.pay {
+    color: #222
+}
+
+.ark_content_list2 li span.bar {
+    padding: 0 8px;
+    color: #ccc
+}
+
+.ark_content_list2 li span.keyword {
+    display: block
+}
+
+.ark_content_list2 li span.keyword .icon {
+    display: inline-block;
+    width: 53px;
+    height: 13px;
+    margin-top: -2px;
+    font-size: 0;
+    vertical-align: middle;
+    color: transparent;
+    background: url('//image.alba.kr/search/icon_keyword.gif') no-repeat 0 0
+}
+
+.ark .page {
+    position: relative;
+    padding: 15px 0 20px;
+    text-align: center
+}
+
+.ark .page a {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 0 2px;
+    font-size: 13px;
+    vertical-align: top;
+    text-align: center;
+    color: #000;
+    border: 1px solid #e5e5e5
+}
+
+.ark .page strong {
+    color: #ea2015
+}
+
+.ark .page .pageBtn {
+    height: 13px;
+    padding-top: 5px
+}
+
+.ark .page .pageBtn span {
+    overflow: hidden;
+    display: inline-block;
+    width: 5px;
+    height: 9px;
+    font-size: 0;
+    vertical-align: top;
+    color: transparent;
+    background: url('//image.alba.kr/e/common/201608/header.png') no-repeat
+}
+
+.ark .page .prevPage span {
+    background-position: -132px 0
+}
+
+.ark .page .nextPage span {
+    background-position: -142px 0
+}
+
+.ark_noInfo {
+    height: 18px;
+    padding: 60px 20px;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+    color: #9096a1
+}
+
+.ark_footer {
+    clear: both;
+    position: relative;
+    height: 44px;
+    padding: 0 19px;
+    background-color: #f7f9fd
+}
+
+.ark_footer .help {
+    position: relative;
+    height: 44px;
+    padding: 0;
+    border: 0 none;
+    font-size: 13px;
+    line-height: 44px;
+    color: #777e8c
+}
+
+.ark_footer .help a {
+    color: #666
+}
+
+.ark_footer .ark-auto>a {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+    margin: 12px 0 0 6px;
+    border-radius: 11px;
+    font-size: 0;
+    vertical-align: top;
+    color: transparent
+}
+
+.ark_footer .ark-auto>a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: #fff
+}
+
+.ark_footer .ark-auto.on>a {
+    background-color: #3396fe
+}
+
+.ark_footer .ark-auto.on>a::before {
+    right: 0;
+    left: auto;
+    border: 1px solid #2e89e5
+}
+
+.ark_footer .ark-auto.off>a {
+    background-color: #ced3db
+}
+
+.ark_footer .ark-auto.off>a::before {
+    right: auto;
+    left: 0;
+    border: 1px solid #a2aebf
+}
+
+.ark_footer .help .word {
+    display: none !important
+}
+
+.ark_footer .help .close {
+    float: right
+}
+
+.ark_footer .help .close>span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 14px 0 0 5px;
+    vertical-align: top;
+    background: url('//image.alba.kr/m/svg/x_circle_bggrayD.svg') no-repeat 0 0 / 16px 16px
+}
+
+.ark_footer .jobTotal {
+    position: absolute;
+    top: 9px;
+    top: 10px\0;
+    *top: 10px;
+    right: 10px;
+    font-size: 11px;
+    color: #222
+}
+
+.ark_footer .jobTotal em {
+    padding-right: 1px;
+    font-weight: bold;
+    font-size: 11px;
+    color: #ea2015
+}
+
+#HeaderMenuWrap {
+    z-index: 101;
+    position: relative;
+    width: 100%;
+    border-top: 1px solid #f0f2f5;
+    border-bottom: 2px solid #ffe000;
+    background-color: #fff
+}
+
+#HeaderMenu {
+    z-index: 101;
+    width: 1260px;
+    height: 56px;
+    margin: 0 auto
+}
+
+body.scroll {
+    padding-top: 49px
+}
+
+body.scroll #HeaderMenuWrap {
+    z-index: 99999;
+    position: fixed;
+    top: 0;
+    left: 0
+}
+
+.headerFilter {
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    filter: alpha(opacity=25);
+    opacity: 0.25
+}
+
+.headerMenu {
+    float: left
+}
+
+.headerMenu>li {
+    float: left
+}
+
+.headerMenu>li>a {
+    position: relative;
+    display: block;
+    height: 56px;
+    padding: 0 15px;
+    font-size: 16px;
+    line-height: 56px
+}
+
+.headerMenu>li>a>span {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: 16px 4px 0 0;
+    vertical-align: top;
+    background: url('//image.alba.kr/e/common/2023/header.png') no-repeat 0 0 / 150px auto
+}
+
+.headerMenu>li>a>.my-text {
+    display: inline-block;
+    width: 54px
+}
+
+.headerMenu>li.all>a {
+    margin-left: -15px;
+    margin-right: 10px;
+    font-weight: bold
+}
+
+.headerMenu>li.all>a::after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    right: -5px;
+    width: 1px;
+    height: 14px;
+    background-color: #777e8c
+}
+
+.headerMenu>li.all>a>span {
+    width: 16px;
+    height: 16px;
+    margin-top: 21px;
+    margin-right: 6px;
+    background-position: -50px 0
+}
+
+.headerMenu>li.person>a>span {
+    background-position: 0 -100px
+}
+
+.headerMenu>li.biz>a>span {
+    background-position: -50px -100px
+}
+
+.headerMenu>li.viv>a>em {
+    display: inline-block;
+    position: absolute;
+    top: 12px;
+    width: 13px;
+    height: 13px;
+    background: url('//image.alba.kr/viv/viv_common.png')no-repeat 0 -120px
+}
+
+.headerMenu>li.on>a, .headerMenu>li.active>a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #000
+}
+
+.headerMenu>li.on>a::before, .headerMenu>li.active>a::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: auto;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    height: 12px;
+    background-color: rgba(255,242,48,0.5)
+}
+
+.headerMenu>li.active .headerMenuFullWrap, .headerMenu>li.active .headerMenuFull, .headerMenu>li.active .headerMenuSub {
+    display: block
+}
+
+.headerMenuFullWrap {
+    display: none;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    border-top: 2px solid #ffe000;
+    background-color: #fff
+}
+
+.headerMenuFull {
+    display: none;
+    width: 1258px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-right: 1px solid #e5e5e5;
+    border-left: 1px solid #e5e5e5
+}
+
+.headerMenuFull-title {
+    padding: 13px 20px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    border-bottom: 1px solid #e7e7e7
+}
+
+.headerMenuFull-title>a>span {
+    margin-top: 3px
+}
+
+.headerMenuFull-section {
+    overflow: hidden;
+    position: relative;
+    width: 100%
+}
+
+.headerMenuFull-section>li {
+    float: left;
+    box-sizing: border-box;
+    width: 14.28%;
+    padding: 20px 0 0;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    border-left: 1px solid #e5e5e5
+}
+
+.headerMenuFull-section>li:first-child {
+    border-left: 0 none
+}
+
+.headerMenuFull-section>li>strong, .headerMenuFull-section>li>a {
+    display: block;
+    margin: 0 0 12px;
+    padding-left: 20px
+}
+
+.headerMenuFull-section-list {
+    overflow: hidden
+}
+
+.headerMenuFull-section-list>li {
+    padding: 4px 0;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: -1px
+}
+
+.headerMenuFull-section-list>li>a {
+    padding-left: 20px;
+    color: #666
+}
+
+.headerMenuFull-section-list>li>a>.icon {
+    display: inline-block;
+    height: 14px;
+    height: 13px\0;
+    *height: 13px;
+    margin-top: -2px;
+    padding: 2px 2px 0;
+    padding-top: 3px\0;
+    *padding-top: 3px;
+    font-size: 11px;
+    letter-spacing: -1px;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    background: #ff9d12
+}
+
+.headerMenuFull-section-list>li>a>.age19 {
+    display: inline-block;
+    width: 11px;
+    height: 12px;
+    padding-right: 1px;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    color: #000;
+    border: 1px solid #ff4544;
+    border-radius: 50%
+}
+
+.headerMenu>li.all .headerMenuFull-section>li {
+    height: 268px
+}
+
+.headerMenu>li.all .headerMenuFull-section.biz>li {
+    width: 16.65%;
+    height: 296px
+}
+
+.headerMenu>li.all .headerMenuFull-section__person, .headerMenu>li.all .headerMenuFull-section__biz {
+    background-color: #f8f8f8
+}
+
+.headerMenu>li.person .headerMenuFull-section>li {
+    height: 256px
+}
+
+.headerMenu>li.person .headerMenuFull-section>li.viv {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    height: 30px;
+    border-left: 0 none
+}
+
+.headerMenu>li.person .headerMenuFull-section>li.mystory {
+    position: absolute;
+    top: 127px;
+    left: 71.4%;
+    height: 88px;
+    border-left: 0 none
+}
+
+.headerMenu>li.biz .headerMenuFull-section>li {
+    width: 12.49%;
+    height: 255px
+}
+
+.headerMenu>li.biz .headerMenuFull-section>li.support {
+    position: absolute;
+    top: 145px;
+    left: 0;
+    height: 30px;
+    border-left: 0 none
+}
+
+.headerMenu>li.job .headerMenuFull-section>li {
+    height: 426px
+}
+
+.headerMenu>li.job .headerMenuFull-section>li.pay {
+    position: absolute;
+    top: 147px;
+    left: 42.84%;
+    height: 127px
+}
+
+.headerMenu>li.brand .headerMenuFull-section>li {
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 77%;
+    height: 358px
+}
+
+.headerMenu>li.brand .headerMenuFull-section>li.brandType {
+    width: 23%
+}
+
+.headerMenu>li.brand .headerMenuFull-section-list>li {
+    float: left;
+    width: 50%
+}
+
+.headerMenu>li.resume .headerMenuFull-section>li {
+    height: 370px
+}
+
+.headerMenu>li.story .headerMenuFull-section>li {
+    width: 16.65%;
+    height: 230px
+}
+
+.headerMenu>li.story .headerMenuFull-section>li.unique {
+    position: absolute;
+    top: 110px;
+    left: 83.35%;
+    height: 24px;
+    border-left: 0 none
+}
+
+.headerMenu>li.story .headerMenuFull-section>li.interview {
+    position: absolute;
+    top: 138px;
+    left: 83.35%;
+    height: 24px;
+    border-left: 0 none
+}
+
+.headerMenu>li.story .headerMenuFull-section>li.global {
+    position: absolute;
+    top: 166px;
+    left: 83.35%;
+    height: 24px;
+    border-left: 0 none
+}
+
+.headerMenu>li.customer .headerMenuFull-section>li {
+    height: 250px
+}
+
+.headerMenu>li.customer .headerMenuFull-section>li.notice {
+    position: absolute;
+    top: 168px;
+    left: 85.71%;
+    height: 24px;
+    border-left: 0 none
+}
+
+.headerMenu>li.my .headerMenuFull-title {
+    padding: 8px 20px
+}
+
+.headerMenu>li.my .headerMenuFull-title>a.menuSetBtn {
+    display: inline-block;
+    height: 20px;
+    height: 21px\0;
+    *height: 21px;
+    padding: 5px 11px 0 7px;
+    padding-top: 4px\0;
+    *padding-top: 4px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #222;
+    border: 1px solid #bcbdbe;
+    border-bottom: 1px solid #868686
+}
+
+.headerMenu>li.my .headerMenuFull-title>a.menuSetBtn>span {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 0 6px 0 0;
+    background: url('//image.alba.kr/e/common/201608/header.png') no-repeat -120px -69px
+}
+
+.headerMenu>li.my .headerMenuFull-section>li {
+    width: 33.32%;
+    min-height: 98px;
+    padding-bottom: 25px
+}
+
+.headerMenu>li.my--biz .headerMenuFull-section>li {
+    min-height: 122px
+}
+
+.headerMenu>li.my .headerMenuFull-section-list>li {
+    float: left;
+    width: 50%
+}
+
+.headerMenuFull-section-subList {
+    overflow: hidden;
+    margin-bottom: 5px;
+    padding: 0 5px 10px 20px;
+    border-bottom: 1px solid #e5e5e5
+}
+
+.headerMenuFull-section-subList.condition {
+    margin: 8px 0 0;
+    padding-bottom: 0;
+    border-bottom: 0 none
+}
+
+.headerMenuFull-section-subList>li {
+    float: left;
+    margin: 0 0 5px
+}
+
+.headerMenuFull-section-subList.area>li {
+    width: 25%
+}
+
+.headerMenuFull-section-subList.kind>li {
+    width: 50%
+}
+
+.headerMenuFull-section-subList.kind--1>li {
+    width: 100%
+}
+
+.headerMenuFull-section-subList.kind--1>li .divide {
+    margin-left: 5px;
+    padding-left: 9px;
+    background: url('//image.alba.kr/e/common/202009/header.png') no-repeat -149px 4px
+}
+
+.headerMenuFull-section-subList>li>a {
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    color: #666
+}
+
+.headerMenuFull-section-brandList {
+    padding: 7px 0 0 20px
+}
+
+.headerMenuFull-section-brandList:after {
+    content: "";
+    clear: both;
+    display: block
+}
+
+.headerMenuFull-section-brandList>li {
+    float: left;
+    width: 69px;
+    height: 75px;
+    margin-right: 8px
+}
+
+.headerMenuFull-section-brandList>li>a {
+    overflow: hidden;
+    display: block;
+    height: 100%;
+    font-size: 11px;
+    letter-spacing: -1px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center
+}
+
+.headerMenuFull-section-brandList>li>a>span {
+    display: block;
+    width: 63px;
+    height: 29px;
+    margin-bottom: 6px;
+    padding: 4px 0 0;
+    background: #fff;
+    border: 1px solid #dfdfdf
+}
+
+.headerMenuFull-section-brandList>li>a>span>img {
+    width: 55px
+}
+
+.header-icon {
+    display: inline-block;
+    font-size: 0;
+    vertical-align: top;
+    color: transparent;
+    background: url('//image.alba.kr/e/common/202009/header.png') no-repeat
+}
+
+.header-icon--home {
+    width: 7px;
+    height: 11px;
+    margin: 2px 0 0 2px;
+    background-position: -120px -60px
+}
+
+.header-icon--pro {
+    width: 38px;
+    height: 18px;
+    background-position: -60px -60px
+}
+
+.header-icon--19 {
+    width: 16px;
+    height: 16px;
+    margin-top: 1px;
+    background-position: -120px -30px
+}
+
+.header-icon--gangsa {
+    width: 38px;
+    height: 18px;
+    background-position: 0 -90px
+}
+
+.header-icon--ganhojob {
+    width: 34px;
+    height: 18px;
+    background-position: -60px -90px
+}
+
+.header-icon--new {
+    width: 13px;
+    height: 13px;
+    margin-top: 1px;
+    background-position: -90px -30px
+}
+
+.header-icon--career {
+    width: 38px;
+    height: 18px;
+    background-position: -60px -60px
+}
+
+.header-icon--more {
+    width: 56px;
+    height: 22px;
+    margin: -3px 0 0 5px;
+    background-position: -90px -120px
+}
+
+.headerQuick {
+    float: right;
+    padding: 9px 0
+}
+
+.headerQuick>li {
+    float: left;
+    margin-left: 6px
+}
+
+.headerQuick>li>a {
+    display: block;
+    height: 36px;
+    padding: 0 20px 0 16px;
+    font-weight: bold;
+    font-size: 15px;
+    border: 1px solid #ffe000;
+    border-radius: 6px;
+    line-height: 36px;
+    background-color: #fff230
+}
+
+.headerQuick>li>a:hover {
+    text-decoration: none;
+    color: initial
+}
+
+.headerQuick>li>a::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 9px 4px 0 0;
+    vertical-align: top;
+    background: url('//image.alba.kr/e/common/2023/header.png') no-repeat 0 0 / 150px auto
+}
+
+.headerQuick>li.personReg>a::before {
+    background-position: 0 -50px
+}
+
+.headerQuick>li.bizReg>a::before {
+    background-position: -50px -50px
+}
+
+.headerQuick>li.bizMag>a::before {
+    background-position: -100px -50px
+}
+
+.headerQuick>li.bizReg>a, .headerQuick--biz>li>a {
+    border-color: #2e89e5;
+    color: #fff !important;
+    background-color: #3396fe
+}
+
+.headerQuick>li.bizReg>a>span, .headerQuick--biz>li>a>span {
+    text-shadow: 0 0 2px #003e80
+}
+
+.myMenuSetWrap {
+    display: none
+}
+
+.myMenuSet {
+    z-index: 999;
+    position: fixed;
+    top: 161px;
+    left: 50%;
+    width: 1068px;
+    height: 584px;
+    margin-left: -535px;
+    border: 1px solid #333;
+    background: #fff
+}
+
+.myMenuSet-title {
+    display: block;
+    padding: 12px 20px 15px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #282828;
+    letter-spacing: -2px;
+    color: #333;
+    border-bottom: 1px solid #e7e7e7
+}
+
+.myMenuSet-section {
+    overflow: hidden;
+    width: 100%
+}
+
+.myMenuSet-section>li {
+    float: left;
+    width: 315px;
+    height: 458px;
+    padding: 12px 20px;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    border-left: 1px solid #e7e7e7
+}
+
+.myMenuSet-section>li:first-child {
+    border-left: none
+}
+
+.myMenuSet-section>li>strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #333
+}
+
+.myMenuSet-section-list {
+    float: left;
+    width: 315px;
+    *zoom:1}
+
+.myMenuSet-section-list:after {
+    content: " ";
+    clear: both;
+    display: block
+}
+
+.myMenuSet-section-list + .myMenuSet-section-list {
+    margin-left: 25px
+}
+
+.myMenuSet-section-list>li {
+    float: left;
+    width: 50%;
+    margin-top: 7px
+}
+
+.myMenuSet-section-list>li>span.input {
+    position: relative;
+    display: inline-block
+}
+
+.myMenuSet-section-list>li>span.input * {
+    vertical-align: middle;
+    cursor: pointer
+}
+
+.myMenuSet-section-list>li>span.input input {
+    position: absolute;
+    left: 0;
+    margin: 0;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0)
+}
+
+.myMenuSet-section-list>li>span.input label {
+    display: inline-block;
+    height: 17px;
+    padding: 0 0 0 20px;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #444;
+    *line-height: 1.3;
+    background: url('//image.alba.kr/comm/input.png') no-repeat;
+    white-space: nowrap
+}
+
+.myMenuSet-section-list>li>span.input input[type="checkbox"] + label {
+    background-position: 0 1px
+}
+
+.myMenuSet-section-list>li>span.input.on input[type="checkbox"] + label {
+    background-position: 0 -19px;
+    color: #2073f0
+}
+
+.myMenuSet-section-btn {
+    position: relative;
+    padding: 15px 20px;
+    text-align: right;
+    border-top: 1px solid #e7e7e7
+}
+
+.myMenuSet-section-btn>a {
+    display: inline-block;
+    width: 65px;
+    padding: 5px 0 7px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1.2;
+    text-align: center;
+    border: 1px solid #bcbdbe;
+    border-bottom: 1px solid #868686
+}
+
+.myMenuSet-section-btn>a.left {
+    position: absolute;
+    top: 15px;
+    left: 20px
+}
+
+.myMenuSet-filter {
+    z-index: 998;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    filter: alpha(opacity=50);
+    opacity: 0.5
+}
+
+/* Header - sub 1070px */
+#Global, #MainBanner {
+    min-width: 1070px
+}
+
+#Header, #HeaderMenu {
+    width: 1070px
+}
+
+.headerMenuFull {
+    width: 1068px
+}
+
+.headerMenu>li.all .headerMenuFull-section>li {
+    height: 268px
+}
+
+.headerMenu>li.all .headerMenuFull-section.biz>li {
+    width: 16.65%;
+    height: 296px
+}
+
+.headerMenu>li.all .headerMenuFull-section__person, .headerMenu>li.all .headerMenuFull-section__biz {
+    background-color: #f8f8f8
+}
+
+.headerMenu>li.person .headerMenuFull-section>li {
+    width: 14%;
+    height: 256px
+}
+
+.headerMenu>li.person .headerMenuFull-section>li.application {
+    width: 16%
+}
+
+.headerMenu>li.person .headerMenuFull-section>li.viv {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    height: 30px;
+    border-left: 0 none
+}
+
+.headerMenu>li.person .headerMenuFull-section>li.mystory {
+    position: absolute;
+    top: 127px;
+    left: 72%;
+    height: 88px;
+    border-left: 0 none
+}
+
+.headerMenu>li.biz .headerMenuFull-section>li {
+    width: 12.49%;
+    height: 255px
+}
+
+.headerMenu>li.biz .headerMenuFull-section>li.support {
+    position: absolute;
+    top: 145px;
+    left: 0;
+    height: 30px;
+    border-left: 0 none
+}
+
+.headerMenu>li.job .headerMenuFull-section>li {
+    height: 426px
+}
+
+.headerMenu>li.job .headerMenuFull-section>li.pay {
+    position: absolute;
+    top: 147px;
+    left: 42.84%;
+    height: 127px
+}
+
+.headerMenu>li.brand .headerMenuFull-section>li {
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 74%;
+    height: 358px
+}
+
+.headerMenu>li.brand .headerMenuFull-section>li.brandType {
+    width: 26%
+}
+
+.headerMenu>li.brand .headerMenuFull-section-list>li {
+    float: left;
+    width: 50%
+}
+
+.headerMenu>li.resume .headerMenuFull-section>li {
+    height: 370px
+}
+
+.headerMenu>li.story .headerMenuFull-section>li {
+    width: 16.65%;
+    height: 230px
+}
+
+.headerMenu>li.story .headerMenuFull-section>li.unique {
+    position: absolute;
+    top: 110px;
+    left: 83.35%;
+    height: 24px;
+    border-left: 0 none
+}
+
+.headerMenu>li.story .headerMenuFull-section>li.interview {
+    position: absolute;
+    top: 138px;
+    left: 83.35%;
+    height: 24px;
+    border-left: 0 none
+}
+
+.headerMenu>li.story .headerMenuFull-section>li.global {
+    position: absolute;
+    top: 166px;
+    left: 83.35%;
+    height: 24px;
+    border-left: 0 none
+}
+
+.headerMenu>li.customer .headerMenuFull-section>li {
+    width: 12%;
+    height: 250px
+}
+
+.headerMenu>li.customer .headerMenuFull-section>li.type01 {
+    width: 15%
+}
+
+.headerMenu>li.customer .headerMenuFull-section>li.type02 {
+    width: 16%
+}
+
+.headerMenu>li.customer .headerMenuFull-section>li.notice {
+    position: absolute;
+    top: 168px;
+    left: 83.98%;
+    width: 16%;
+    height: 24px;
+    border-left: 0 none
+}
+
+.headerMenu>li.my .headerMenuFull-title {
+    padding: 8px 20px
+}
+
+.headerMenu>li.my .headerMenuFull-title>a.menuSetBtn {
+    display: inline-block;
+    height: 20px;
+    height: 21px\0;
+    *height: 21px;
+    padding: 5px 11px 0 7px;
+    padding-top: 4px\0;
+    *padding-top: 4px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #222;
+    border: 1px solid #bcbdbe;
+    border-bottom: 1px solid #868686
+}
+
+.headerMenu>li.my .headerMenuFull-title>a.menuSetBtn>span {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 0 6px 0 0;
+    background: url('//image.alba.kr/e/common/201608/header.png') no-repeat -120px -69px
+}
+
+.headerMenu>li.my .headerMenuFull-section>li {
+    width: 33.32%;
+    min-height: 98px;
+    padding-bottom: 25px
+}
+
+.headerMenu>li.my--biz .headerMenuFull-section>li {
+    min-height: 122px
+}
+
+.headerMenu>li.my .headerMenuFull-section-list>li {
+    float: left;
+    width: 50%
+}
+
+/* Header - biz */
+.headerMenu--biz {
+    border-bottom-color: #3396fe !important
+}
+
+.headerMenu--biz .headerMenu>li.on>a::before, .headerMenu--biz .headerMenu>li.active>a::before {
+    background-color: #cfe6ff
+}
+
+.headerMenu--biz .headerMenu>li.biz {
+    margin-right: 25px
+}
+
+.headerMenu--biz .headerMenu>li.biz>a {
+    margin-left: -15px;
+    font-weight: bold;
+    color: #2e89e5
+}
+
+.headerMenu--biz .headerMenu>li.biz>a>span {
+    background-position: -100px -100px
+}
+
+.headerMenu--biz .headerMenuFullWrap {
+    border-top-color: #3396fe
+}
+
+.headerMenu--biz .headerMenuFull-section>li {
+    width: 15.95%;
+    height: 314px
+}
+
+.headerMenu--biz .headerMenuFull-section>li.headerMenuFull-section--item5 {
+    width: 216px
+}
+
+.headerMenu--biz .headerMenuFull-section>li>strong {
+    font-size: 14px
+}
+
+.headerMenu--biz .headerMenu>li.active .headerMenuFull-section>li.active {
+    background-color: #f7f9fd
+}
+
+.headerMenu--biz .headerMenu>li.active .headerMenuFull-section>li.active>strong {
+    color: #2e89e5
+}
+
+/* Header - 기업서비스/TM전문관 */
+#HeaderGnb {
+    z-index: 110;
+    position: relative;
+    width: 100%;
+    background-color: #fff
+}
+
+#HeaderGnb .headerAction {
+    z-index: 110;
+    position: relative;
+    width: 1070px;
+    margin: 0 auto
+}
+
+#HeaderWrap {
+    width: 100%;
+    background-color: #fff
+}
+
+#HeaderWrap #Header {
+    height: 125px
+}
+
+#HeaderWrap .headerBi {
+    height: 98px;
+    padding-top: 27px
+}
+
+#JobProMenuWrap {
+    z-index: 100;
+    position: relative;
+    width: 100%;
+    height: 38px;
+    padding: 18px 0 0 0;
+    background: url('//image.alba.kr/e/common/201403/header_JobPro.png') repeat-x 0 -20px
+}
+
+#JobProMenu {
+    z-index: 100;
+    position: relative;
+    width: 960px;
+    height: 38px;
+    margin: 0 auto
+}
+
+.jobProMenu {
+    overflow: hidden;
+    width: 960px;
+    height: 38px
+}
+
+.jobProMenu li {
+    float: left
+}
+
+.jobProMenu li a {
+    display: block;
+    text-indent: -999em;
+    height: 38px;
+    background: url('//image.alba.kr/e/common/201403/header_JobPro.png') no-repeat
+}
+
+.jobProMenu li.job a {
+    width: 90px;
+    background-position: 0 -80px
+}
+
+.jobProMenu li.resume a {
+    width: 97px;
+    background-position: -90px -80px
+}
+
+.jobProMenu li.regResume a {
+    width: 108px;
+    background-position: -187px -80px
+}
+
+.jobProMenu li.regJob a {
+    width: 120px;
+    background-position: -295px -80px
+}
+
+.jobProMenu.person li.person a {
+    width: 126px;
+    background-position: -416px -80px
+}
+
+.jobProMenu.person li.resumeReg a {
+    width: 107px;
+    background-position: -187px -80px
+}
+
+.jobProMenu.biz li.biz a {
+    width: 126px;
+    background-position: -651px -80px
+}
+
+.jobProMenu.biz li.jobReg a {
+    width: 117px;
+    background-position: -778px -80px
+}
+
+.jobProMenu.sns li.snsHome a {
+    width: 101px;
+    background-position: 0 -122px
+}
+
+/* GlobalBanner */
+#GlobalBannerWrap {
+    width: 100%;
+    background-color: #f7f7f7
+}
+
+#GlobalBanner {
+    position: relative;
+    width: 1070px;
+    height: 112px;
+    margin: 0 auto;
+    background-color: #f7f7f7
+}
+
+#GlobalBanner p.sideCenter {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    margin-left: -240px
+}
+
+#GlobalBanner p.sideLeft {
+    position: absolute;
+    top: 35px;
+    left: 21px
+}
+
+#GlobalBanner p.sideRight {
+    position: absolute;
+    top: 35px;
+    right: 21px
+}
+
+.side-info__link {
+    display: block;
+    position: relative;
+    padding-left: 51px;
+    font-size: 14px;
+    color: #222
+}
+
+.side-info__icon {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 42px;
+    height: 42px;
+    background: url('//image.alba.kr/comm/subside_icon.png')no-repeat
+}
+
+.side-info__title {
+    display: block
+}
+
+.sideRight .side-info__link {
+    padding-right: 51px;
+    text-align: right
+}
+
+.sideRight .side-info__icon {
+    left: initial;
+    right: 0;
+    background-position: -42px 0
+}
+
+/* 현재 위치 */
+#Location {
+    position: relative;
+    height: 24px;
+    margin: 0 0 20px;
+    padding: 18px 0 0 0;
+    color: #545455;
+    border-bottom: 1px solid #ececec
+}
+
+#Location img {
+    display: none
+}
+
+body.contract #Location {
+    width: 1070px;
+    margin: 0 auto
+}
+
+/* SubSide - TM전문관 채용/인재 */
+#SubSide h1.tmJobTitle {
+    height: 87px;
+    background: url('//image.alba.kr/e/common/201402/SubSide_Jobpro.gif') no-repeat 0 0
+}
+
+#SubSide h1.tmResumeTitle {
+    height: 87px;
+    background: url('//image.alba.kr/e/common/201402/SubSide_Jobpro.gif') no-repeat -175px 0
+}
+
+#SubSide h1.tmJobTitle span, #SubSide h1.tmResumeTitle span {
+    position: relative;
+    z-index: -1
+}
+
+#SubSide .subTmMenu {
+    padding: 17px;
+    border: 1px solid #e5e5e5
+}
+
+#SubSide .subTmMenu h2 {
+    padding: 0 0 5px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #8c8c8c;
+    color: #282828;
+    font-weight: bold;
+    letter-spacing: -1px
+}
+
+#SubSide .subTmMenu ul li {
+    height: 24px;
+    line-height: 24px
+}
+
+#SubSide .subTmMenu ul li a {
+    padding: 0 3px 0 7px;
+    letter-spacing: -1px;
+    background: url('//image.alba.kr/e/common/201402/SubSide_Jobpro.gif') no-repeat -350px 0
+}
+
+#SubSide .subTmMenu ul li a.first {
+    padding-left: 2px;
+    background-image: none
+}
+
+#SubSide .subTmMenu ul li a.last {
+    padding-right: 0
+}
+
+#SubSide .subTmMenu .tmMenuArea {
+    padding: 0 0 13px;
+    margin-bottom: 17px;
+    border-bottom: 1px solid #e5e5e5
+}
+
+#SubSide .subTmMenu .tmMenuRecruit {
+    padding: 0 0 13px;
+    margin-bottom: 17px;
+    border-bottom: 1px solid #e5e5e5
+}
+
+#SubSide .subTmMenu .tmMenuRecruit a {
+    padding: 0;
+    background-image: none
+}
+
+#SubSide .subTmMenu .tmMenuCustom a {
+    padding: 0;
+    background-image: none
+}
+
+/* Footer */
+#FooterWrap {
+    clear: both;
+    width: 100%;
+    min-width: 1070px;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    border-top: 1px solid #eee;
+    background-color: #fff
+}
+
+#Footer {
+    width: 100%
+}
+
+#Footer * {
+    letter-spacing: -1px
+}
+
+.footer__cs {
+    overflow: hidden;
+    width: 1070px;
+    margin: 0 auto;
+    padding: 30px 0
+}
+
+.footer__customer {
+    float: left;
+    width: 456px;
+    height: 78px;
+    padding-top: 3px
+}
+
+.footer__customer-tel {
+    float: left;
+    width: 185px;
+    font-size: 20px;
+    line-height: 1.1
+}
+
+.footer__customer-tel>strong {
+    display: block;
+    margin-top: -1px;
+    margin-bottom: 3px;
+    font-weight: bold;
+    font-size: 34px
+}
+
+.footer__customer-tel>span {
+    display: block;
+    font-size: 12px;
+    color: #666
+}
+
+.footer__customer-contact {
+    float: right;
+    width: 260px
+}
+
+.footer__customer-contact>li {
+    font-size: 13px;
+    line-height: 2
+}
+
+.footer__customer-contact>li>span {
+    display: inline-block;
+    width: 40px
+}
+
+.footer__customer-contact>li>span.add {
+    width: auto;
+    color: #999
+}
+
+.footer__faq {
+    float: left;
+    box-sizing: border-box;
+    width: 333px;
+    height: 78px;
+    padding-top: 3px;
+    border-left: 1px solid #ddd;
+    text-align: center
+}
+
+.footer__faq>li {
+    display: inline-block
+}
+
+.footer__faq a {
+    display: block;
+    padding: 0 10px;
+    font-size: 13px
+}
+
+.footer__faq span {
+    display: block;
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 4px;
+    background: url('//image.alba.kr/e/common/2021/footer.png') no-repeat 0 0
+}
+
+.footer__faq-agency span {
+    background-position: 0 0
+}
+
+.footer__faq-faq span {
+    background-position: -60px 0
+}
+
+.footer__faq-qna span {
+    background-position: 0 -60px
+}
+
+.footer__app {
+    float: right;
+    box-sizing: border-box;
+    width: 279px;
+    height: 81px;
+    border-left: 1px solid #ddd;
+    font-size: 13px;
+    line-height: 1.45
+}
+
+.footer__app>a {
+    overflow: hidden;
+    display: block;
+    width: 257px;
+    height: 78px;
+    padding: 3px 0 0 22px
+}
+
+.footer__app strong {
+    display: block;
+    margin-bottom: 3px;
+    font-weight: normal;
+    font-size: 24px
+}
+
+.footer__app span {
+    float: right;
+    width: 74px;
+    height: 74px;
+    background: url('//image.alba.kr/e/common/202005/footer_app.png') no-repeat 0 0
+}
+
+.footer__link {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee
+}
+
+.footer__menu {
+    overflow: hidden;
+    width: 1070px;
+    margin: 0 auto
+}
+
+.footer__menu>li {
+    float: left
+}
+
+.footer__menu a {
+    display: block;
+    height: 60px;
+    padding: 0 13px;
+    font-size: 15px;
+    line-height: 60px
+}
+
+.footer__menu>li.first>a {
+    padding-left: 0
+}
+
+.footer__menu>li.end>a {
+    padding-right: 0;
+    padding-left: 34px
+}
+
+.footer__corp {
+    position: relative;
+    width: 1070px;
+    margin: 0 auto;
+    padding: 20px 0 20px
+}
+
+.footer__company-address {
+    padding: 10px 0 6px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #666
+}
+
+.footer__company-address>span {
+    display: inline-block;
+    width: 1px;
+    height: 14px;
+    margin: 3px 2px 0 4px;
+    font-size: 0;
+    vertical-align: top;
+    color: transparent;
+    background-color: #e5e5e5
+}
+
+.footer__company-copyright {
+    font-size: 13px;
+    color: #666
+}
+
+.footer__etc>dl {
+    position: absolute;
+    right: 0;
+    width: 160px;
+    margin: 0 0 5px;
+    border: 1px solid #e5e5e5;
+    background-color: #fff
+}
+
+.footer__etc dt span {
+    position: absolute;
+    top: 12px;
+    right: 19px;
+    width: 10px;
+    height: 6px;
+    background: url('//image.alba.kr/e/common/202005/footer.png') no-repeat 0 -60px
+}
+
+.footer__etc dt>a, .footer__etc dd>a {
+    display: block;
+    height: 30px;
+    padding: 0 10px;
+    font-size: 13px;
+    line-height: 30px;
+    text-decoration: none
+}
+
+.footer__etc dd {
+    display: none
+}
+
+.footer__etc dd>a:hover {
+    background-color: #eee
+}
+
+.footer__family {
+    z-index: 2;
+    top: 38px
+}
+
+.footer__local {
+    top: 75px
+}
+
+.footer__etc>dl.on {
+    z-index: 9999
+}
+
+.footer__etc>dl.on dt {
+    border-bottom: 1px solid #e5e5e5
+}
+
+.footer__etc>dl.on dd {
+    display: block
+}
+
+#Prize {
+    width: 1070px;
+    margin: 0 auto;
+    border-top: 1px solid #e5e5e5
+}
+
+.prize__list {
+    overflow: hidden;
+    width: 1070px
+}
+
+.prize__list>li {
+    float: left;
+    width: 14.28%
+}
+
+.prize__list a {
+    display: block;
+    width: 150px;
+    height: 130px;
+    margin: 0 auto;
+    font-size: 0;
+    color: transparent;
+    background: url('//image.alba.kr/e/common/2022/prize_202201.jpg') no-repeat 0 0
+}
+
+.prize__list-1>a {
+    background-position: 0 0
+}
+
+.prize__list-2>a {
+    background-position: -150px 0
+}
+
+.prize__list-3>a {
+    background-position: -300px 0
+}
+
+.prize__list-4>a {
+    background-position: 0 -150px
+}
+
+.prize__list-5>a {
+    background-position: -150px -150px
+}
+
+.prize__list-6>a {
+    background-position: -300px -150px
+}
+
+.prize__list-7>a {
+    background-position: 0 -300px
+}
+
+/* 팝업 - 입사지원자 알림  */
+#cMainPart_onDesire {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 207px;
+    height: 71px;
+    margin-left: -480px;
+    background: url('//image.alba.kr/topMain/onDesire_bg.gif') no-repeat left top
+}
+
+#cMainPart_onDesire p.notice {
+    position: absolute;
+    top: 14px;
+    left: 87px;
+    font-size: 11px;
+    letter-spacing: -1px;
+    color: #504f4d
+}
+
+#cMainPart_onDesire p.notice span {
+    display: block;
+    color: #6a6a68
+}
+
+#cMainPart_onDesire p.count {
+    position: absolute;
+    top: 17px;
+    left: 8px;
+    width: 69px;
+    text-align: center;
+    letter-spacing: -1px;
+    color: #5f5e5c
+}
+
+#cMainPart_onDesire p.count span {
+    display: block;
+    margin-bottom: 2px;
+    font-weight: bold;
+    font-size: 11px
+}
+
+#cMainPart_onDesire p.count a {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #f94c00
+}
+
+#cMainPart_onDesire p.confirm {
+    position: absolute;
+    top: 43px;
+    left: 87px
+}
+
+#cMainPart_onDesire p.close {
+    position: absolute;
+    top: 5px;
+    right: 7px;
+    cursor: pointer
+}
+
+/* 배너 - 스카이 */
+#SkyBanner {
+    overflow: hidden;
+    position: fixed;
+    top: 231px;
+    left: 50%;
+    width: 106px;
+    margin-left: 545px
+}
+
+#TodayView #SkyBanner, body.job #SkyBanner, body.resume #SkyBanner, body.recruit #SkyBanner, body.story #SkyBanner {
+    top: 328px
+}
+
+body.biz #SkyBanner {
+    top: 190px
+}
+
+body.login #SkyBanner {
+    top: 205px
+}
+
+body.scroll #SkyBanner {
+    z-index: 95;
+    top: 62px
+}
+
+#SkyBanner div.quickService {
+    position: relative;
+    width: 106px
+}
+
+#SkyBanner div.quickService h1 {
+    display: none
+}
+
+#SkyBanner div.quickService .userInfo {
+    width: 104px;
+    height: 33px;
+    border: 1px solid #b2b2b2;
+    border-bottom: 0 none;
+    line-height: 33px;
+    text-align: center;
+    background-color: #f8f8f8
+}
+
+#SkyBanner div.quickService a.cnt {
+    display: inline;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: verdana;
+    text-decoration: underline;
+    color: #ff5400
+}
+
+#SkyBanner div.quickService a.quickBtn {
+    display: block;
+    width: 88px;
+    height: 24px;
+    margin-top: 8px;
+    font-size: 11px;
+    line-height: 24px;
+    letter-spacing: -1px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #848e9b;
+    color: #fff;
+    background: #989fa8
+}
+
+#SkyBanner div.quickService a.quickBtn span {
+    display: inline-block;
+    width: 3px;
+    height: 14px;
+    vertical-align: top
+}
+
+#SkyBanner div.quickService .menu {
+    width: 104px;
+    border: 1px solid #b2b2b2;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 0 none
+}
+
+#SkyBanner div.quickService .menuWrap {
+    width: 104px;
+    background: #f8f8f8
+}
+
+/* #SkyBanner div.quickService .menu ul {padding-bottom:4px;border-bottom:1px solid #828282} */
+#SkyBanner div.quickService .menu ul {
+    padding: 7px 0 9px 5px;
+    border-bottom: 1px solid #bbb
+}
+
+#SkyBanner div.quickService .menu ul a {
+    display: block;
+    height: 14px;
+    padding: 2px 0 0;
+    font-size: 11px;
+    letter-spacing: -1px;
+    text-decoration: none
+}
+
+#SkyBanner div.quickService .menu ul a span {
+    display: inline-block;
+    width: 2px;
+    height: 2px;
+    margin: 5px 6px 0 0;
+    vertical-align: top;
+    background: url('//image.alba.kr/e/skyBanner/201307/quickService.gif') no-repeat -94px -60px
+}
+
+#SkyBanner div.quickService .menu p {
+    padding: 8px 7px 18px;
+    font-weight: bold;
+    font-size: 11px;
+    letter-spacing: -1px;
+    color: #222;
+    background: #fff
+}
+
+#SkyBanner div.quickService .menu p.myResumeInfo {
+    border-bottom: 0 none
+}
+
+#SkyBanner div.quickService .menu p.myJobInfo {
+    padding-bottom: 7px;
+    font-weight: normal;
+    text-align: center
+}
+
+#SkyBanner div.quickService .menu p.joinGuide {
+    padding-top: 2px;
+    border: 0 none
+}
+
+#SkyBanner div.quickService .menu p.resumeRead {
+    padding: 10px 7px 7px;
+    border-top: 1px solid #ddd;
+    border-bottom: 0 none;
+    text-align: center
+}
+
+#SkyBanner div.quickService .menu p.resumeRead .icon {
+    *zoom:1;display: inline-block;
+    *display: inline;
+    width: 30px;
+    height: 30px;
+    background: url('//image.alba.kr/biz/guide/searchtalent/talent_icon.png') no-repeat
+}
+
+#SkyBanner div.quickService .menu p.resumeRead .resumeRead-title {
+    display: block;
+    padding-top: 10px;
+    font-weight: normal;
+    color: #222;
+    background-color: #fff
+}
+
+/* #SkyBanner div.quickService .menu ul {padding:0 0 0 6px} */
+#SkyBanner div.quickService .menu ul.noMember {
+    border-bottom: 0 none
+}
+
+#SkyBanner div.quickService .menu p a.cnt {
+    display: inline;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: verdana
+}
+
+#SkyBanner div.quickService .chat {
+    position: relative;
+    border: 1px solid #b2b2b2;
+    border-bottom: 0
+}
+
+#SkyBanner div.quickService .chat a {
+    display: block;
+    height: 24px;
+    padding: 8px 0 0 5px;
+    font-weight: bold;
+    font-size: 11px
+}
+
+#SkyBanner div.quickService .today {
+    position: relative;
+    border: 1px solid #b2b2b2
+}
+
+#SkyBanner div.quickService .today h2 {
+    width: 99px;
+    height: 24px;
+    padding: 8px 0 0 5px;
+    font-weight: bold;
+    font-size: 11px;
+    letter-spacing: -1px;
+    border-bottom: 1px solid #e6e6e6
+}
+
+#SkyBanner div.quickService .today h2 a.cnt {
+    padding-left: 4px
+}
+
+#SkyBanner div.quickService .today .list {
+    width: 104px
+}
+
+#SkyBanner div.quickService .today .list li {
+    background: #f8f8f8;
+    border-bottom: 1px solid #eee
+}
+
+#SkyBanner div.quickService .today .list li a {
+    display: block;
+    padding: 6px 8px;
+    font-size: 11px;
+    line-height: 1.3;
+    letter-spacing: -1px;
+    color: #717171
+}
+
+#SkyBanner div.quickService .today .list li a .payIcon {
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    vertical-align: initial !important
+}
+
+#SkyBanner div.quickService .today .list li a strong {
+    display: block;
+    font-weight: normal;
+    color: #3973cb
+}
+
+#SkyBanner div.quickService .today .list li a strong strong {
+    display: inline
+}
+
+#SkyBanner div.quickService .today .list li a span.local {
+    display: block;
+    color: #999
+}
+
+#SkyBanner div.quickService .today .list li a span.pay span.consult {
+    position: relative;
+    top: 1px;
+    top: 2px\9;
+    font-weight: bold
+}
+
+#SkyBanner div.quickService .today .list li a span.pay span.num {
+    font-weight: bold;
+    font-size: 11px;
+    font-family: tahoma
+}
+
+#SkyBanner div.quickService .today .list li a span.pay img {
+    margin-right: 2px
+}
+
+/* 급여 옵션 */
+#SkyBanner .quickService .today .pay>.payIcon {
+    position: relative;
+    top: 3px;
+    *top: -1px;
+    overflow: hidden;
+    display: inline-block;
+    width: auto;
+    background: none
+}
+
+#SkyBanner .pay>.payIcon.hour {
+    color: #4c93ac
+}
+
+#SkyBanner .pay>.payIcon.day {
+    color: #59ab4b
+}
+
+#SkyBanner .pay>.payIcon.week {
+    color: #5a74f1
+}
+
+#SkyBanner .pay>.payIcon.month {
+    color: #cb7c1b
+}
+
+#SkyBanner .pay>.payIcon.year {
+    color: #8c6ae7
+}
+
+#SkyBanner .pay>.payIcon.count {
+    color: #e47852
+}
+
+#SkyBanner .pay>.payIcon.talk, #SkyBanner .pay>.payIcon.rule {
+    color: #222
+}
+
+#SkyBanner div.quickService .today .list li.noInfo {
+    padding: 13px 0 19px 7px;
+    padding: 13px 0 17px 7px\0;
+    *padding: 13px 0 17px 7px;
+    font-size: 11px;
+    letter-spacing: -1px
+}
+
+#SkyBanner div.quickService .today .viewAll {
+    padding: 10px 7px 0;
+    font-size: 11px;
+    letter-spacing: -1px
+}
+
+#SkyBanner div.quickService .today .page {
+    position: relative;
+    overflow: hidden;
+    padding: 5px 7px 10px
+}
+
+#SkyBanner div.quickService .today .page a {
+    overflow: hidden;
+    float: left;
+    width: 43px;
+    height: 17px;
+    text-indent: -999em;
+    background: url('//image.alba.kr/e/skyBanner/201307/quickService.gif') no-repeat
+}
+
+#SkyBanner div.quickService .today .page a.prev {
+    margin-right: 4px;
+    background-position: 0 -216px
+}
+
+#SkyBanner div.quickService .today .page a.next {
+    background-position: 0 -243px
+}
+
+#SkyBanner div.quickServiceBrand {
+    width: 70px;
+    margin: 0;
+    padding-bottom: 4px;
+    background: url('//image.alba.kr/skyBanner/quickServiceBrand_bg.gif') no-repeat left bottom
+}
+
+#SkyBanner div.quickServiceBrand h1 {
+    overflow: hidden;
+    width: 70px;
+    height: 20px;
+    text-indent: -999em;
+    background: url('//image.alba.kr/e/skyBanner/201307/quickService.gif') no-repeat 0 -80px
+}
+
+#SkyBanner div.quickServiceBrand ul {
+    width: 56px;
+    margin: 0 auto
+}
+
+#SkyBanner div.quickServiceBrand ul li {
+    overflow: hidden;
+    height: 21px;
+    text-indent: -999em;
+    background: url('//image.alba.kr/e/skyBanner/202302/quickService.png') no-repeat
+}
+
+#SkyBanner div.quickServiceBrand ul li.resumeReg {
+    background-position: 0 -105px
+}
+
+#SkyBanner div.quickServiceBrand ul li.resumeMag {
+    background-position: 0 -131px
+}
+
+#SkyBanner div.quickServiceBrand ul li.jodReg {
+    background-position: 0 -158px
+}
+
+#SkyBanner div.quickServiceBrand ul li.jobMag {
+    background-position: 0 -184px
+}
+
+#SkyBanner div.quickServiceBrand ul li.jobCert {
+    height: 35px;
+    background-position: 0 -211px
+}
+
+#SkyBanner div.quickServiceBrand ul li.jobCert a {
+    height: 35px
+}
+
+#SkyBanner div.quickServiceBrand ul li a {
+    display: block;
+    height: 21px
+}
+
+#SkyBanner p.magNomember {
+    width: 58px;
+    margin: 0;
+    padding: 25px 0;
+    background: url('//image.alba.kr/skyBanner/bg_magNomember.gif') no-repeat left top
+}
+
+#SkyBanner p.magNomember a {
+    display: block;
+    margin: 0 0 2px
+}
+
+.skybanner-link {
+    border-right: 1px solid #dedede;
+    border-left: 1px solid #dedede
+}
+
+.skybanner-link>li {
+    border-bottom: 1px solid #dedede
+}
+
+.skybanner-link a {
+    display: block;
+    height: 31px;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 31px;
+    text-align: center;
+    color: #717171;
+    background-color: #f8f8f8
+}
+
+.skybanner-link a::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 7px 2px 0 0;
+    vertical-align: top;
+    background: url('//image.alba.kr/skyBanner/skybanner-link.png') no-repeat 0 0 / 36px auto
+}
+
+.skybanner-link>li.voice a::before {
+    background-position: 0 -18px
+}
+
+.skybanner-link>li.fake a::before {
+    background-position: -18px -18px
+}
+
+.quickTop {
+    position: fixed;
+    _position: absolute;
+    bottom: -33px;
+    left: 50%;
+    margin-left: 543px
+}
+
+/* 배너 - 날개 */
+#WingBanner {
+    overflow: hidden;
+    position: absolute;
+    top: 218px;
+    right: 50%;
+    width: 94px;
+    margin-right: 545px
+}
+
+body.job #WingBanner, body.recruit #WingBanner, body.resume #WingBanner, body.talent #WingBanner, body.story #WingBanner {
+    top: 329px
+}
+
+body#JobBrandMainGate #WingBanner {
+    top: 568px
+}
+
+body.contract #WingBanner {
+    top: 241px
+}
+
+#WingBanner .pointGuide {
+    position: relative;
+    width: 65px;
+    height: 75px;
+    margin-left: 15px
+}
+
+#WingBanner .pointGuide .pointShadow {
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    width: 43px;
+    height: 12px;
+    margin-right: -21px;
+    background: url('//image.alba.kr/person/point.png') no-repeat 0 -84px;
+    animation: alPoShadow 1.5s ease-out 1s forwards;
+    -webkit-animation: alPoShadow 1.5s ease-out 1s forwards
+}
+
+#WingBanner .pointGuide .pointBtn {
+    position: absolute;
+    right: 50%;
+    bottom: 5px;
+    display: block;
+    width: 55px;
+    height: 55px;
+    margin-right: -27px;
+    font-size: 0;
+    color: transparent;
+    background: url('//image.alba.kr/person/point.png') no-repeat 0 -24px;
+    animation: alPoBtn 1.5s ease-out 1s forwards;
+    -webkit-animation: alPoBtn 1.5s ease-out 1s forwards
+}
+
+#WingBanner .pointGuideLayer {
+    z-index: 1100;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+#WingBanner .pointGuideLayer .layerWrap {
+    z-index: 1100;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 380px;
+    margin: 0 0 0 -193px;
+    background: #fff;
+    border: 3px solid #494949;
+    box-shadow: 0 0 5px #494949
+}
+
+#WingBanner .pointGuideLayer .title {
+    padding: 17px 0 12px 18px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #000;
+    border-bottom: 1px solid #eaeaea
+}
+
+#WingBanner .pointGuideLayer .title strong {
+    display: inline-block;
+    height: 19px;
+    height: 17px\0;
+    *height: 17px;
+    padding: 5px 7px 0;
+    padding: 7px 7px 0\0;
+    *padding: 7px 7px 0;
+    font-size: 12px;
+    color: #ff0000;
+    background: #fff9f7;
+    border: 1px solid #ffd4d4
+}
+
+#WingBanner .pointGuideLayer .pointList {
+    margin-top: -1px;
+    padding: 0 20px;
+    border-bottom: 1px solid #cdcdcd
+}
+
+#WingBanner .pointGuideLayer .pointList li {
+    position: relative;
+    padding: 11px 0 11px 4px;
+    border-top: 1px solid #eaeaea
+}
+
+#WingBanner .pointGuideLayer .pointList li em {
+    display: inline-block;
+    width: 34px;
+    height: 23px;
+    padding: 11px 0 0;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    color: #614400;
+    background: #ffc000;
+    border-radius: 50%
+}
+
+#WingBanner .pointGuideLayer .pointList li strong {
+    display: inline-block;
+    width: 210px;
+    padding-left: 7px;
+    vertical-align: middle;
+    color: #282828
+}
+
+#WingBanner .pointGuideLayer .pointList li .contants {
+    display: block;
+    margin-top: 3px;
+    font-weight: normal;
+    color: #666
+}
+
+#WingBanner .pointGuideLayer .pointList li .state {
+    display: inline-block;
+    width: 73px;
+    height: 21px;
+    height: 19px\0;
+    *height: 20px;
+    *margin-left: 4px;
+    padding: 8px 0 0;
+    padding: 10px 0 0\0;
+    *padding: 9px 0 0;
+    line-height: 14px;
+    text-align: center;
+    vertical-align: middle;
+    color: #dc5333;
+    background: #fff9f7;
+    border: 1px solid #ffd4d4;
+    border-bottom: 1px solid #ecbbb7
+}
+
+#WingBanner .pointGuideLayer .pointList li .state.ing {
+    height: 28px;
+    height: 26px\0;
+    *height: 27px;
+    padding: 1px 0 0;
+    padding: 3px 0 0\0;
+    *padding: 2px 0 0;
+    color: #dc5333;
+    background: #fff;
+    border: 1px solid #ffd4d4
+}
+
+#WingBanner .pointGuideLayer .pointList li .state.complete {
+    color: #9d9c9c;
+    background: #fff;
+    border: 1px solid #e2e2e2
+}
+
+#WingBanner .pointGuideLayer .btnAction {
+    overflow: hidden;
+    padding: 20px 0;
+    text-align: center
+}
+
+#WingBanner .pointGuideLayer .btnAction a {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 11px 25px 10px;
+    padding: 12px 25px 9px\0;
+    *padding: 12px 25px 9px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: top;
+    color: #000;
+    background: #fff;
+    border: 1px solid #d5d5d5;
+    border-bottom: 1px solid #aaa
+}
+
+#WingBanner .pointGuideLayer .btnAction a span {
+    display: inline-block;
+    width: 6px;
+    height: 9px;
+    margin: 0 0 0 4px;
+    background: url('//image.alba.kr/person/point.png') no-repeat -69px -28px
+}
+
+#WingBanner .pointGuideLayer .closeBtn {
+    position: absolute;
+    right: 13px;
+    top: 16px;
+    width: 14px;
+    height: 14px;
+    font-size: 0;
+    color: transparent;
+    background: url('//image.alba.kr/person/point.png') no-repeat -80px -28px
+}
+
+#WingBanner .pointGuideLayer .filter {
+    z-index: 1100
+}
+
+@keyframes alPoBtn {
+    0% {
+        bottom: 5px
+    }
+
+    20% {
+        bottom: 5px
+    }
+
+    27% {
+        bottom: 30px
+    }
+
+    55% {
+        bottom: 3px
+    }
+
+    60% {
+        bottom: 3px
+    }
+
+    70% {
+        bottom: 30px
+    }
+
+    90% {
+        bottom: 2px
+    }
+
+    96% {
+        bottom: 7px
+    }
+
+    100% {
+        bottom: 5px
+    }
+}
+
+@-webkit-keyframes alPoBtn {
+    0% {
+        bottom: 5px
+    }
+
+    20% {
+        bottom: 5px
+    }
+
+    27% {
+        bottom: 30px
+    }
+
+    55% {
+        bottom: 3px
+    }
+
+    60% {
+        bottom: 3px
+    }
+
+    70% {
+        bottom: 30px
+    }
+
+    90% {
+        bottom: 2px
+    }
+
+    96% {
+        bottom: 7px
+    }
+
+    100% {
+        bottom: 5px
+    }
+}
+
+@keyframes alPoShadow {
+    0% {
+        opacity: 1;
+        transform: scale(1,1)
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(1,1)
+    }
+
+    27% {
+        opacity: 0.5;
+        transform: scale(0.7,0.7)
+    }
+
+    55% {
+        opacity: 1;
+        transform: scale(1.1,1.1)
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.1,1.1)
+    }
+
+    70% {
+        opacity: 0.5;
+        transform: scale(0.7,0.7)
+    }
+
+    90% {
+        opacity: 1;
+        transform: scale(1.1,1.1)
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1,1)
+    }
+}
+
+@-webkit-keyframes alPoShadow {
+    0% {
+        opacity: 1;
+        -webkit-transform: scale(1,1)
+    }
+
+    20% {
+        opacity: 1;
+        -webkit-transform: scale(1,1)
+    }
+
+    27% {
+        opacity: 0.5;
+        -webkit-transform: scale(0.7,0.7)
+    }
+
+    55% {
+        opacity: 1;
+        -webkit-transform: scale(1.1,1.1)
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: scale(1.1,1.1)
+    }
+
+    70% {
+        opacity: 0.5;
+        -webkit-transform: scale(0.7,0.7)
+    }
+
+    90% {
+        opacity: 1;
+        -webkit-transform: scale(1.1,1.1)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1,1)
+    }
+}
+
+#WingBannerBiz {
+    z-index: 2;
+    position: fixed;
+    top: 179px;
+    left: 50%;
+    width: 160px;
+    margin-left: 548px
+}
+
+#WingBannerBiz .agency-banner {
+    width: 160px
+}
+
+#WingBannerBiz .agency-banner img {
+    width: 100%
+}
+
+#WingBannerBiz .agency-banner__customer {
+    display: block;
+    width: 160px;
+    height: 41px;
+    margin-top: 5px;
+    line-height: 41px;
+    font-size: 16px;
+    text-align: center;
+    color: #666;
+    background-color: #f8f8f8
+}
+
+#WingBannerBiz .agency-banner--left .agency-banner__customer {
+    height: 50px;
+    line-height: 50px;
+    margin-top: 10px;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
+    font-family: HGSoftGGothicssi60g;
+    letter-spacing: 0;
+    font-size: 16px;
+    color: #595e69
+}
+
+#WingBannerBiz .agency-banner--left .agency-banner__customer strong {
+    line-height: 0;
+    font-size: 17px
+}
+
+#WingBannerBiz .consultant {
+    position: relative;
+    margin-bottom: 10px
+}
+
+#WingBannerBiz .consultant__icon {
+    display: none
+}
+
+#WingBannerBiz .consultant__wrap {
+    width: 128px;
+    padding: 20px 15px;
+    border: 1px solid #ddd;
+    background-color: #fff
+}
+
+#WingBannerBiz .consultant__name {
+    margin: 0 0 10px;
+    padding: 0 0 10px 43px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    line-height: 1.36;
+    background: url('//image.alba.kr/biz/icon_consultant.png') no-repeat 0 0
+}
+
+#WingBannerBiz .consultant__name>strong {
+    font-weight: bold;
+    font-size: 15px;
+    color: #222
+}
+
+#WingBannerBiz .consultant__tel {
+    display: block;
+    margin-bottom: 3px;
+    font-weight: bold;
+    font-size: 19px;
+    color: #3366cc
+}
+
+#WingBannerBiz .consultant__time {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 14px;
+    color: #666
+}
+
+#WingBannerBiz .consultant__time>em {
+    letter-spacing: 0
+}
+
+#WingBannerBiz .consultant__mail {
+    font-size: 14px;
+    letter-spacing: 0;
+    color: #222
+}
+
+@media all and (max-width: 1280px) {
+    #WingBannerBiz .consultant__icon {
+        display:block
+    }
+
+    #WingBannerBiz .consultant__wrap {
+        display: none
+    }
+
+    #WingBannerBiz .consultant__icon:hover + .consultant__wrap {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 160px
+    }
+}
+
+.regist-guide__agency, .regist-guide__limitrule {
+    margin-bottom: 10px
+}
+
+.regist-guide__customer {
+    padding: 15px 0 0;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
+    border-radius: 6px;
+    background-color: #fff
+}
+
+.regist-guide__customer-title {
+    font-family: HGSoftGGothicssi80g;
+    letter-spacing: 0;
+    text-align: center;
+    color: #444
+}
+
+.regist-guide__customer-tel {
+    margin-bottom: 5px;
+    font-size: 28px;
+    text-align: center;
+    color: #0076ff
+}
+
+.regist-guide__customer-center {
+    display: none;
+    padding: 0 10px
+}
+
+.customer-center__time {
+    margin-bottom: 8px;
+    padding: 8px 10px;
+    background-color: #fafafa;
+    opacity: 0.8
+}
+
+.customer-center__time>li {
+    font-size: 12px;
+    color: #666
+}
+
+.customer-center__time span {
+    display: inline-block;
+    width: 45px;
+    font-size: 13px
+}
+
+.customer-center__time em {
+    font-size: 14px;
+    letter-spacing: 0
+}
+
+.customer-center__list {
+    overflow: hidden;
+    margin-bottom: 10px
+}
+
+.customer-center__list>li {
+    float: right;
+    box-sizing: border-box;
+    width: 83px;
+    height: 24px;
+    border: 1px solid rgba(153,153,153,0.5);
+    border-radius: 4px;
+    font-size: 11px;
+    line-height: 22px;
+    text-align: center;
+    color: #444;
+    background-color: #fff
+}
+
+.customer-center__list>li:first-child {
+    float: left;
+    width: 74px
+}
+
+.regist-guide__customer-detail>a {
+    display: block;
+    height: 27px;
+    border-top: 1px solid #ebebeb;
+    font-size: 12px;
+    line-height: 27px;
+    text-align: center;
+    color: #666
+}
+
+.regist-guide__customer-detail>a::after {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin: 9px 0 0 6px;
+    border-top: 1px solid #666;
+    border-right: 1px solid #666;
+    vertical-align: top;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg)
+}
+
+.regist-guide__customer-detail>a.on::after {
+    margin-top: 12px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg)
+}
+
+/* 하단 이용가이드 레이어 */
+#UserGuideLayer {
+    z-index: 99999;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 183px
+}
+
+#UserGuideLayer .guideTitle {
+    position: relative;
+    width: 183px
+}
+
+#UserGuideLayer .guideTitle h1 {
+    height: 17px;
+    padding: 7px 10px 0;
+    font-weight: bold;
+    font-size: 12px;
+    color: #8ad6fd;
+    background: url('//image.alba.kr/customer/Guide_box_top.gif') no-repeat left top
+}
+
+#UserGuideLayer .guideTitle p.btn {
+    position: absolute;
+    top: 2px;
+    right: 2px
+}
+
+#UserGuideLayer .guideTitle p.btn img {
+    cursor: pointer
+}
+
+#UserGuideLayer .guideTitle p.btn img.open {
+    display: none
+}
+
+#UserGuideLayer .guideContens {
+    overflow: hidden;
+    width: 163px;
+    padding: 8px 10px;
+    font-size: 11px;
+    background: url('//image.alba.kr/customer/Guide_box_bottom.gif') no-repeat left bottom
+}
+
+#UserGuideLayer .guideContens p.txt {
+    margin-bottom: 3px;
+    letter-spacing: -1px
+}
+
+#UserGuideLayer .guideContens p.btn {
+    float: left;
+    height: 22px;
+    background: url('//image.alba.kr/customer/Guide_bul_Guideleft.gif') repeat-x left top
+}
+
+#UserGuideLayer .guideContens p.btn a {
+    float: left;
+    height: 16px;
+    padding: 6px 13px 0 5px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    color: #036ba1;
+    background: url('//image.alba.kr/customer/Guide_bul_Guideright.gif') no-repeat right top
+}
+
+#JobDetail #UserGuideLayer .guideContens {
+    display: none
+}
+
+#JobDetail #UserGuideLayer .guideTitle p.btn img.open {
+    display: block
+}
+
+#JobDetail #UserGuideLayer .guideTitle p.btn img.close {
+    display: none
+}
+
+/* 기업회원 로그인 알림 */
+#LoginAlarm {
+    z-index: 99999;
+    position: fixed;
+    right: 50%;
+    bottom: 0;
+    margin-right: -480px;
+    border: 1px solid #7ac8f0
+}
+
+#LoginAlarm p {
+    font-size: 12px;
+    font-family: tahoma;
+    letter-spacing: -1px
+}
+
+#LoginAlarm div.close {
+    position: absolute;
+    top: 1px;
+    right: 1px
+}
+
+#LoginAlarm div.close img {
+    cursor: pointer
+}
+
+#LoginAlarm .paymentWait {
+    padding: 5px;
+    background: #ebf8ff;
+    text-align: center;
+    border: 1px solid #fafdff
+}
+
+#LoginAlarm .paymentWait p.guide {
+    padding: 9px 25px;
+    line-height: 1.4;
+    background: #fff
+}
+
+#LoginAlarm .paymentWait p.guide strong {
+    color: #0062db
+}
+
+#LoginAlarm .paymentWait p.title {
+    padding: 9px 25px;
+    font-weight: bold;
+    line-height: 1.4;
+    background: #fff;
+    border-top: 1px solid #ebf8ff
+}
+
+#LoginAlarm .paymentWait p.action {
+    padding: 15px 25px 7px
+}
+
+#LoginAlarm .paymentWait p.action img {
+    margin: 0 1px
+}
+
+#LoginAlarm .bizCertState {
+    padding: 5px;
+    background: #ebf8ff;
+    border: 1px solid #fafdff
+}
+
+#LoginAlarm .bizCertState p.title {
+    padding: 4px 6px 9px;
+    font-weight: bold;
+    text-align: center;
+    color: #0068a4
+}
+
+#LoginAlarm .bizCertState p.state {
+    padding: 9px 6px;
+    text-align: center;
+    background: #fff
+}
+
+#LoginAlarm .bizCertState p.guide {
+    padding: 0 13px 9px;
+    font-size: 11px;
+    line-height: 1.5;
+    background: #fff
+}
+
+#LoginAlarm .bizCertState p.guide strong {
+    font-weight: normal;
+    color: #e74c00
+}
+
+#LoginAlarm .bizCertState p.guide em {
+    margin-right: 15px;
+    letter-spacing: 0
+}
+
+#LoginAlarm .bizCertState p.guide a {
+    letter-spacing: 0;
+    color: #0082cc
+}
+
+#LoginAlarm .bizCertState p.view {
+    padding: 15px 6px 7px;
+    text-align: center
+}
+
+/* 구글 AD */
+#GoogleAdSide {
+    margin: 10px 0 0 10px
+}
+
+#GoogleAdFooter {
+    margin: 0 0 10px 190px
+}
+
+/* 지니어스 추천 인재제공 서비스 */
+.geniusLayer {
+    z-index: 9999;
+    display: none;
+    position: absolute;
+    width: 596px;
+    height: 262px;
+    text-indent: -999em;
+    background: #fff url('//image.alba.kr/e/serviceguide/201401/genius_layer.png') no-repeat 0 0
+}
+
+.geniusLayer li {
+    border: 0 none !important
+}
+
+.geniusLayer p {
+    background: none !important
+}
+
+.geniusLayer .view {
+    position: absolute;
+    top: 12px;
+    left: 271px;
+    width: 71px;
+    height: 20px;
+    text-indent: 0
+}
+
+.geniusLayer .view a {
+    display: block;
+    height: 20px;
+    text-indent: -999em
+}
+
+.geniusLayer .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 49px;
+    height: 41px;
+    text-indent: 0
+}
+
+.geniusLayer .close a {
+    display: block;
+    height: 41px;
+    text-indent: -999em
+}
+
+/* 제휴사이트 잡서치 안내 */
+.jobsearchLayer {
+    z-index: 9999;
+    display: none;
+    position: absolute;
+    width: 490px;
+    height: 281px;
+    text-indent: -999em;
+    background: #fff url('//image.alba.kr/e/serviceguide/201603/jobsearch_layer.png') no-repeat 0 0
+}
+
+.jobsearchLayer p, .jobsearchLayer a {
+    background: none !important
+}
+
+.jobsearchLayer .view {
+    position: absolute;
+    left: 338px;
+    top: 64px;
+    width: 67px;
+    height: 18px;
+    text-indent: 0
+}
+
+.jobsearchLayer .view a {
+    display: block;
+    width: 100% !important;
+    height: 18px !important;
+    text-indent: -999em
+}
+
+.jobsearchLayer .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 49px;
+    height: 41px;
+    text-indent: 0
+}
+
+.jobsearchLayer .close a {
+    display: block;
+    width: 100% !important;
+    height: 41px !important;
+    text-indent: -999em
+}
+
+/* location 프로모션 영역 */
+#PrLocation {
+    z-index: 10;
+    position: relative;
+    width: 1070px;
+    margin: 0 auto
+}
+
+.prLocation {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    padding-right: 1px;
+    letter-spacing: -1px
+}
+
+.prLocation a.linkLayer span {
+    position: relative;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 1px 4px 0 0;
+    vertical-align: top;
+    background: url('//image.alba.kr/e/common/201406/prLocation.png') no-repeat -90px 0
+}
+
+.prLocationLayer {
+    display: none;
+    position: absolute;
+    top: 23px;
+    right: -12px;
+    width: 200px;
+    height: 90px;
+    background-color: #fff;
+    border: 2px solid #666
+}
+
+.prLocationLayer p.title {
+    padding: 10px 10px 0
+}
+
+.prLocationLayer p.guide {
+    padding: 5px 10px;
+    font-size: 11px;
+    line-height: 1.3;
+    color: #888
+}
+
+.prLocationLayer p.link {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 190px;
+    height: 19px;
+    height: 18px\0;
+    *height: 18px;
+    padding: 7px 10px 0 0;
+    padding-top: 8px\0;
+    *padding-top: 8px;
+    text-align: right;
+    color: #fff;
+    background-color: #63c5de
+}
+
+.prLocationLayer p.link a {
+    color: #fff
+}
+
+.prLocationLayer p.link span {
+    position: relative;
+    top: 5px;
+    display: inline-block;
+    width: 5px;
+    height: 7px;
+    margin-left: 4px;
+    vertical-align: top;
+    background: url('//image.alba.kr/e/common/201406/prLocation.png') no-repeat -37px 0
+}
+
+.prLocationLayer p.close {
+    position: absolute;
+    top: 11px;
+    right: 8px
+}
+
+.prLocationLayer p.close a {
+    display: block;
+    width: 9px;
+    height: 9px;
+    text-indent: -999em;
+    background: url('//image.alba.kr/e/common/201406/prLocation.png') no-repeat -47px 0
+}
+
+.prLocationLayer span.arrow {
+    position: absolute;
+    top: -8px;
+    width: 11px;
+    height: 8px;
+    background: url('//image.alba.kr/e/common/201406/prLocation.png') no-repeat -21px 0
+}
+
+.prLocation1 span.arrow {
+    left: 26px;
+    left: 22px\0
+}
+
+.prLocation2 span.arrow {
+    left: 48px;
+    left: 43px\0
+}
+
+.prLocation3 span.arrow {
+    left: 37px;
+    left: 34px\0
+}
+
+.prLocation4 span.arrow {
+    left: 52px;
+    left: 48px\0
+}
+
+/* 채팅상담 */
+.customerChat-btn {
+    position: fixed;
+    left: 50%;
+    bottom: 50px;
+    width: 58px;
+    height: 58px;
+    margin-left: 539px;
+    padding: 10px
+}
+
+.customerChat-btn img {
+    width: 100%
+}
+
+.customerChat-layerWrap {
+    display: none;
+    z-index: 999999;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none
+}
+
+.customerChat-layer {
+    z-index: 999998;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background-color: #fff
+}
+
+.customerChat-layerContent {
+    position: relative
+}
+
+.customerChat-layerClose {
+    position: absolute;
+    right: 16px;
+    top: 17px;
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+    color: transparent;
+    background: url('//image.alba.kr/common/customer_chat_bg.png') no-repeat -77px 0
+}
+
+/* 채팅상담 - 정보입력 */
+#CustomerChat-infoWrite .customerChat-layer {
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 361px;
+    height: 500px;
+    padding: 25px 32px 22px;
+    margin: -300px 0 0 -213px;
+    border: 1px solid #c6c6c6
+}
+
+#CustomerChat-infoWrite .customerChat-layer * {
+    font-weight: bold;
+    letter-spacing: -1px
+}
+
+#CustomerChat-infoWrite p {
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #8b8a8a
+}
+
+#CustomerChat-infoWrite .title {
+    margin-bottom: 22px;
+    font-size: 34px;
+    text-align: center;
+    color: #955c3f
+}
+
+#CustomerChat-infoWrite .title>.balloon {
+    position: relative;
+    top: 12px;
+    display: inline-block;
+    width: 57px;
+    height: 31px;
+    margin-left: 5px;
+    vertical-align: top;
+    background: url('//image.alba.kr/common/customer_chat_bg.png') no-repeat 0 0
+}
+
+#CustomerChat-infoWrite .customerChat-write>li {
+    overflow: hidden;
+    height: 45px;
+    margin-top: -1px;
+    border: 1px solid #cfcfcf
+}
+
+#CustomerChat-infoWrite .customerChat-write>li:first-child {
+    margin-top: 0
+}
+
+#CustomerChat-infoWrite .customerChat-write>li>.item {
+    float: left;
+    width: 110px
+}
+
+#CustomerChat-infoWrite .customerChat-write>li>.item>label {
+    display: block;
+    height: 33px;
+    padding: 12px 0 0 12px;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: -1px
+}
+
+#CustomerChat-infoWrite .customerChat-write>li>.itemDetail {
+    overflow: hidden;
+    padding: 0 5px
+}
+
+#CustomerChat-infoWrite .customerChat-write>li>.itemDetail>input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 44px;
+    *height: 45px;
+    margin-top: 1px;
+    *margin-top: 0;
+    font-weight: normal;
+    font-size: 15px;
+    vertical-align: top;
+    color: #ababab;
+    border: 0 none;
+    letter-spacing: 0
+}
+
+#CustomerChat-infoWrite .customerChat-write>li.full {
+    height: auto;
+    margin: 0;
+    padding: 27px 0 0;
+    border: 0 none
+}
+
+#CustomerChat-infoWrite .customerChat-write>li.full>.item {
+    float: none;
+    width: auto
+}
+
+#CustomerChat-infoWrite .customerChat-write>li.full>.item>label {
+    height: auto;
+    padding: 0 0 8px;
+    color: #8b8b8b
+}
+
+#CustomerChat-infoWrite .customerChat-write>li.full>.itemDetail {
+    overflow: hidden;
+    width: 100%;
+    padding: 0
+}
+
+#CustomerChat-infoWrite .customerChat-write>li.full>.itemDetail>select {
+    width: 48%;
+    height: 32px;
+    padding-left: 10px;
+    border: 1px solid #d7d7d7
+}
+
+#CustomerChat-infoWrite .customerChat-write>li.full>.itemDetail>select:first-child {
+    margin-right: 10px
+}
+
+#CustomerChat-infoWrite .infomationAgree-wrap {
+    padding: 10px 0
+}
+
+#CustomerChat-infoWrite .infomationAgree-check {
+    position: relative;
+    padding: 5px 0 5px 10px
+}
+
+#CustomerChat-infoWrite .infomationAgree-check>.input {
+    position: relative;
+    display: inline-block;
+    vertical-align: top
+}
+
+#CustomerChat-infoWrite .infomationAgree-check>.input>input {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0
+}
+
+#CustomerChat-infoWrite .infomationAgree-check>.input>label {
+    z-index: 2;
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    padding: 0 0 0 25px;
+    font-size: 15px;
+    line-height: 20px;
+    color: #181818;
+    background: #fff url('//image.alba.kr/common/customer_chat_bg.png') no-repeat 0 -90px
+}
+
+#CustomerChat-infoWrite .infomationAgree-check>.input>input:checked+label , #CustomerChat-infoWrite .infomationAgree-check>.input.on>label {
+    background-position: 0 -50px
+}
+
+#CustomerChat-infoWrite .infomationAgree-check .input.on input[type="checkbox"]+label {
+    background-position: 0 -50px
+}
+
+#CustomerChat-infoWrite .infomationAgree-check>.agree-check-moreView {
+    display: inline-block;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: -0.07em;
+    vertical-align: top;
+    color: #ffa200;
+    text-decoration: underline
+}
+
+#CustomerChat-infoWrite .infomationAgree {
+    display: none;
+    padding: 5px 0 20px 15px
+}
+
+#CustomerChat-infoWrite .infomationAgree>p {
+    font-size: 13px
+}
+
+#CustomerChat-infoWrite .infomationAgree>ul>li {
+    padding: 3px 0 2px;
+    font-size: 12px;
+    color: #000
+}
+
+#CustomerChat-infoWrite .customerChat-startBtn {
+    display: block;
+    height: 51px;
+    font-size: 20px;
+    line-height: 51px;
+    text-align: center;
+    color: #3c3c3c;
+    background: #ffd100;
+    text-decoration: none
+}
+
+/* 채팅상담 - 시간안내 */
+#CustomerChat-timeOver .customerChat-layer {
+    width: 361px;
+    height: 256px;
+    padding: 54px 32px 22px;
+    margin: -166px 0 0 -213px;
+    border: 1px solid #c6c6c6
+}
+
+#CustomerChat-timeOver .customerChat-layer * {
+    font-weight: bold;
+    letter-spacing: -1px;
+    text-align: center
+}
+
+#CustomerChat-timeOver .customerChat-timeInfo-guide1 {
+    margin-bottom: 12px;
+    font-size: 17px;
+    color: #949494
+}
+
+#CustomerChat-timeOver .customerChat-timeInfo-guide1>span {
+    position: relative;
+    top: 3px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: top;
+    background: url('//image.alba.kr/common/customer_chat_bg.png') no-repeat -80px -30px
+}
+
+#CustomerChat-timeOver .customerChat-timeInfo-title {
+    margin-bottom: 11px;
+    font-size: 26px;
+    letter-spacing: -0.07em;
+    color: #955c3f
+}
+
+#CustomerChat-timeOver .customerChat-timeInfo-list {
+    margin-bottom: 13px;
+}
+
+#CustomerChat-timeOver .customerChat-timeInfo-list>li {
+    margin-top: 3px;
+    font-size: 15px;
+    color: #545454
+}
+
+#CustomerChat-timeOver .customerChat-timeInfo-list>li:first-child {
+    margin-top: 0
+}
+
+#CustomerChat-timeOver .customerChat-timeInfo-list>li>span {
+    position: relative;
+    top: 10px;
+    display: inline-block;
+    width: 2px;
+    height: 2px;
+    margin-right: 5px;
+    vertical-align: top;
+    background: #545454
+}
+
+#CustomerChat-timeOver .customerChat-timeInfo-guide2 {
+    margin-bottom: 27px;
+    font-size: 15px;
+    color: #9e9e9e
+}
+
+#CustomerChat-timeOver .customerChat-timeInfo-btn {
+    display: block;
+    height: 51px;
+    font-size: 20px;
+    line-height: 51px;
+    text-align: center;
+    color: #3c3c3c;
+    background: #ffd100
+}
+
+/* 설문조사 */
+.survey-wrapper {
+    position: fixed;
+    bottom: 100px;
+    right: 0
+}
+
+.survey__icon {
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 30px;
+    vertical-align: top;
+    font-size: 0;
+    line-height: 0;
+    background: url('//image.alba.kr/common/w_survey.png')
+}
+
+.survey__icon--pen {
+    top: 4px;
+    width: 24px;
+    height: 23px;
+    margin-right: 4px;
+    background-position: 0 0
+}
+
+.survey__icon--agree {
+    margin-bottom: 8px;
+    background-position: 0 -33px
+}
+
+.survey__icon--disagree {
+    margin-bottom: 8px;
+    background-position: -45px -33px
+}
+
+.survey__icon--close {
+    position: absolute;
+    right: 10px;
+    top: 11px;
+    width: 16px;
+    height: 15px;
+    background-position: -40px 0
+}
+
+.survey__button {
+    z-index: 999999;
+    position: fixed;
+    bottom: 100px;
+    right: 0;
+    padding: 7px 16px;
+    font-size: 12px !important;
+    letter-spacing: -1px;
+    line-height: 32px;
+    border-radius: 25px;
+    background: #3366cc;
+    color: #fff !important;
+    -webkit-animation: balloon 1s linear infinite;
+    animation: balloon 1s linear infinite;
+}
+
+@-webkit-keyframes balloon {
+    0% {
+        bottom: 100px
+    }
+
+    50% {
+        bottom: 90px
+    }
+
+    100% {
+        bottom: 100px
+    }
+}
+
+@keyframes balloon {
+    0% {
+        bottom: 100px
+    }
+
+    50% {
+        bottom: 90px
+    }
+
+    100% {
+        bottom: 100px
+    }
+}
+
+.survey__layer {
+    z-index: 999999;
+    position: fixed;
+    bottom: 100px;
+    right: 0;
+    letter-spacing: -1px;
+    text-align: left;
+    border: 1px solid #3366cc;
+    background: #fff
+}
+
+.survey__head {
+    height: 39px;
+    padding: 0 35px 0 15px;
+    border-bottom: 1px solid #3366cc;
+    font-size: 12px;
+    line-height: 39px;
+    text-align: left;
+    background: #3366cc;
+    color: #fff
+}
+
+.survey__body {
+    position: relative;
+    width: 190px;
+    padding: 20px 10px
+}
+
+.survey__title {
+    padding: 0 0 10px;
+    font-size: 12px;
+    text-align: center
+}
+
+.survey__list {
+    *zoom:1}
+
+.survey__list:after {
+    content: "";
+    clear: both;
+    display: table;
+    width: 100%;
+    height: 0;
+    font-size: 0;
+    line-height: 0
+}
+
+.survey__item {
+    position: relative;
+    padding: 4px 0 3px 15px;
+    font-size: 12px
+}
+
+.survey__item--agree , .survey__item--disagree {
+    float: left;
+    width: 50%;
+    padding: 0;
+    text-align: center;
+    cursor: pointer
+}
+
+.survey__item--agree p, .survey__item--disagree p {
+    font-size: 12px
+}
+
+.survey__layer .survey__input {
+    position: absolute;
+    left: 0;
+    top: 8px;
+    margin: 0
+}
+
+.survey__layer .survey__label {
+    display: block;
+    height: 20px;
+    font-size: 12px;
+    line-height: 20px
+}
+
+.survey__layer .survey__label--etc {
+    float: left;
+    margin-right: 8px
+}
+
+.survey__layer .survey__input-text {
+    max-width: 132px;
+    height: 18px;
+    padding: 0;
+    line-height: 18px;
+    overflow: hidden
+}
+
+.survey__layer .survey__submit {
+    display: block;
+    height: 30px;
+    margin-top: 10px;
+    font-size: 12px !important;
+    line-height: 30px;
+    text-align: center;
+    background: #534a3f;
+    color: #fff
+}
+
+.survey__layer .survey__complete {
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center
+}
+
+.survey__layer .survey__complete-bi {
+    display: block;
+    width: 95px;
+    margin: 10px auto 0
+}
+
+.survey__layer .survey__complete-bi-img {
+    width: 100%
+}
+
+/* 약관동의 */
+.agreement-wrapper {
+    position: relative;
+    margin-top: 40px
+}
+
+.agreement__title {
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: -0.03em
+}
+
+.agreement__table {
+    width: 100%;
+    margin-top: 14px !important;
+    border-top: 1px solid #ddd !important;
+    border-bottom: 1px solid #ddd !important
+}
+
+.agreement__table-title {
+    width: 110px;
+    padding: 14px 20px 15px 15px !important;
+    border: 0 none !important;
+    border-top: 1px solid #eee !important;
+    background: #f9f9f9 !important;
+    color: #222 !important
+}
+
+.agreement__table-contents {
+    width: auto;
+    padding: 14px 20px 15px 15px !important;
+    border: 0 none !important;
+    border-top: 1px solid #eee !important;
+    color: #666 !important
+}
+
+.agreement__table-first-row .agreement__table-title , .agreement__table-first-row .agreement__table-contents {
+    border-top: 0 none !important
+}
+
+.agreement__confirm {
+    padding: 20px 0 5px;
+    text-align: center
+}
+
+.agreement__inputbox {
+    position: relative;
+    display: inline-block
+}
+
+.agreement__inputbox * {
+    vertical-align: middle;
+    cursor: pointer
+}
+
+.agreement__input {
+    position: absolute;
+    left: 0;
+    margin: 0;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0)
+}
+
+.agreement__label {
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+    height: 17px;
+    height: 16px\0;
+    *height: 16px;
+    padding: 1px 0 0 20px;
+    padding-top: 2px\0;
+    *padding-top: 2px;
+    background: url('//image.alba.kr/comm/input.png') no-repeat;
+    white-space: nowrap
+}
+
+.agreement__input[type="checkbox"] + label {
+    background-position: 0 1px
+}
+
+.agreement__inputbox.on .agreement__input[type="checkbox"] + label {
+    background-position: 0 -19px;
+    color: #2073f0
+}
+
+.agreement__input[type="radio"] + label {
+    background-position: 0 -39px
+}
+
+.agreement__input.on .agreement__input[type="checkbox"] + label {
+    background-position: 0 -59px;
+    color: #2073f0
+}
+
+/* 업직종 카테고리 개편(PMS-49741) - 업종별 아이콘 개편 */
+.icon-kind {
+    display: inline-block;
+    width: 25px;
+    height: auto;
+    vertical-align: top !important
+}
+
+.icon-kind > img {
+    width: 100%;
+    image-rendering: -webkit-optimize-contrast
+}
+
+/* layerpop */
+.layer-pop {
+    display: none;
+    z-index: 99999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0
+}
+
+.layer-pop.on {
+    display: block
+}
+
+.layer-pop__wrap {
+    z-index: 99999;
+    position: fixed;
+    width: 440px;
+    top: 50%;
+    left: 50%;
+    border-radius: 8px;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%)
+}
+
+.layer-pop__title {
+    height: 69px;
+    padding: 0 70px 0 30px;
+    border-bottom: 1px solid #ebedf1;
+    font-weight: normal;
+    font-size: 24px;
+    font-family: HGSoftGGothicssi60g;
+    letter-spacing: 0;
+    line-height: 71px;
+    color: #000
+}
+
+.layer-pop__title.center {
+    text-align: center
+}
+
+.layer-pop__contents {
+    padding: 30px 30px 20px
+}
+
+.layer-pop__text {
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: #333
+}
+
+.layer-pop__bullet-item {
+    position: relative;
+    padding-left: 8px;
+    font-size: 15px;
+    line-height: 25px;
+    color: #4c515b;
+    word-break: keep-all
+}
+
+.layer-pop__bullet-item::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: #666
+}
+
+.layer-pop__table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse
+}
+
+.layer-pop__table th {
+    height: 49px;
+    border-top: 2px solid #62708c;
+    border-bottom: 1px solid #eee;
+    font-weight: normal;
+    font-size: 14px;
+    color: #666;
+    background-color: #fafafa
+}
+
+.layer-pop__table td {
+    height: 49px;
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0;
+    color: #333
+}
+
+.layer-pop__table td:first-child {
+    border-left: none
+}
+
+.layer-pop__action {
+    padding: 20px 30px 30px;
+    text-align: center
+}
+
+.layer-pop__button {
+    display: inline-block;
+    box-sizing: border-box;
+    min-width: 140px;
+    height: 50px;
+    margin: 0 2px;
+    padding: 0 50px;
+    border-radius: 6px;
+    font-size: 18px;
+    font-family: HGSoftGGothicssi60g;
+    letter-spacing: 0;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none !important;
+    color: #fff !important;
+    background-color: #0076ff
+}
+
+.layer-pop__button.cancel {
+    border: 1px solid #0076ff;
+    line-height: 48px;
+    color: #0076ff !important;
+    background-color: #fff
+}
+
+.layer-pop__term {
+    padding: 0 30px;
+    line-height: 56px;
+    border-radius: 0 0 8px 8px;
+    color: #999;
+    background-color: #f7f7f7
+}
+
+.layer-pop__input {
+    position: relative;
+    display: inline-block
+}
+
+.layer-pop__input input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    margin: 0;
+    cursor: pointer;
+    opacity: 0
+}
+
+.layer-pop__input label {
+    display: inline-block;
+    padding: 0 0 0 30px;
+    font-size: 15px;
+    line-height: 22px;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #222;
+    background: url('//image.alba.kr/m/input_checkbox_off.png') no-repeat;
+    background-size: 22px 22px
+}
+
+.layer-pop__input input[type="checkbox"]:checked + label {
+    background-image: url('//image.alba.kr/m/input_checkbox_on.png')
+}
+
+.layer-pop__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 69px;
+    height: 69px;
+    padding: 0;
+    border-radius: 0 8px 0 0;
+    font-size: 0;
+    text-align: center;
+    cursor: pointer;
+    color: transparent;
+    background-color: #fff
+}
+
+.layer-pop__close::before, .layer-pop__close::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 28px;
+    background-color: #666
+}
+
+.layer-pop__close::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg)
+}
+
+.layer-pop__close::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+    -webkit-transform: translate(-50%, -50%) rotate(45deg)
+}
+
+.up-nudge__guide {
+    margin-bottom: 15px;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center
+}
+
+.up-nudge__guide>span {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #666
+}
+
+.up-nudge__price {
+    padding: 23px 0;
+    text-align: center;
+    background-color: #f7f7f7
+}
+
+.up-nudge__price--coupon {
+    padding: 11px 0 10px
+}
+
+.up-nudge__price>img {
+    image-rendering: -webkit-optimize-contrast
+}
+
+.up-nudge__price>span {
+    display: block;
+    margin-top: 7px;
+    font-size: 13px;
+    color: #666
+}
+
+.goodsMovie {
+    width: 720px;
+    border-radius: 0
+}
+
+/* 안내 텍스트 리스트(공통) */
+.bullet-list__info {
+    padding-left: 1px
+}
+
+.bullet-list__info-item {
+    position: relative;
+    padding-left: 9px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #777e8c;
+    word-break: keep-all
+}
+
+.bullet-list__info-item + .bullet-list__info-item {
+    margin-top: 4px
+}
+
+.bullet-list__info-item::before {
+    content: '';
+    position: absolute;
+    top: 7.2px;
+    left: 0;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #777e8c
+}
+
+.bullet-list__info-item>em {
+    color: #000
+}
+
+.bullet-list__info-item .point-color1 {
+    color: #2e89e5
+}
+
+.bullet-list__info-item .point-color2 {
+    color: #fa5165
+}
+
+/* 맞춤인재 추천 넛지 */
+#LayerCustomizedNudge .layer-pop__wrap {
+    overflow: hidden;
+    width: 528px
+}
+
+#LayerCustomizedNudge .layer-pop__contents {
+    padding: 30px 0 10px
+}
+
+.customized-nudge__title {
+    margin: 0 30px 24px;
+    font-size: 22px;
+    font-family: HGSoftGGothicssi80g;
+    letter-spacing: 0;
+    line-height: 1.4
+}
+
+.customized-nudge__title strong {
+    font-weight: normal;
+    color: #2e89e5
+}
+
+.customized-nudge__set {
+    margin: 0 30px 16px;
+    padding: 13px 16px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-size: 0;
+    background-color: #f2f7fe
+}
+
+.customized-nudge__set li {
+    display: inline-block;
+    padding: 3px 0;
+    font-size: 15px;
+    color: #335780;
+    word-break: break-all
+}
+
+.customized-nudge__set li::after {
+    content: '';
+    display: inline-block;
+    position: relative;
+    top: 1px;
+    margin: 0 8px;
+    width: 1px;
+    height: 13px;
+    background-color: #b4c6e0
+}
+
+.customized-nudge__set li:last-child::after {
+    display: none
+}
+
+.customized-nudge__slide {
+    position: relative;
+    height: 190px;
+    margin: 0 22px 0 30px
+}
+
+.customized-nudge__list {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.customized-nudge__list-item {
+    width: 238px;
+    height: 190px
+}
+
+.customized-nudge__list-link {
+    display: block;
+    height: 190px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: 1px solid #e1e7f0;
+    padding: 20px;
+    margin-right: 8px;
+    text-align: center
+}
+
+.customized-nudge__list-more {
+    font-size: 16px;
+    text-align: center;
+    color: #9096a1
+}
+
+.customized-nudge__list-more::before {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: 23px auto 12px;
+    background: url('//image.alba.kr/e/goods/201506/goodsResume.png') no-repeat -1345px -917px
+}
+
+.customized-nudge__list-photo {
+    overflow: hidden;
+    display: block;
+    box-sizing: border-box;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 16px;
+    border: 1px solid #e8ecf0;
+    border-radius: 50%
+}
+
+.customized-nudge__list-photo img {
+    width: 100%
+}
+
+.customized-nudge__list-name {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: bold
+}
+
+.customized-nudge__list-career {
+    display: block;
+    font-size: 14px;
+    font-weight: bold
+}
+
+.customized-nudge__list-career>em {
+    color: #2e89e5
+}
+
+.customized-nudge__control {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0
+}
+
+.customized-nudge__control-btn {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    padding: 0;
+    font-size: 0;
+    vertical-align: top;
+    color: transparent;
+    background-color: transparent
+}
+
+.customized-nudge__control-btn::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    margin-left: -8px;
+    border-top: 2px solid #a2aebf;
+    border-right: 2px solid #a2aebf
+}
+
+.customized-nudge__control-btn--prev::after {
+    transform: rotate(225deg)
+}
+
+.customized-nudge__control-btn--next::after {
+    transform: rotate(45deg)
+}
+
+.customized-nudge__count {
+    display: inline-block;
+    padding: 0 24px;
+    font-size: 16px;
+    color: #777e8c;
+    vertical-align: top
+}
+
+.customized-nudge__count>em {
+    font-weight: bold;
+    color: #000
+}
+
+/*서비스 만족도조사 팝업*/
+#ServiceLayer .layer-pop__wrap {
+    width: 500px
+}
+
+#ServiceLayer .service_text {
+    font-size: 15px;
+    line-height: 21px;
+    letter-spacing: -1px;
+    color: #222222
+}
+
+#ServiceLayer .service_text>strong {
+    color: #2e89e5
+}
+
+/*알바포인트 종료 팝업*/
+#PointEndLayer .layer-pop__wrap {
+    width: 500px
+}
+
+#PointEndLayer .point-layer__title {
+    line-height: 32px;
+    font-weight: normal;
+    font-size: 24px;
+    font-family: HGSoftGGothicssi60g;
+    letter-spacing: 0;
+    color: #333
+}
+
+#PointEndLayer .point-layer__title>strong {
+    font-weight: normal;
+    font-family: HGSoftGGothicssi80g
+}
+
+#PointEndLayer .point-layer__contents {
+    margin-top: 16px;
+    font-size: 15px;
+    line-height: 25px;
+    color: #333
+}
+
+#PointEndLayer .layer-pop__table {
+    margin-top: 24px
+}
+
+#PointEndLayer .layer-pop__table tr:first-child {
+    border-top: 2px solid #62708c
+}
+
+#PointEndLayer .layer-pop__table th {
+    border-top: none;
+    color: #333
+}
+
+#PointEndLayer .layer-pop__table td {
+    font-weight: bold;
+    letter-spacing: -1px
+}
+
+#PointEndLayer .layer-pop__action {
+    padding: 8px 30px 30px
+}
+
+/* 개인 활동레벨 아이콘*/
+.person-level {
+    display: inline-block;
+    position: relative;
+    height: 17px;
+    border: solid 1px #ffb700;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-family: 'Noto sans';
+    font-size: 0;
+    vertical-align: top;
+    color: #ffb700 !important;
+    background: #fff
+}
+
+.person-level:hover {
+    text-decoration: none
+}
+
+.person-level__icon {
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    left: -2px;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 7px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    box-shadow: 1px 2px 2px 0 rgba(0,0,0,0.1);
+    line-height: 20px;
+    letter-spacing: 0;
+    font-size: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #fff;
+    background: #ffc300
+}
+
+.person-level__icon::before {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    box-sizing: border-box;
+    border: solid 1px #fff;
+    border-radius: 8px;
+    opacity: 0.5;
+    content: ''
+}
+
+.person-level__link {
+    padding: 0 8px 0 2px;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 15px;
+    vertical-align: top
+}
+
+.person-level--20 {
+    border-color: #1da843;
+    color: #1da843 !important
+}
+
+.person-level--20 .person-level__icon {
+    background-color: #21a655
+}
+
+.person-level--30 {
+    border-color: #26a0b0;
+    color: #26a0b0 !important
+}
+
+.person-level--30 .person-level__icon {
+    background-color: #26a0b0
+}
+
+.person-level--40 {
+    border-color: #2a75d1;
+    color: #2a75d1 !important
+}
+
+.person-level--40 .person-level__icon {
+    background-color: #2a75d1
+}
+
+.person-level--50 {
+    border-color: #5e1ebc;
+    color: #5e1ebc !important
+}
+
+.person-level--50 .person-level__icon {
+    background-color: #5e1ebc
+}
+
+/* 채팅문의&지원 - 스크롤 커스텀 */
+.chat-custom-scroll::-webkit-scrollbar {
+    width: 14px
+}
+
+.chat-custom-scroll::-webkit-scrollbar-thumb {
+    background-color: #d3d3d3;
+    border-radius: 8px;
+    background-clip: padding-box;
+    border: 4px solid transparent
+}
+
+.chat-custom-scroll::-webkit-scrollbar-track {
+    box-shadow: inset -1px 0 0 0 rgba(0,0,0,0.02), inset 0.5px 0 0 0 rgba(0,0,0,0.07);
+    background-color: #f9fbfc
+}
+
+/* 채팅문의&지원 - 대시보드 */
+.chat-dashboard {
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    height: 628px;
+    margin-top: 10px;
+    font-size: 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid #e5e8ec
+}
+
+.chat-dashboard--person {
+    margin-top: 0
+}
+
+.chat-dashboard__section {
+    position: relative;
+    height: 100%;
+    box-sizing: border-box
+}
+
+.chat-dashboard__section--list {
+    width: 368px;
+    border-right: 1px solid #e5e8ec
+}
+
+.chat-dashboard__section--room {
+    width: 700px
+}
+
+/* 채팅문의&지원 - 채팅리스트(대시보드) */
+.chat-filter {
+    position: relative;
+    height: 50px;
+    border-bottom: 1px solid #e5e8ec
+}
+
+.chat-filter__container {
+    display: none;
+    z-index: 1;
+    overflow: hidden;
+    position: absolute;
+    top: 43px;
+    left: 20px;
+    width: 135px;
+    box-sizing: border-box;
+    border: 1px solid #e5e6ec;
+    border-radius: 4px
+}
+
+.chat-filter__container.active {
+    display: block
+}
+
+.chat-filter__option {
+    border-top: 1px solid #e5e8ec
+}
+
+.chat-filter__option:first-child {
+    border-top: none
+}
+
+.chat-filter__text {
+    display: block;
+    height: 34px;
+    padding-left: 10px;
+    line-height: 34px;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+    color: #8f959f;
+    background-color: #fff
+}
+
+.chat-filter__option.active .chat-filter__text, .chat-filter__text:hover {
+    font-weight: bold;
+    color: #4c515b;
+    background-color: #f7f8fa
+}
+
+.chat-filter__selected {
+    padding: 0 0 0 20px;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 50px;
+    text-align: left;
+    cursor: pointer;
+    color: #000;
+    background-color: transparent
+}
+
+.chat-filter__selected::after {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 8px;
+    vertical-align: -1px;
+    background: url('//image.alba.kr/m/svg/arrow_gray700.svg') 0 0 /100% 100% no-repeat;
+    transform: rotate(90deg)
+}
+
+.chat-filter__container.active + .chat-filter__selected::after {
+    transform: rotate(-90deg)
+}
+
+.chat-list {
+    position: relative;
+    overflow-y: auto;
+    height: 575px;
+    background-color: #f7f8fa
+}
+
+.chat-list__item {
+    position: relative;
+    padding: 14px 20px 16px;
+    border-bottom: 1px solid #e5e8ec
+}
+
+.chat-list__status {
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #a9afb8
+}
+
+.chat-list__leave {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 13px 20px 5px 5px;
+    font-size: 0;
+    color: transparent;
+    background-color: transparent
+}
+
+.chat-list__leave::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('//image.alba.kr/comm/chat_management.png') 0 -40px / 40px auto no-repeat
+}
+
+.chat-list__deadline {
+    color: #fa5165
+}
+
+.chat-list__user {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 40px;
+    padding-left: 50px;
+    margin-bottom: 10px;
+    text-decoration: none !important
+}
+
+.chat-list__photo {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 0 3px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fff
+}
+
+.chat-dashboard--biz .chat-list__photo {
+    padding: 0
+}
+
+.chat-list__photo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('//image.alba.kr/m/svg/squircle-mask_bggrayF2.svg') 0 0 / contain no-repeat
+}
+
+.chat-list__photo img {
+    width: 100%
+}
+
+.chat-list__user-info {
+    width: 100%
+}
+
+.chat-list__info-base {
+    font-size: 14px;
+    margin-bottom: 2px;
+    color: #000
+}
+
+.chat-list__info-base>em {
+    font-weight: bold
+}
+
+.chat-list__info-job {
+    overflow: hidden;
+    position: relative;
+    display: block;
+    padding-right: 14px;
+    font-size: 12px;
+    color: #747a84;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.chat-list__info-job::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    background: url('//image.alba.kr/m/svg/icn_arrow_down_outline_grayBBB.svg') center / contain no-repeat;
+    transform: rotate(-90deg)
+}
+
+.chat-list__message {
+    display: block;
+    position: relative;
+    padding: 7px 14px;
+    text-decoration: none !important;
+    border-radius: 8px;
+    border: 1px solid #e5e8ec;
+    background-color: #f0f2f5
+}
+
+.chat-list__message-info {
+    position: relative;
+    padding-left: 22px
+}
+
+.chat-list__message-info::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 1px;
+    left: 0;
+    background: url('//image.alba.kr/m/icon_chat.png') 0 0 / 16px no-repeat
+}
+
+.chat-list__message-text {
+    overflow: hidden;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #000
+}
+
+.chat-list__message-date {
+    margin-top: 2px;
+    font-size: 12px;
+    color: #9ca2ac
+}
+
+.chat-list__message-count {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    min-width: 16px;
+    height: 16px;
+    box-sizing: border-box;
+    padding: 0 5px;
+    font-weight: bold;
+    font-size: 10px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 16px;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #f04452;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%)
+}
+
+.chat-list__item:hover .chat-list__leave {
+    display: block
+}
+
+.chat-list__item.on {
+    background-color: #fff
+}
+
+.chat-list__item.on::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #fff230
+}
+
+.chat-dashboard--biz .chat-list__item.on::before {
+    background-color: #91c7fe
+}
+
+.chat-list__item.on .chat-list__message {
+    border-color: #f7f8fa;
+    background-color: #f7f8fa
+}
+
+.chat-list__item.on .chat-list__photo::after {
+    background-image: url("//image.alba.kr/m/svg/squircle-mask_border_gray.svg")
+}
+
+.chat-list__item-nodata {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    color: #9096a1;
+    transform: translateY(-50%)
+}
+
+.chat-list__item-nodata::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 55px;
+    margin: 0 auto 12px;
+    background: url('//image.alba.kr/m/icon_search_noinfo.png') 50% 0 /60px 55px no-repeat
+}
+
+/* 채팅문의&지원 - 채팅방(대시보드/공고상세 공통) */
+.chat-room {
+    display: none
+}
+
+.chat-room.on {
+    display: block
+}
+
+.chat-room__info {
+    position: relative;
+    height: 85px;
+    padding: 18px 24px 17px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e5e8ec
+}
+
+.chat-room__info-base {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000
+}
+
+.chat-room__info-job {
+    overflow: hidden;
+    width: calc(100% - 160px);
+    font-size: 15px;
+    color: #000;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.chat-room__info-job>strong {
+    margin-right: 8px;
+    color: #8f959f
+}
+
+.chat-room__info-job>strong.ing {
+    color: #2e89e5
+}
+
+.chat-room__info-date {
+    position: absolute;
+    right: 24px;
+    bottom: 17px;
+    font-size: 13px;
+    color: #8f959f
+}
+
+.chat-room__info-deadline {
+    display: inline-block;
+    height: 20px;
+    padding: 0 10px;
+    margin-left: 1px;
+    line-height: 18px;
+    font-size: 13px;
+    font-weight: normal;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #e5e8ec;
+    border-radius: 6px;
+    color: #8f959f
+}
+
+.chat-room__info-deadline.ing {
+    border-color: #ffd2da;
+    color: #fa5165
+}
+
+.chat-room__contents {
+    display: flex;
+    flex-direction: column;
+    height: 541px
+}
+
+.chat-room__board {
+    overflow-y: auto;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 8px 20px 16px
+}
+
+.chat-board__section-space {
+    display: none;
+    height: 16px
+}
+
+.chat-board__intro {
+    display: none
+}
+
+.chat-board__intro-text {
+    height: 341px;
+    padding-top: 156px;
+    box-sizing: border-box;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.4;
+    color: #a9afb8
+}
+
+.chat-board__intro-action {
+    position: relative;
+    width: 100%;
+    height: 104px;
+    padding: 16px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    text-align: center;
+    background-color: #f2f6fc
+}
+
+.chat-board__intro-message {
+    margin-bottom: 14px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #7a96b8
+}
+
+.chat-board__intro-message::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    vertical-align: -2px;
+    background: url('//image.alba.kr/comm/chat_room.png') -32px 0 / 48px auto no-repeat
+}
+
+.chat-board__intro-submit {
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: 13px;
+    border-radius: 8px;
+    border: 1px solid #dfe7f2;
+    color: #4c515b;
+    background-color: #fff
+}
+
+.chat-board__intro-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    font-size: 0;
+    color: transparent;
+    background-color: transparent
+}
+
+.chat-board__intro-close::before, .chat-board__intro-close::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 27px;
+    width: 1px;
+    height: 12px;
+    background-color: #a9afb8
+}
+
+.chat-board__intro-close::before {
+    transform: rotate(45deg)
+}
+
+.chat-board__intro-close::after {
+    transform: rotate(-45deg)
+}
+
+.chat-board__notice {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 12px 14px;
+    margin: 8px 0 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #9ca2ac;
+    background-color: #f7f8fa
+}
+
+.chat-board__notice--red {
+    color: #e89197;
+    background-color: #fef7f7
+}
+
+.chat-board__notice-text--icon {
+    position: relative;
+    padding-left: 24px
+}
+
+.chat-board__notice-text--icon::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 13px;
+    top: 1px;
+    left: 0;
+    font-size: 0;
+    color: transparent;
+    background: url('//image.alba.kr/comm/chat_room.png') 0 0 / 48px auto no-repeat
+}
+
+.chat-board__notice--red .chat-board__notice-text--icon::before {
+    background-position: -16px 0
+}
+
+.chat-board__notice-text>strong {
+    display: inline-block;
+    margin-bottom: 4px
+}
+
+.chat-board__item {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 6px
+}
+
+.chat-board__item .chat-board__notice {
+    margin: 8px 0 14px
+}
+
+.chat-board__item--me {
+    flex-direction: row-reverse
+}
+
+.chat-board__item--you {
+    flex-direction: row;
+    padding-left: 40px
+}
+
+.chat-board__date {
+    display: block;
+    width: 100%;
+    margin: 10px 0 14px;
+    font-size: 13px;
+    text-align: center;
+    color: #747a84
+}
+
+.chat-board__status {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin: 0 4px;
+    color: #aeb4bf
+}
+
+.chat-board__status-reading {
+    width: 100%;
+    height: 13px;
+    margin-bottom: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: right;
+    color: #777e8c
+}
+
+.chat-board__status-load {
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+    background: url('//image.alba.kr/comm/chat_room.png') 0 -16px / 48px auto no-repeat;
+    vertical-align: -2px
+}
+
+.chat-board__status-date {
+    font-size: 10px;
+    letter-spacing: 0;
+    color: #aeb4bf
+}
+
+.chat-board__status-fail {
+    display: block;
+    width: 48px;
+    height: 22px;
+    padding-top: 4px;
+    font-size: 0;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 6px;
+    background-color: #4c515b
+}
+
+.chat-board__status-fail button {
+    position: relative;
+    display: inline-block;
+    width: 15px;
+    height: 14px;
+    margin: 0 3px;
+    font-size: 0;
+    color: transparent
+}
+
+.chat-board__status-reload {
+    background: url('//image.alba.kr/comm/chat_room.png') -16px -16px / 48px auto no-repeat
+}
+
+.chat-board__status-delete {
+    background: url('//image.alba.kr/comm/chat_room.png') -32px -16px / 48px auto no-repeat
+}
+
+.chat-board__status-delete::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -3px;
+    width: 1px;
+    height: 14px;
+    background-color: #666c76
+}
+
+.chat-board__message {
+    max-width: calc(100% - 246px);
+    min-width: 36px;
+    min-height: 36px;
+    padding: 8px 12px 8px 14px;
+    font-size: 14px;
+    line-height: 1.4;
+    box-sizing: border-box;
+    border-radius: 17px 0 17px 17px;
+    color: #000;
+    background-color: #fff230;
+    word-break: break-all
+}
+
+.chat-board__item--you .chat-board__message {
+    padding: 8px 14px 8px 12px;
+    border-radius: 0 17px 17px 17px;
+    background: #f0f2f5
+}
+
+.chat-board__photo {
+    overflow: hidden;
+    position: absolute;
+    top: -2px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    padding: 0 3px;
+    box-sizing: border-box;
+    text-align: center
+}
+
+.chat-dashboard--biz .chat-board__photo {
+    padding: 0
+}
+
+.chat-board__photo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('//image.alba.kr/m/svg/squircle-mask_border_gray.svg') 0 0 / contain no-repeat
+}
+
+.chat-board__photo img {
+    width: 100%
+}
+
+.chat-board__photo--biz {
+    background-color: #fff
+}
+
+.chat-board__photo--biz img {
+    width: calc(100% - 4px)
+}
+
+.chat-board__item--me + .chat-board__item--you, .chat-board__item--you + .chat-board__item--me {
+    margin-top: 20px
+}
+
+.chat-room__action {
+    position: relative;
+    padding: 10px 14px;
+    box-sizing: border-box;
+    border-top: 1px solid #e5e8ec;
+    background-color: #f7f8fa
+}
+
+.chat-room__action-message {
+    position: relative;
+    padding-right: 40px
+}
+
+.chat-room__action-message textarea {
+    overflow-y: auto;
+    width: 100%;
+    max-height: 98px;
+    height: auto;
+    min-height: 41px;
+    padding: 10px 14px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: 1px solid #e5e8ec;
+    font-size: 14px;
+    letter-spacing: -1px;
+    vertical-align: top
+}
+
+.chat-room__action-message textarea::-webkit-scrollbar {
+    width: 14px
+}
+
+.chat-room__action-message textarea::-webkit-scrollbar-thumb {
+    background-color: #d3d3d3;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 5px solid transparent
+}
+
+.chat-room__action-message textarea::-webkit-scrollbar-track {
+    background-color: transparent
+}
+
+.chat-room__action-message textarea:focus {
+    outline: none
+}
+
+.chat-room__send {
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    font-size: 0;
+    background: url('//image.alba.kr/comm/chat_send.png') 0 0 / 100% auto no-repeat;
+    transition: .2s ease-out
+}
+
+.chat-room__send.active {
+    background-image: url('//image.alba.kr/comm/chat_send_active.png')
+}
+
+.chat-management__more {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    padding: 10px;
+    font-size: 0;
+    background-color: transparent
+}
+
+.chat-management__more::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('//image.alba.kr/comm/chat_management.png') 0 0 / 40px auto no-repeat
+}
+
+.chat-management__wrap {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    top: 43px;
+    right: 20px;
+    width: 181px;
+    padding: 4px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.16);
+    background-color: #fff
+}
+
+.chat-management__wrap.on {
+    display: block
+}
+
+.chat-management__btn {
+    position: relative;
+    display: block;
+    width: 180px;
+    height: 44px;
+    box-sizing: border-box;
+    line-height: 44px;
+    padding: 0 0 0 44px;
+    font-size: 14px;
+    font-family: HGSoftGGothicssi60g;
+    letter-spacing: 0;
+    text-align: left;
+    background-color: transparent;
+    color: #4c515b
+}
+
+.chat-management__btn::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    width: 20px;
+    height: 20px;
+    background: url('//image.alba.kr/comm/chat_management.png') 0 0 / 40px auto no-repeat
+}
+
+.chat-management__btn--block::before {
+    background-position: -20px 0
+}
+
+.chat-management__btn--report::before {
+    background-position: 0 -20px
+}
+
+.chat-management__btn--leave::before {
+    background-position: -20px -20px
+}
+
+/* 채팅문의&지원 - 채팅방(대시보드) */
+.chat-room--nodata {
+    display: none;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    color: #9096a1;
+    transform: translateY(-50%)
+}
+
+.chat-room--nodata::before {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 12px;
+    background: url('//image.alba.kr/comm/chat_room_nodata.png') 50% 0 /80px 80px no-repeat
+}
+
+.chat-room--nodata.on {
+    display: block
+}
+
+/* 채팅문의&지원 - 채팅방(공고상세) */
+.chat-apply-layer {
+    display: none;
+    overflow: hidden;
+    z-index: 999;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 420px;
+    height: 640px;
+    box-sizing: border-box;
+    border: 1px solid #e5e8ec;
+    border-radius: 12px;
+    box-shadow: 0 2px 20px 0 rgba(0,0,0,0.1);
+    background-color: #fff
+}
+
+.chat-apply-layer .chat-room__info {
+    height: 107px;
+    padding: 18px 20px 17px
+}
+
+.chat-apply-layer .chat-room__info-job {
+    width: 100%;
+    font-weight: bold
+}
+
+.chat-apply-layer .chat-room__info-job>strong {
+    margin-right: 5px
+}
+
+.chat-apply-layer .chat-room__info-base {
+    font-size: 14px;
+    font-weight: normal
+}
+
+.chat-apply-layer .chat-room__info-date {
+    position: static;
+    margin-top: 6px
+}
+
+.chat-apply-layer .chat-room__contents {
+    height: 531px
+}
+
+.chat-apply-layer .chat-board__message {
+    max-width: calc(100% - 108px)
+}
+
+.chat-room__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    font-size: 0;
+    color: transparent;
+    background-color: transparent
+}
+
+.chat-room__close::before, .chat-room__close::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    right: 12px;
+    width: 1px;
+    height: 18px;
+    background-color: #292c33
+}
+
+.chat-room__close::before {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg)
+}
+
+.chat-room__close::after {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg)
+}
+
+/* 채팅문의&지원 - 대시보드_신고하기 레이어 */
+#LayerChatReport .layer-pop__wrap {
+    width: 520px
+}
+
+.chat-notify {
+    position: relative;
+    padding-left: 150px
+}
+
+.chat-notify + .chat-notify {
+    padding-top: 24px;
+    margin-top: 24px;
+    border-top: 1px solid #eee
+}
+
+.chat-notify__title {
+    position: absolute;
+    left: 0;
+    margin-top: 1px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000
+}
+
+.chat-notify__title>em {
+    color: #ff4b64
+}
+
+.chat-notify__reason li + li {
+    margin-top: 10px
+}
+
+.chat-notify__reason span.pub-input label {
+    font-size: 14px;
+    color: #000
+}
+
+.chat-notify__contents textarea {
+    width: 100%;
+    height: 116px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    vertical-align: top
+}
+
+.chat-notify__count {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    text-align: right;
+    color: #494949
+}
+
+.chat-notify__count>em {
+    color: #2e89e5
+}
+
+/* 채팅문의&지원 - 대시보드_이용가능 브라우저 안내 레이어 */
+#LayerChatBrowserInfo .layer-pop__wrap {
+    width: 502px
+}
+
+.browser-info__text {
+    font-size: 15px;
+    line-height: 1.4;
+    color: #000
+}
+
+.browser-info__area {
+    margin-top: 28px;
+    padding: 20px 20px 24px;
+    font-size: 14px;
+    background-color: #f8f8f8
+}
+
+.browser-info__area>p {
+    font-weight: bold
+}
+
+.browser-info__list {
+    margin-top: 8px
+}
+
+.browser-info__item {
+    position: relative;
+    margin-top: 4px
+}
+
+.browser-info__item--point {
+    margin-top: 6px
+}
+
+.browser-info__description {
+    margin: 12px 0 0;
+    font-size: 13px;
+    color: #666
+}
+
+/* 채팅문의&지원 - 대시보드_PC 채팅알림창 설정 가이드 레이어 */
+#LayerChatSetting .layer-pop__wrap {
+    width: 754px
+}
+
+#LayerChatSetting .layer-pop__contents {
+    overflow-y: auto;
+    height: 460px
+}
+
+.chat-setting-layer__text {
+    font-size: 15px;
+    color: #000
+}
+
+.chat-setting-layer__section {
+    margin-top: 28px
+}
+
+.chat-setting-layer__section>p {
+    font-size: 15px;
+    font-weight: bold;
+    color: #000
+}
+
+.chat-setting-layer__area {
+    margin-top: 8px;
+    padding: 17px 25px 30px;
+    background-color: #fafafa
+}
+
+.chat-setting-layer__description {
+    font-size: 14px;
+    line-height: 1.57;
+    color: #000
+}
+
+.chat-setting-layer__description + .chat-setting-layer__description {
+    margin-top: 24px
+}
+
+.chat-setting-layer__description img {
+    width: 100%;
+    margin-top: 16px;
+    image-rendering: -webkit-optimize-contrast
+}
+
+/* 채팅문의&지원 - 대시보드_PC 알림 하단플로팅 */
+.floating-alarm {
+    z-index: 99;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 48px;
+    background-color: #f2f6fc
+}
+
+.floating-alarm__inner {
+    position: relative;
+    overflow: hidden;
+    width: 1070px;
+    margin: 0 auto
+}
+
+.floating-alarm__message {
+    font-size: 13px;
+    text-align: center;
+    line-height: 48px;
+    color: #204469
+}
+
+.floating-alarm__btn {
+    height: 27px;
+    padding: 0 10px;
+    margin-left: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    box-sizing: border-box;
+    border: 1px solid #cbd8e8;
+    border-radius: 8px;
+    color: #204469;
+    background-color: #fff
+}
+
+.floating-alarm__btn::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    vertical-align: -3px;
+    background: url('//image.alba.kr/comm/icon_floating-alarm.png') 0 0 / 40px no-repeat
+}
+
+.floating-alarm__close {
+    position: absolute;
+    top: 13px;
+    right: 0
+}
+
+.floating-alarm__close .pub-input label {
+    color: #8f959f
+}
+
+.floating-alarm__close-action {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 12px;
+    font-size: 0;
+    vertical-align: top;
+    background: url('//image.alba.kr/comm/icon_floating-alarm.png') -20px 0 / 40px no-repeat
+}
+
+/* 채팅문의&지원 - 기업홈/개인홈 스낵바 */
+.snack-bar {
+    z-index: 3;
+    position: fixed;
+    right: 32px;
+    bottom: 20px;
+    width: 440px;
+    height: 56px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: rgba(52, 56, 64, 0.9)
+}
+
+.snack-bar__link {
+    display: block;
+    padding: 16px 50px 20px 22px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff !important
+}
+
+.snack-bar__link::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    vertical-align: -4px;
+    background: url('//image.alba.kr/comm/icon_snackbar.png') 0 0 / 100% no-repeat
+}
+
+.snack-bar__count {
+    display: inline-block;
+    min-width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    padding: 0 6px 0 5px;
+    margin-left: 8px;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 20px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #f04452
+}
+
+.snack-bar__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+    background-color: transparent
+}
+
+.snack-bar__close::before, .snack-bar__close::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    right: 11px;
+    width: 1px;
+    height: 18px;
+    background-color: #a9afb8
+}
+
+.snack-bar__close::before {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg)
+}
+
+.snack-bar__close::after {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg)
+}
+
+/* 개인정보 동의*/
+.privacy-agree {
+    border: solid 1px #e5e8ec;
+    margin-top: 20px;
+    box-sizing: border-box
+}
+
+.privacy-agree span.input label {
+    height: 20px;
+    line-height: 19px
+}
+
+.privacy-agree span.input input[type="checkbox"]+label {
+    background-position: 0 0
+}
+
+.privacy-agree span.input input[type="checkbox"]:checked+label {
+    color: initial;
+    background-position: 0 -60px
+}
+
+.privacy-agree span.pub-input input:checked + label {
+    color: #4c515b
+}
+
+.privacy-agree__header {
+    position: relative;
+    height: 54px;
+    padding: 18px 20px;
+    box-sizing: border-box;
+    border-bottom: solid 1px #f0f2f5;
+    font-weight: bold
+}
+
+.privacy-agree__toggle {
+    position: relative;
+    margin: 20px 0;
+    padding: 0 20px
+}
+
+.privacy-agree__label {
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px
+}
+
+.privacy-agree__label em {
+    vertical-align: top
+}
+
+.privacy-agree__contents {
+    display: none;
+    background-color: #f7f8fa;
+    padding: 20px;
+    margin-top: 12px;
+    font-size: 13px;
+    line-height: 22px
+}
+
+.privacy-agree__contents.on {
+    display: block
+}
+
+.privacy-agree__info {
+    color: #4c515b
+}
+
+.privacy-agree__info em {
+    color: #26a0b0
+}
+
+.privacy-agree__info>li {
+    display: table;
+    line-height: 1.4
+}
+
+.privacy-agree__info>li + li {
+    margin-top: 6px
+}
+
+.privacy-agree__info-title {
+    display: table-cell;
+    width: 100px;
+    color: #000
+}
+
+.privacy-agree__caption {
+    padding-top: 10px;
+    margin-top: 10px;
+    color: #8f959f;
+    border-top: solid 1px #ebedf1;
+    line-height: 1.4
+}
+
+.privacy-agree__button {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    font-size: 0;
+    text-indent: -999999px;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none
+}
+
+.privacy-agree__button::before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 10px;
+    margin: 0 auto;
+    background: url('//image.alba.kr/person/resumeIcon.png') -100px -100px no-repeat
+}
+
+.privacy-agree__button.on::before {
+    transform: rotate(180deg)
+}

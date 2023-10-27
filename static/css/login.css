@@ -1,0 +1,212 @@
+@charset "UTF-8";
+
+input.i_text {height:16px;padding:5px 0 0 5px;_margin-top:-2px;font:normal 11px 'Malgun Gothic';color:#585858;vertical-align:middle;border:1px solid #b4b4b4}
+.login legend {overflow:hidden;position:absolute;top:-999em;height:0;line-height:0;font-size:0}
+.login a.btn {display:inline-block;overflow:hidden;padding-right:2px;color:#626262;text-decoration:none !important;vertical-align:middle;white-space:nowrap;word-spacing:-1px;letter-spacing:-1px;background:url('//image.alba.kr/login/bg_btn.gif') no-repeat 100% 0}
+.login a.btn span,
+.login a.btn strong {display:block;padding:2px 2px 0 4px;font-size:11px;font-family:'Malgun Gothic';color:#626262;line-height:19px;background:url('//image.alba.kr/login/bg_btn.gif') no-repeat 0 0}
+	:root .login a.btn span {padding-top:1px}
+	:root .login a.btn strong {padding-top:1px}
+.loginAction a.btn strong {color:#e74701}
+	:root .login a.btn span {height:17px;padding-top:3px}
+	:root .login a.btn strong {height:17px;padding-top:3px}
+
+.btnLogin {position:absolute}
+p.checkArea {margin:5px 0 0 0}
+p.checkArea input {margin-top:-2px}
+p.checkArea label {display:inline-block;margin-left:2px;padding-top:1px;font:normal 11px 'Malgun Gothic';letter-spacing:-1px}
+p.checkArea span.security {display:inline-block;color:#dcdcdc;font:normal 11px/12px 'Malgun Gothic';letter-spacing:-1px}
+p.checkArea span.security span {padding:0 0 0 12px;margin-left:1px;color:#474747;background:url('//image.alba.kr/login/ic.gif') no-repeat 0 2px}
+p.checkArea span.security a {text-decoration:none}
+p.checkArea span img {margin-top:2px;}
+p.checkArea span.security img {margin-top:-2px;*margin-top:-1px;vertical-align:middle;*vertical-align:top;}
+
+.loginInfoTop {position:relative;overflow:hidden;height:210px;margin-top:12px;background:url('//image.alba.kr/login/bg_login2.gif') no-repeat 0 0}
+.biz {background-position:0 -260px}
+.loginInfoTop .loginAction {float:left;width:364px}
+.loginInfoTop .loginAction h1,
+.loginInfoTop .loginAction h2 {position:relative;z-index:-1;height:35px; *text-indent:-999em}
+.loginInfoTop .loginFail h1,
+.loginInfoTop .loginFail h2 {height:26px}
+.loginInfoTop .loginNotCookie h2 {z-index:1;text-indent:-999em}
+.loginInfoTop .loginNotCookie h2 a {z-index:1;position:absolute;left:240px;top:7px;width:77px;height:14px}
+.loginInfoTop .loginAction p.btn {margin:3px 0 0 113px}
+.loginInfoTop .loginAction fieldset.login {display:block;overflow:hidden;position:relative;width:224px;height:80px;margin:0 0 0 113px;padding:0;zoom:1}
+.loginInfoTop .loginAction fieldset.login dt label {position:absolute;top:-999em;height:0;line-height:0;font-size:0}
+.loginInfoTop .loginAction fieldset.login input.i_text {width:150px;margin-bottom:4px}
+.loginInfoTop .loginAction fieldset.login .sns {position:absolute;bottom:0;right:0;border-bottom:0 none}
+#LoginPerson .loginFail {background:url('//image.alba.kr/login/bg_login2.gif') no-repeat 0 -520px}
+#LoginBiz .loginFail {background:url('//image.alba.kr/login/bg_login2.gif') no-repeat 0 -740px}
+#LoginPerson .loginNotCookie {background:url('//image.alba.kr/login/bg_login2.gif') no-repeat 0 -960px}
+#LoginBiz .loginNotCookie {background:url('//image.alba.kr/login/bg_login2.gif') no-repeat 0 -1180px}
+#LoginPerson input.btnLogin,
+#LoginBiz input.btnLogin {right:0;top:0}
+.loginInfoTop .loginDetail {position:relative;float:left;width:396px;height:195px;margin-right:5px}
+.loginInfoTop .loginDetail a.join {position:absolute;left:285px;top:21px;display:inline-block;width:90px;height:35px;text-decoration:none}
+.loginInfoTop .loginComment,
+.loginInfoTop .loginDetail p,
+.loginInfoTop .loginDetail a.join span {position:relative;z-index:-1; *text-indent:-999em}
+.loginInfoTop .loginBanner {position:relative;float:left;width:195px}
+.loginInfoTop .loginBanner img {width:195px;height:195px}
+
+.loginInfoTop p.loginGuide {width:209px;margin:0 0 0 115px;padding:9px 0 0 15px;font-size:11px;line-height:1.3;letter-spacing:-1px;background:url('//image.alba.kr/icon/caution.gif') no-repeat 0 8px}
+.loginInfoTop p.loginGuide a {font-weight:bold;text-decoration:underline;color:#017bd1}
+#LoginPerson .loginInfoTop p.loginGuide a {color:#3f7d2a}
+
+h3 {height:24px;border-bottom:2px solid #626262;background:url('//image.alba.kr/login/hx.gif') no-repeat}
+h3 span {position:relative;z-index:-1}
+h3.special {background-position:0 -50px}
+h3.award {background-position:0 -100px}
+.bizCon h3.bestUse {background-position:0 -150px}
+.bizCon h3.special {background-position:0 -200px}
+.bizCon h3.award {background-position:0 -250px}
+
+.loginInfoCon {overflow:hidden;zoom:1;padding-left:8px;border-top:1px solid #e3e3e3}
+.loginInfoCon .pl,
+.loginInfoCon .pr {overflow:hidden;padding-top:23px}
+.loginInfoCon .pl {float:left;width:355px;border-right:1px solid #e0e0e0}
+.loginInfoCon .pr {float:right;width:565px}
+.loginInfoCon ul {overflow:hidden;position:relative;text-indent:-999em}
+ul.bestUse {height:300px;margin-bottom:7px;background:url('//image.alba.kr/login/img_bestUse2.gif') no-repeat}
+ul.bestUse li a {position:absolute;left:20px;width:66px;height:19px}
+ul.bestUse li.resume a {top:210px}
+ul.bestUse li.mobile a {top:272px}
+.bizCon ul.bestUse {background-position:0 -310px}
+ul.special {height:325px;margin-bottom:18px;background:url('//image.alba.kr/login/img_special.gif') no-repeat}
+.bizCon ul.special {background-position:0 -325px}
+ul.award {height:105px;background:url('//image.alba.kr/login/img_award.gif') no-repeat}
+
+/* popup */
+.popHead {overflow:hidden;width:100%;background:url('//image.alba.kr/login/hx_login3_bg.gif') repeat-x}
+.popHead .loginHx {height:39px;background:url('//image.alba.kr/login/hx_login3.gif') no-repeat}
+.popHead .loginHx span {position:relative;z-index:-1}
+.popContents {overflow:hidden;width:514px;margin:0 auto;padding:30px}
+.popContents .popCon {float:left;box-sizing:border-box;width:57.2%;padding:20px 20px 10px;background:#f8f8f8;border:1px solid #e7e7e7;border-top:3px solid #088ad0}
+.popContents .popBan {float:right;width:220px}
+.popFooter {height:25px;padding:5px 7px 0;text-align:right;background:#828282}
+a.btn_close {display:inline-block;overflow:hidden;padding-right:2px;line-height:20px;color:#464646;text-decoration:none !important;vertical-align:middle;white-space:nowrap;word-spacing:-1px;letter-spacing:-1px;background:url('//image.alba.kr/story/bg_btn.gif') no-repeat 100% -100px}
+a.btn_close span {display:block;padding:2px 4px 0 18px;color:#464646;background:url('//image.alba.kr/story/bg_btn.gif') no-repeat 0 -600px}
+	:root a.btn_close span {padding-top:0px}
+
+fieldset.loginArea {overflow:hidden;position:relative;padding:0;margin:0;zoom:1}
+fieldset.loginArea legend,
+fieldset.loginArea dl label {position:absolute;top:-999em;height:0;line-height:0;font-size:0}
+fieldset.loginArea dl {margin-top:12px}
+fieldset.loginArea input.i_text {width:130px;margin-bottom:4px}
+
+#LoginPop {overflow:hidden;min-width:auto}
+#LoginPop input.i_text {padding:7px 0 2px 5px}
+#LoginPop .btnLogin {left:145px;top:49px}
+#LoginPop p.checkArea {position:absolute;left:145px;top:11px;margin:0}
+#LoginPop p.checkArea span {display:block;width:107px;margin-bottom:4px}
+#LoginPop p.checkArea span.security span {display:inline}
+#LoginPop p.vr {margin-top:12px;margin-top:10px\9;text-align:right;color:#616161;letter-spacing:-1px}
+#LoginPop p.vr a:link {color:#616161}
+#LoginPop p.vr strong a {color:#e64605 !important}
+#LoginPop p.vr span.line {color:#dadada}
+#LoginPop .loginFail {padding-bottom:10px}
+#LoginPop p.loginGuide {width:475px;height:26px;margin:0 auto 25px;padding:13px 0 0 39px;font-size:11px;line-height:1.3;letter-spacing:-1px;background:url('//image.alba.kr/login/LoginPop_bg.gif') no-repeat 0 0}
+#LoginPop p.loginGuide a {font-weight:bold;text-decoration:underline;color:#017bd1}
+
+p.sns {overflow:hidden;height:20px;margin-top:2px;padding:0 0 5px 1px;border-bottom:1px solid #e1e1e1}
+p.sns a {float:left;width:20px;height:20px;margin-left:5px;text-indent:-999em;background:url('//image.alba.kr/sns/icon_sns_pc_202104.png') no-repeat}
+p.sns a:first-child {margin-left:0}
+p.sns a.facebook {background-position:-60px -32px}
+p.sns a.naver {background-position:-210px -32px}
+p.sns a.kakao {background-position:-30px -32px}
+p.sns a.apple {background-position:-180px -32px}
+p.sns a.google {background-position:-150px -32px}
+
+/* 쿠키차단 브라우저 설정오류 */
+.loginNotCookie .popCon {padding:13px 20px 7px}
+#LoginPop .loginNotCookie p.sns {margin-top:3px}
+
+/* 이용제안 popup */
+#PopLimit .PoptitleBg{width:100%; height:37px;background:url('//image.alba.kr/login/popup_title_bg.gif') repeat-x; }
+#PopLimit .PoptitleBg img{ margin:10px 0 0 10px; }
+#PopLimit .popCont { width:350px; margin:0 auto; padding:23px 0; }
+#PopLimit .popCont h2 img{margin: 0 0 23px 15px }
+#PopLimit .popCont p {letter-spacing:-1px; font-size:11px; line-height:16px; padding-bottom:5px}
+#PopLimit .popCont dl.dateArea{margin-bottom:33px; width:346px; border:2px solid #d6daf6; text-align:center}
+#PopLimit .popCont dl.dateArea dt{padding:10px 0 7px 0; color:#515ba0; background:#eff1ff; }
+#PopLimit .popCont dl.dateArea dd{padding:10px 0 7px 0; color:#0676ff}
+
+#PopLimit .popCont dl.customerArea{width:348px; border:1px solid #d9d9d9; background:#f9f9f9; text-align:center}
+#PopLimit .popCont dl.customerArea dt{float:left; padding:10px 14px 7px 14px; color:#6b6b6b;  }
+#PopLimit .popCont dl.customerArea dd{overflow:hidden; padding:10px 14px 7px 14px;  border-left:1px solid #d9d9d9; padding:10px; text-align:left}
+
+#PopLimit .popFooter {height:25px;padding:5px 7px 0;text-align:right;background:#828282}
+
+/* 로그인 */
+fieldset {padding:0;margin:0;border:0}
+
+.loginCombine {width:390px;margin:0 auto;box-sizing:border-box;}
+.loginCombine legend {overflow:hidden;position:absolute;top:-999em;height:0;line-height:0;font-size:0}
+
+.login-head {padding:50px 0;text-align:center}
+.login-head>img {width:120px;margin:0 auto;image-rendering:-webkit-optimize-contrast}
+
+.login-wrap {position:relative;width:390px;margin:0 auto}
+.login-wrap::after {content:"";clear:both;display:block}
+
+.login-area {float:left;width:390px}
+.login-tab {overflow:hidden;width:100%;margin-bottom:32px}
+.login-tab__item {float:left;width:50%;height:58px;box-sizing:border-box;border:1px solid #e5e5e5;border-bottom-color:#000;font-family:'HGSoftGGothicssi80g';font-weight:normal;font-size:16px;cursor:pointer;color:#999;background-color:#f9f9f9}
+.login-tab__item.on {border:1px solid #222;border-bottom-color:#fff;color:#222;background-color:#fff}
+.login-tab__subtxt {display:block;margin-top:3px;font-size:12px;font-family:'HGSoftGGothicssi60g';}
+
+.login-field__action {position:relative;margin-bottom:13px;padding-right:118px}
+.login-field__action>input {display:block;width:100%;height:44px;margin-top:8px;padding:0 12px;border:1px solid #ddd;border-radius:4px;box-sizing:border-box;font-size:15px;background-color:#fff}
+.login-field__action>input:first-child {margin-top:0}
+.login-field__action>button {position:absolute;top:0;right:0;width:110px;height:96px;border-radius:4px;font-weight:bold;font-size:18px;cursor:pointer;background-color:#ffe000;color:#222}
+.login-wrap.biz .login-field__action>button {background-color:#0076ff;color:#fff}
+
+.login-field__guide {margin:-3px 0 13px;font-size:12px;line-height:1.3;letter-spacing:-0.1em;color:#ff2a2a}
+.login-field__guide>a {text-decoration:underline;color:#ff2a2a}
+
+.login-field__state {position:relative;margin-bottom:30px}
+.login-field__state>span {font-size:13px;line-height:1.2;vertical-align:top;color:#222}
+.login-field__state input {position:absolute;top:0;left:0;opacity:0}
+.login-field__state label {display:inline-block;min-height:16px;padding:0 0 0 20px;font-size:13px;color:#222;background:url('//image.alba.kr/login/login_checkbox.png') no-repeat 0 0;background-size:16px 16px}
+.login-field__state input:checked+label {background-image:url('//image.alba.kr/login/login_checkbox_p.png')}
+.login-wrap.biz .login-field__state input:checked+label {background-image:url('//image.alba.kr/login/login_checkbox_c.png')}
+.login-field__state-security {margin-left:34px}
+.login-field__state-security::before,
+.login-field__state-help,
+.login-field__state-on {display:inline-block;width:24px;height:15px;margin:1px 0 0;font-size:0;vertical-align:top;color:transparent;background:url('//image.alba.kr/login/login_state.png') no-repeat 0 -20px;background-size:40px auto}
+.login-field__state-security::before {content:"";width:15px;background-position:0 0}
+.login-field__state-help {width:14px;height:14px;cursor:poionter;background-position:-20px 0}
+
+.login-link {margin-bottom:30px;font-size:14px;text-align:center;color:#666}
+.login-wrap.biz .login-sns {display:none}
+.login-link>a {position:relative;padding:0 17px 0 18px;color:#666}
+.login-link>a::before {content:"";position:absolute;top:5px;left:0;width:1px;height:10px;background-color:#e5e5e5}
+.login-link>a:first-child::before {content:none}
+
+.login-sns {padding-top:19px;border-top:1px solid #e5e5e5;text-align:center}
+.login-sns>button {margin:0 9px;font-size:12px;color:#666;cursor:pointer;background-color:#fff}
+.login-sns>button::before {content:"";display:block;width:36px;height:36px;margin:0 auto 10px;font-size:0;color:transparent;background:url('//image.alba.kr/sns/icon_sns_m_202202.png') no-repeat;background-size:204px auto}
+.login-sns>button.naver::before {background-position:0 -107px}
+.login-sns>button.kakao::before {background-position:-40px -107px}
+.login-sns>button.facebook::before {background-position:-80px -107px}
+.login-sns>button.apple::before {background-position:-120px -107px}
+
+.layerHelp {z-index:10;display:none;position:absolute;top:25px;left:0;width:192px;padding:15px;border:1px solid #666;border-radius:6px;box-sizing:border-box;font-size:12px;letter-spacing:-1px;color:#666;background:#fff}
+.layerHelp::after {content:"";position:absolute;top:-5px;left:34px;width:8px;height:8px;border-top:1px solid #666;border-right:1px solid #666;background-color:#fff;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg)}
+.layerHelp strong {font-weight:normal;color:#ff2a2a}
+.layerHelp__detail {display:block;margin:10px 0 0;color:#222}
+.layerHelp__detail::after {content:"";display:inline-block;width:5px;height:5px;margin:5px 0 0 2px;border-top:1px solid #222;border-right:1px solid #222;vertical-align:top;background-color:#fff;transform:rotate(45deg);-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg)}
+.layerHelp__guide>dt {margin-bottom:5px;font-size:13px;line-height:1.46;letter-spacing:-1px;color:#222}
+.layerHelp__guide>dd {position:relative;padding-left:9px;font-size:12px;line-height:1.5;letter-spacing:-1px;color:#666}
+.layerHelp__guide>dd::before {content:"-";position:absolute;top:-2px;left:0}
+.layerHelp__caution {margin-top:9px;padding-top:10px;border-top:1px solid #e5e5e5}
+.layerHelp__caution>li {position:relative;padding-left:14px;font-size:12px;line-height:1.5;letter-spacing:-1px;color:#666}
+.layerHelp__caution>li::before {content:"※";position:absolute;top:0;left:0}
+.layerHelp__close {position:absolute;top:12px;right:12px;width:12px;height:12px;font-size:0;color:transparent;background:url('//image.alba.kr/comm/btn_close7.png') no-repeat 0 0;background-size:12px 12px}
+.loginMaintain::after {left:53px}
+.loginMaintainDetail {width:390px}
+.loginMaintainDetail::after {left:116px}
+.secretHelp {left:72px}
+.secretHelp::after {left:145px}
+.secretHelp .layerHelp__guide>dd {padding-left:0}
+.secretHelp .layerHelp__guide>dd::before {content:none}
