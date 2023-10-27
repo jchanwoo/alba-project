@@ -1,0 +1,31 @@
+# server
+server:
+  port: 10001
+
+
+# jdbc
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url:
+    username: root
+    password: 12345678
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  # jpa
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    # jpa format
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+
+  # log
+  output:
+    ansi:
+      enabled: always
